@@ -79,7 +79,7 @@ print len(age)
 
 w = [7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
 nwalkers = 40
-nsteps = 100
+nsteps = 75
 #start = [13.0, 0.001, 13.0, 0.001]
 nstarts = 4
 
@@ -98,7 +98,7 @@ f.close()
 start_time = time.time()
 #The rest calls the emcee code and makes plots....
 # The function takes the following arguments: sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
-samples, fig, samples_save = sample(4, nwalkers, nsteps, nstarts, w, colours[0,0], colours[0,4], colours[0, 1], colours[0, 5], age[0], colours[0,3], colours[0,2])
+samples, fig, samples_save = sample(4, nwalkers, nsteps, nstarts, w, colours[0:1,0], colours[0:1,4], colours[0:1, 1], colours[0:1, 5], age[0:1], colours[0:1,3], colours[0:1,2])
 elap = (time.time() - start_time)/60
 print 'Minutes taken for '+str(len(samples)/nwalkers
                                )+' steps and '+str(nwalkers)+' walkers', elap
@@ -108,7 +108,7 @@ samples = samples.reshape(nwalkers, -1, 4)
 unburnt_samples = samples[:,:,:].reshape(-1, 4)
 samples = samples[:,:,:].reshape(-1, 4)
 
-tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
+tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0:1]), zip(*N.percentile(samples, [16,50,84],axis=0)))
 
 f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
 f.write('Samples found at : '+str(samples_save)+'\n')

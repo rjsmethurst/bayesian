@@ -123,8 +123,8 @@ def positions(nwalkers, nstarts, ndim):
 
 
 def sample(ndim, nwalkers, nsteps, nstarts, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
-    #if len(age) != len(ur):
-    #raise SystemExit('Number of ages does not coincide with number of galaxies...')
+    if len(age) != len(ur):
+        raise SystemExit('Number of ages does not coincide with number of galaxies...')
     #pos = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     pos = positions(nwalkers, nstarts, ndim)
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))

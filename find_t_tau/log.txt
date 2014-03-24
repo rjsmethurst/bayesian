@@ -52,19 +52,10 @@ Time taken to complete : 10.9974096508 hours
  
 ------------------------------------------------------------------ 
  
-
-Run started at 12:00 on 24/03/14
+Run started at 12:54 on 24/03/14
 Reason for running iteration: First initial test of "multi-nesting" with  4 start points and few walkers and the first galaxy ONLY of all of the GZ2 sample.
 Number of walkers : 40
-Number of steps :100
-Number of starting points of walkers : 4
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 126084
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/age_all.npy
-Run started at 12:01 on 24/03/14
-Reason for running iteration: First initial test of "multi-nesting" with  4 start points and few walkers and the first galaxy ONLY of all of the GZ2 sample.
-Number of walkers : 40
-Number of steps :100
+Number of steps :75
 Number of starting points of walkers : 4
 Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
 Number of galaxies used was : 126084
