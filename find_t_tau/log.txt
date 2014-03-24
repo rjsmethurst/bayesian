@@ -1,0 +1,71 @@
+Run started at 17:06 on 20/03/14
+Reason for running iteration: A quick test to see where the S0s (pd < 0.8 and ps < 0.8) end up in the parmeter space)
+Number of walkers : 10
+Number of steps :150
+Starting point of walkers : [13.0, 0.001, 13.0, 0.001]
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 63955
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/age_inter.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/samples_inter_1500_63955_17_23_20_03_14.npy
+Total number of positions for each parameter (after being "burnt in") : 1500
+t_smooth from MCMC : (12.123981283050648, 0.87565439186943728, 0.20869911150580123)
+tau_smooth from MCMC : (0.057191214213532807, 0.063242304843153421, 0.056429078184888383)
+t_disc from MCMC : (12.437515859591219, 0.56229533554840039, 0.14129885082538074)
+tau_disc from MCMC : (0.052310869271829021, 0.043253338674908319, 0.051887263415124521)
+Time taken to complete : 0.292156288028 hours 
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 17:29 on 20/03/14
+Reason for running iteration: Well the first quick one didn't really do anything with so few walkers and steps, so here's one with a big number of both to see what happens for all these intermediate S0 galaxies with pd and ps < 0.8. 
+Number of walkers : 150
+Number of steps :350
+Starting point of walkers : [13.0, 0.001, 13.0, 0.001]
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 63955
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/age_inter.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/samples_inter_52500_63955_02_29_22_03_14.npy
+Total number of positions for each parameter (after being "burnt in") : 52500
+t_smooth from MCMC : (9.7763636163164946, 2.9974326223644709, 0.28696257558090466)
+tau_smooth from MCMC : (0.7274439800820649, 0.2631332348076777, 0.67789606407096525)
+t_disc from MCMC : (10.740830533965614, 0.92683471599477052, 0.80833865184981413)
+tau_disc from MCMC : (1.1499287972966261, 0.23296950044679776, 1.0525438997834617)
+Time taken to complete : 33.0062866153 hours 
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 18:01 on 23/03/14
+Reason for running iteration: Starting in the central location of the parameter space rather than in the bottom right corner like the last run of S0s (pd ~ ps < 0.8). More walkers than last time too. 
+Number of walkers : 150
+Number of steps :400
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 63955
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/age_inter.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/samples_inter_60000_63955_05_01_24_03_14.npy
+Total number of positions for each parameter (after being "burnt in") : 60000
+t_smooth from MCMC : (9.5028245038348125, 1.2443362288125428, 1.1833894955117295)
+tau_smooth from MCMC : (1.1507049786574242, 0.35223885928116028, 0.14349058373825341)
+t_disc from MCMC : (9.470642338279923, 1.0657814885889021, 1.7967314455058663)
+tau_disc from MCMC : (1.187842251539674, 0.88325617554160796, 0.19213530020053882)
+Time taken to complete : 10.9974096508 hours 
+ 
+------------------------------------------------------------------ 
+ 
+
+Run started at 12:00 on 24/03/14
+Reason for running iteration: First initial test of "multi-nesting" with  4 start points and few walkers and the first galaxy ONLY of all of the GZ2 sample.
+Number of walkers : 40
+Number of steps :100
+Number of starting points of walkers : 4
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 126084
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/age_all.npy
+Run started at 12:01 on 24/03/14
+Reason for running iteration: First initial test of "multi-nesting" with  4 start points and few walkers and the first galaxy ONLY of all of the GZ2 sample.
+Number of walkers : 40
+Number of steps :100
+Number of starting points of walkers : 4
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 126084
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/age_all.npy

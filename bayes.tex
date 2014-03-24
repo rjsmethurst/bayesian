@@ -1,0 +1,99 @@
+\documentclass[a4paper, twoside, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{fullpage}
+\oddsidemargin = 1pt
+\topmargin = 1pt
+\textheight = 650pt
+\markright{Becky Smethurst}
+\begin{document}
+
+\title{\sc{Bayesian Methods for Modelling the Star Formation History of Galaxy Zoo 2 Data}}
+\author{Becky Smethurst}
+\date{\today}
+
+\maketitle
+
+First we define the properties of the star formation model, described through an exponentially decaying function of time, beginning when star formation is quenched, $t_{q}$ at a quenching rate, $\tau$. Prior to $t_{q}$ the star formation rate is constant. We must consider these models across all possible values of $\underline{t_{q}}$ and $\underline{\tau}$ which will each be distributed with a mean and standard deviation, so that: $\underline{w} = (\mu_{t_{q}}, \sigma_{t_{q}}, \mu_{\tau}, \sigma_{\tau})$. For a given combinaton of $t_{q}$ and $\tau$ we define:
+
+\begin{equation*}
+\theta = \left( \begin{array}{c}
+t_{q}\\
+\tau \end{array} \right),
+\end{equation*}
+\\
+so that, 
+\begin{equation*}
+\theta - \overline{\theta} = \left( \begin{array}{c}
+t_{q} - \mu_{t_{q}} \\
+\tau - \mu_{\tau} \end{array} \right) 
+\end{equation*}
+\\
+where $\overline{\theta} = (\mu_{t_{q}}, \mu_{\tau})$ and also:
+\begin{equation*}
+\hat{C} = \left( \begin{array}{cc}
+1/\sigma^2_{t_{q}} & 0 \\
+0 & 1/\sigma^2_{\tau} \end{array} \right).
+\end{equation*}
+
+We can then define the Bayesian probability $P(t_{q}, \tau) = P(t_{q})P(\tau)$ assuming that $ P(t_{q})$ and $P(\tau)$ are independent of each other to give:
+\begin{equation*}
+P(t_{q}, \tau) = \frac{1}{\sqrt[]{4\pi^2\sigma^2_{t_{q}}\sigma^2_{\tau}}} \exp\left(-\frac{(t_{q}-\mu_{t_{q}})^2}{2\sigma^2_{t_{q}}}\right)\exp\left(-\frac{(\tau-\mu_{\tau})^2}{2\sigma^2_{\tau}}\right).
+\end{equation*}
+If we work in the arrays we defined earlier then:
+\begin{equation*}
+P(\theta) = \frac{1}{Z_{\theta}} \exp{\left[ -\frac{1}{2} [\theta - \overline{\theta}]^T \hat{C}^{-1} [\theta - \overline{\theta}] \right]}
+\end{equation*}
+where,
+\begin{equation*}
+\chi^2_{\theta} = [\theta - \overline{\theta}]^T \hat{C}^{-1} [\theta - \overline{\theta}]
+\end{equation*}
+and if N is the dimension $N x N$ of $\hat{C}$ then,
+\begin{equation*}
+Z_{\theta} = (2\pi)^{\frac{N}{2}} |\hat{C}|^{\frac{1}{2}}.
+\end{equation*}
+And so if we work in logarithmic probabilities:
+\begin{equation*}
+\log{(P(\theta))} = - \log{(Z_{\theta})} - \frac{\chi^2_{\theta}}{2}.
+\end{equation*}
+\\
+We must then find the probability of the data given these values of theta, $P(\underline{d}|\theta, \underline{w})$:
+\begin{equation*}
+P(\underline{d}|\theta, \underline{w}) = \prod_{k} P(d_{k}|\theta),
+\end{equation*}
+where $d_{k}$ is a single data point (colour of one galaxy). We calculate $P(d_{k}|\theta)$ using the predicted values for the colour, $d_p(\theta)$, for a given combination of $\theta = (t_{q}, \tau)$. 
+\begin{equation*}
+P(d_{k}|\theta) = \frac{1}{\sqrt{2\pi\sigma_{k}^2}} \exp{\left( - \frac{(d_{k} - d_{p}(\theta))^2}{\sigma_{k}^2} \right)},
+\end{equation*}
+where for one combination of $\theta = (t_{q}, \tau)$,
+\begin{equation*}
+\chi_{k}^2 = \frac{(d_{k} - d_{p}(\theta))^2}{\sigma_{k}^2}
+\end{equation*}
+and
+\begin{equation*}
+Z_{k} = \sqrt[]{2\pi\sigma_{k}^2}.
+\end{equation*}
+Again working in logarithmic probabilites:
+\begin{equation*}
+\log{(P(\underline{d}|\theta, \underline{w}))} = \sum_{k} log(P(d_{k}|\theta))
+\end{equation*}
+\begin{equation*}
+\log{(P(\underline{d}|\theta, \underline{w}))}  = \sum_{k} \log{\left[\frac{1}{\sqrt{2\pi\sigma_{k}^2}} \exp{\left( -\frac{(d_{k} - d_{p}(\theta))^2}{\sigma_{k}^2} \right)}\right]}
+\end{equation*}
+\begin{equation*}
+\log{(P(\underline{d}|\theta, \underline{w}))}  = K - \sum_{k} \frac{\chi_{k}^2}{2},
+\end{equation*}
+where K is a constant:
+\begin{equation*}
+K = - \sum_{k} \log{Z_{k}}. 
+\end{equation*}
+What we want however is the probability of each combination of theta values given the data we have, $P(\theta|\underline{d})$, which we can find by:
+\begin{equation*}
+P(\theta|\underline{d}) = \frac{P(\underline{d}|\theta)P(\theta)}{\int P(\underline{d}|\theta)P(\theta) d\theta},
+\end{equation*}
+where,
+\begin{equation*}
+P(\underline{d}|\theta)P(\theta) = \exp{\left[\log{(P(\underline{d}|\theta))} + \log{(P(\theta)}\right]},
+\end{equation*}
+and the $\int P(\underline{d}|\theta)P(\theta) d\theta$ is given by the sum across all the array elements of $P(\underline{d}|\theta)P(\theta)$.
+\end{document}

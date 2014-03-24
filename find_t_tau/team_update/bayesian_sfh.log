@@ -1,0 +1,400 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  17 MAR 2014 14:20
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**bayesian_sfh.tex
+(./bayesian_sfh.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen105
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen106
+\subfiglabelskip=\skip46
+\c@subfigure=\count88
+\c@lofdepth=\count89
+\c@subtable=\count90
+\c@lotdepth=\count91
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+No file bayesian_sfh.aux.
+\openout1 = `bayesian_sfh.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count92
+\scratchdimen=\dimen107
+\scratchbox=\box26
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen108
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks16
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+./bayesian_sfh.tex:7: Missing $ inserted.
+<inserted text> 
+                $
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 7.
+./bayesian_sfh.tex:7: Double subscript.
+<argument> triangle_t_
+                      tau_disc_red_s_37500_14_41_14_03_14.pdf
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:7: Double subscript.
+<argument> triangle_t_tau_disc_red_s_
+                                     37500_14_41_14_03_14.pdf
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:7: Extra }, or forgotten $.
+\@subfloat ...evmode \setbox \@tempboxa \hbox {#4}
+                                                  \@tempdima =\wd \@tempboxa...
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:7: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:7: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:7: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:7: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+
+Overfull \hbox (10.86127pt too wide) in paragraph at lines 7--7
+[]\OT1/cmr/m/n/8 (a)
+ []
+
+
+Overfull \hbox (42.97284pt too wide) in paragraph at lines 7--7
+\OT1/cmr/m/n/8 width=0.45 
+ []
+
+./bayesian_sfh.tex:7: Extra }, or forgotten $.
+\@subfloat ...use {c@\@captype }\m@ne \fi \egroup 
+                                                  
+l.7 ..._t_tau_disc_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Missing $ inserted.
+<inserted text> 
+                $
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Double subscript.
+<argument> triangle_t_
+                      tau_smooth_red_s_37500_14_41_14_03_14.pdf
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Double subscript.
+<argument> triangle_t_tau_smooth_red_s_
+                                       37500_14_41_14_03_14.pdf
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Extra }, or forgotten $.
+\@subfloat ...evmode \setbox \@tempboxa \hbox {#4}
+                                                  \@tempdima =\wd \@tempboxa...
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:8: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+
+Overfull \hbox (11.3335pt too wide) in paragraph at lines 8--8
+[]\OT1/cmr/m/n/8 (b)
+ []
+
+
+Overfull \hbox (42.97284pt too wide) in paragraph at lines 8--8
+\OT1/cmr/m/n/8 width=0.45 
+ []
+
+./bayesian_sfh.tex:8: Extra }, or forgotten $.
+\@subfloat ...use {c@\@captype }\m@ne \fi \egroup 
+                                                  
+l.8 ..._tau_smooth_red_s_37500_14_41_14_03_14.pdf}
+                                                  
+? 
+./bayesian_sfh.tex:9: Missing $ inserted.
+<inserted text> 
+                $
+l.9 
+    
+? 
+
+./bayesian_sfh.tex:11: LaTeX Error: \begin{figure} on input line 6 ended by \en
+d{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \end{document}
+                   
+? 
+./bayesian_sfh.tex:11: Missing } inserted.
+<inserted text> 
+                }
+l.11 \end{document}
+                   
+? 
+./bayesian_sfh.tex:11: Missing $ inserted.
+<inserted text> 
+                $
+l.11 \end{document}
+                   
+? 
+./bayesian_sfh.tex:11: Missing } inserted.
+<inserted text> 
+                }
+l.11 \end{document}
+                   
+? 
+./bayesian_sfh.tex:11: Missing } inserted.
+<inserted text> 
+                }
+l.11 \end{document}
+                   
+? 
+(./bayesian_sfh.aux)
+./bayesian_sfh.tex:11: You can't use `\end' in internal vertical mode.
+\enddocument ... \endgroup \deadcycles \z@ \@@end 
+                                                  
+l.11 \end{document}
+                   
+? 
+
+./bayesian_sfh.tex:11: LaTeX Error: \begin{figure} on input line 6 ended by \en
+d{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \end{document}
+                   
+? 
+./bayesian_sfh.tex:11: Missing } inserted.
+<inserted text> 
+                }
+l.11 \end{document}
+                   
+? 
+./bayesian_sfh.tex:11: Missing } inserted.
+<inserted text> 
+                }
+l.11 \end{document}
+                   
+? 
+)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*\end
+
+*
+! Emergency stop.
+<*> \end
+        
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 1615 strings out of 493315
+ 23339 string characters out of 6137904
+ 77963 words of memory out of 5000000
+ 5086 multiletter control sequences out of 15000+600000
+ 3939 words of font info for 15 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,10n,24p,246b,238s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
