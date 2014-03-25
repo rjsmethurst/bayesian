@@ -19,10 +19,10 @@ import time
 
 cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 
-font = {'family':'serif', 'size':12}
+font = {'family':'serif', 'size':14}
 P.rc('font', **font)
-P.rc('xtick', labelsize='small')
-P.rc('ytick', labelsize='small')
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
 
 
 ########################################################################################
@@ -116,10 +116,13 @@ def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
 def sample(ndim, nwalkers, nsteps, start, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     if len(age) != len(ur):
         raise SystemExit('Number of ages does not coincide with number of galaxies...')
-    pos = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
+    p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
-    sampler.run_mcmc(pos, nsteps)
-    samples = sampler.chain[:,:,:].reshape((-1,ndim))
+    #burn in
+    pos, prob, state = sampler.run_mcmc(p0, 50)
+    sampler.reset()
+    print 'RESET', pos
+    sampler.run_mcmc(pos, nsteps)    samples = sampler.chain[:,:,:].reshape((-1,ndim))
     samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/samples_inter_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
     N.save(samples_save, samples)
     fig = triangle.corner(samples, labels=[r'$ t_{smooth} $', r'$ \tau_{smooth} $', r'$ t_{disc} $', r'$ \tau_{disc}$'])
@@ -192,7 +195,7 @@ def corner_plot(s, labels):
     ax2 = P.subplot(223)
     ax2.set_xlabel(labels[0])
     ax2.set_ylabel(labels[1])
-    triangle.histo2d(x, y, ax=ax2, extent=[[0, 13.807108309208775],[0, 3.0]])
+    im = triangle.histo2d(x, y, ax=ax2, extent=[[0, 13.807108309208775],[0, 3.0]])
     [l.set_rotation(45) for l in ax2.get_xticklabels()]
     [j.set_rotation(45) for j in ax2.get_yticklabels()]
     ax1 = P.subplot(221, xlim=[0, 13.807108309208775])
@@ -205,8 +208,10 @@ def corner_plot(s, labels):
     ax3.hist(y, bins=50, orientation='horizontal', histtype='step',color='k', range=(0,3))
     P.subplots_adjust(wspace=0.05)
     P.subplots_adjust(hspace=0.05)
-    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/inter/corner_'+labels[0]+'_'+labels[1]+'_'+str(len(s))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
-    fig.savefig(save_fig)
+    cbar_ax = fig.add_axes([0.522, 0.51, 0.02, 0.39])
+    cb = fig.colorbar(im, cax = cbar_ax)
+    cb.solids.set_edgecolor('face')
+    cb.set_label(r'model $NUV-u$ prediction', labelpad = 20)
     return fig
 
 

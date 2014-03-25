@@ -15,9 +15,7 @@ P.rc('font', **font)
 P.rc('xtick', labelsize='small')
 P.rc('ytick', labelsize='small')
 
-#dir ='/home/smethurst/Projects/Green-Valley-Project/bc03/models/Padova1994/chabrier/ASCII/'
-#model = 'extracted_bc2003_lr_m62_chab_ssp.ised_ASCII'
-#data = N.loadtxt(dir+model)
+
 #
 tq = N.linspace(0.0, 13.8, 200)
 tau = N.linspace(0.001, 3, 200)
@@ -54,30 +52,37 @@ for n in range(len(tq)):
 #cbar.set_label(r'% drop in star formation rate')
 #P.savefig('sfr_drop.pdf')
 
-fig = P.figure(figsize=(15,4))
+fig = P.figure(figsize=(15,6))
 P.subplot(1,3,1)
-ax1 = P.imshow(ur, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)])
+ax1 = P.imshow(ur, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.7, cmap=P.cm.spectral)
 P.xlabel(r'$t_{quench} (Gyr)$')
 P.ylabel(r'$\tau$ (Gyr)')
-cbar = P.colorbar(ax1)
-cbar.set_label(r'predicted $u-r$ colour')
+cbar = P.colorbar(ax1, orientation='horizontal')
+cbar.set_label(r'predicted $u-r$ colour', labelpad=10)
+cbar.set_ticks([0.75, 1.25, 1.75, 2.25])
+cbar.set_ticklabels([0.75, 1.25, 1.75, 2.25])
 
 P.subplot(1,3,2)
-ax2 = P.imshow(nuv, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)])
+ax2 = P.imshow(nuv, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.7, cmap=P.cm.spectral)
 P.xlabel(r'$t_{quench} (Gyr)$')
 P.ylabel(r'$\tau$ (Gyr)')
-cbar= P.colorbar(ax2)
-cbar.set_label(r'predicted $NUV-u$ colour')
+cbar= P.colorbar(ax2, orientation='horizontal')
+cbar.set_label(r'predicted $NUV-u$ colour', labelpad=10)
+cbar.set_ticks([0.4, 1.2, 2.0, 2.8])
+cbar.set_ticklabels([0.4, 1.2, 2.0, 2.8])
+
 
 P.subplot(1,3,3)
-ax3 = P.imshow(sfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)])
+ax3 = P.imshow(sfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.7)
 P.text(0.5, 2.75, r'$t_{obs} = 13.7 ~Gyr$')
 P.xlabel(r'$t_{quench} (Gyr)$')
 P.ylabel(r'$\tau$ (Gyr)')
-cbar = P.colorbar(ax3)
-cbar.set_label(r'% drop in SFR')
+cbar = P.colorbar(ax3, orientation='horizontal')
+cbar.set_label(r'% drop in SFR', labelpad=10)
+cbar.set_ticks([0, 20, 40, 60, 80, 100])
+cbar.set_ticklabels([0, 20, 40, 60, 80, 100])
 
-save_fig = '/home/smethurst/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_plot/sfr_drop_and_colours_'+str(len(tq))+'_t_tau_obs_'+str(age)+'_Gyr_with_203_timesteps.pdf'
+save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_plot/sfr_drop_and_colours_'+str(len(tq))+'_t_tau_obs_'+str(age)+'_Gyr_with_203_timesteps.pdf'
 fig.tight_layout()
 fig.savefig(save_fig)
 

@@ -60,3 +60,39 @@ Number of starting points of walkers : 4
 Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
 Number of galaxies used was : 126084
 Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/age_all.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/samples_all_3000_1_13_27_24_03_14.npy
+Total number of positions for each parameter (after being "burnt in") : 3000
+t_smooth from MCMC : (6.3032744970513743, 1.9910588168862073, array([ 2.34262826]))
+tau_smooth from MCMC : (0.88894877935143723, 0.57778948184773071, array([ 0.64938682]))
+t_disc from MCMC : (6.3065921259211191, 1.9934222911605968, array([ 2.33838602]))
+tau_disc from MCMC : (0.88605878824143813, 0.58060830413903686, array([ 0.64562274]))
+Time taken to complete : 0.557688080801 hours 
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 14:21 on 24/03/14
+Reason for running iteration: Testing multistart points
+Number of walkers : 40
+Number of steps :15
+Number of starting points of walkers : 4
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 126084
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/age_all.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/samples_all_600_1_14_40_24_03_14.npy
+Total number of positions for each parameter (after being "burnt in") : 600
+t_smooth from MCMC : (6.6829070091336611, 3.1996707911968691, array([ 3.58239672]))
+tau_smooth from MCMC : (1.0693390564847089, 1.0676894391473704, array([ 0.51188622]))
+t_disc from MCMC : (6.6829065802311911, 3.1996742500940867, array([ 3.58242198]))
+tau_disc from MCMC : (1.0693077388040853, 1.0677159767232758, array([ 0.5118423]))
+Time taken to complete : 0.322428397205 hours 
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 14:04 on 25/03/14
+Reason for running iteration: To re-run the smooth galaxies only (rather than the red sequence ones - in order to compare) with the new burn in start in the samples function
+Number of walkers : 100
+Number of steps :300
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 10494
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/smooth/age_smooth.npy

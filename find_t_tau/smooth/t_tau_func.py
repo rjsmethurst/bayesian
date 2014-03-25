@@ -19,6 +19,11 @@ import time
 
 cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 
+font = {'family':'serif', 'size':14}
+P.rc('font', **font)
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
+
 ########################################################################################
 # The data files .ised_ASCII contain the extracted bc03 models and have a 0 in the origin at [0,0]. The first row contains
 # the model ages (from the second column) - data[0,1:]. The first column contains the model lambda values (from the second
@@ -107,12 +112,16 @@ def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     return lp + lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
 
 
-def sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
+def sample(ndim, nwalkers, nsteps, start, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     if len(age) != len(ur):
         raise SystemExit('Number of ages does not coincide with number of galaxies...')
-    pos = [[13.0, 3.0, 13.0, 3.0] + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
+    p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
-    sampler.run_mcmc(pos, 250)
+    #burn in
+    pos, prob, state = sampler.run_mcmc(p0, 50)
+    sampler.reset()
+    print 'RESET', pos
+    sampler.run_mcmc(pos, nsteps)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
     samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/smooth/samples_smooth_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
     N.save(samples_save, samples)
@@ -178,6 +187,31 @@ def walker_steps(samples, nwalkers, limit):
     P.tight_layout()
     save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/smooth/walkers_2d_steps_smooth_'+str(nwalkers)+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
     fig.savefig(save_fig)
+    return fig
+
+def corner_plot(s, labels):
+    x, y = s[:,0], s[:,1]
+    fig = P.figure(figsize=(10,10))
+    ax2 = P.subplot(223)
+    ax2.set_xlabel(labels[0])
+    ax2.set_ylabel(labels[1])
+    im = triangle.histo2d(x, y, ax=ax2, extent=[[0, 13.807108309208775],[0, 3.0]])
+    [l.set_rotation(45) for l in ax2.get_xticklabels()]
+    [j.set_rotation(45) for j in ax2.get_yticklabels()]
+    ax1 = P.subplot(221, xlim=[0, 13.807108309208775])
+    ax1.tick_params(axis='x', labelbottom='off')
+    ax1.tick_params(axis='y', labelleft='off')
+    ax1.hist(x, bins=50, histtype='step', color='k', range=(0, 13.807108309208775))
+    ax3 = P.subplot(224)
+    ax3.tick_params(axis='x', labelbottom='off')
+    ax3.tick_params(axis='y', labelleft='off')
+    ax3.hist(y, bins=50, orientation='horizontal', histtype='step',color='k', range=(0,3))
+    P.subplots_adjust(wspace=0.05)
+    P.subplots_adjust(hspace=0.05)
+    cbar_ax = fig.add_axes([0.522, 0.51, 0.02, 0.39])
+    cb = fig.colorbar(im, cax = cbar_ax)
+    cb.solids.set_edgecolor('face')
+    cb.set_label(r'model $NUV-u$ prediction', labelpad = 20)
     return fig
 
 

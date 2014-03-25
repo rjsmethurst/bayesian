@@ -16,6 +16,7 @@ P.rc('font', **font)
 P.rc('xtick', labelsize='small')
 P.rc('ytick', labelsize='small')
 
+reason = str(raw_input('Why are you running this iteration? : '))
 
 #Using PyFits to open up the Galaxy Zoo data
 file = '/Users/becky/Projects/Green-Valley-Project/data/GZ2_all_GALEX_match_GZ1_k_correct_green_valley.fits'
@@ -64,45 +65,59 @@ else:
     age = N.load(age_save)
 print len(age)
 
-
-#col = N.zeros([1,8])
-#col[:,0] = 2.1
-#col[:,1] = 1.2
-#col[:,2] = 0.1
-#col[:,3] = 0.9
-#col[:,4] = 0.05
-#col[:,5] = 0.1
-#col[:,6] = 13.0
-#col[:,7] = 0.001
-
-
 w = [7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
-nwalkers = 150
+nwalkers = 100
+nsteps= 350
+start = [7.5, 1.5, 7.5, 1.5]
+
+f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
+f.write('Run started at '+str(time.strftime('%H:%M'))+' on '+str(time.strftime('%d/%m/%y'))+'\n')
+f.write('Reason for running iteration: ' +reason+'\n')
+f.write('Number of walkers : '+str(nwalkers)+'\n')
+f.write('Number of steps :'+str(nsteps)+'\n')
+f.write('Starting point of walkers : '+str(start)+'\n')
+f.write('Prior assumptions, w :'+str(w)+'\n')
+f.write('Number of galaxies used was : '+str(len(age))+'\n')
+f.write('Ages of galaxies used found at : '+str(age_save)+'\n')
+f.close()
 
 # w is the prior conditions on my theta parameters - the mean and standard deviation of tq and tau for the disc and smooth populations
 # w = [mu_tqs, mu_taus, mu_tqd, mu_taud, sig_tqs, sig_taus, sig_tqd, sig_taud]
 start_time = time.time()
 #The rest calls the emcee code and makes plots....
 # The function takes the following arguments: sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
-samples, fig = sample(4, nwalkers, w, blue_c[:,0], blue_c[:,4], blue_c[:, 1], blue_c[:, 5], age, blue_c[:,3], blue_c[:,2])
+samples, fig = sample(4, nwalkers, nsteps, start, w, blue_c[:,0], blue_c[:,4], blue_c[:, 1], blue_c[:, 5], age, blue_c[:,3], blue_c[:,2])
 elap = (time.time() - start_time)/60
 print 'Minutes taken for '+str(len(samples)/nwalkers
                                )+' steps and '+str(nwalkers)+' walkers', elap
 
 #samples = N.load('samples_blue_c_45000_74194_20_34_11_03_14.npy')
-samples = samples.reshape(nwalkers, -1, 4)
-samples = samples[:,50:,:].reshape(-1,4)
+s = samples.reshape(nwalkers, -1, 4)
 
 tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
+
+f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
+f.write('Samples found at : '+str(samples_save)+'\n')
+f.write('Total number of positions for each parameter : '+str(len(samples))+'\n')
+f.write('t_smooth from MCMC : '+str(tqs_mcmc)+'\n')
+f.write('tau_smooth from MCMC : '+str(taus_mcmc)+'\n')
+f.write('t_disc from MCMC : '+str(tqd_mcmc)+'\n')
+f.write('tau_disc from MCMC : '+str(taud_mcmc)+'\n')
+f.write('Time taken to complete : '+str(elap/60)+' hours \n')
+f.write(' \n')
+f.write('------------------------------------------------------------------ \n')
+f.write(' \n')
+f.close()
+
 print 'tq_smooth',tqs_mcmc
 print 'tau_smooth',taus_mcmc
 print 'tq_disc',tqd_mcmc
 print 'tau_disc',taud_mcmc
 
-fig_s = triangle.corner(samples[:,0:2], labels = [r'$ t_{smooth}$', r'$ \tau_{smooth}$'])
+fig_s = corner_plot(samples[:,0:2], labels = [r'$ t_{smooth}$', r'$ \tau_{smooth}$'])
 fig_s.savefig('triangle_t_tau_smooth_blue_c_'+str(len(samples))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
-fig_d = triangle.corner(samples[:,2:4], labels = [r'$t_{disc}$', r'$\tau_{disc}$'])
+fig_d = corner_plot(samples[:,2:4], labels = [r'$t_{disc}$', r'$\tau_{disc}$'])
 fig_d.savefig('triangle_t_tau_disc_blue_c_'+str(len(samples))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
 
-fig_samp = walker_plot(samples, nwalkers, 250)
-fig_2 = walker_steps(samples, nwalkers, 250)
+fig_samp = walker_plot(s, nwalkers, 250)
+fig_2 = walker_steps(s, nwalkers, 250)

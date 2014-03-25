@@ -79,16 +79,15 @@ print len(age)
 
 w = [7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
 nwalkers = 40
-nsteps = 75
-#start = [13.0, 0.001, 13.0, 0.001]
-nstarts = 4
+nsteps = 15
+start = [13.0, 0.001, 13.0, 0.001]
 
 f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
 f.write('Run started at '+str(time.strftime('%H:%M'))+' on '+str(time.strftime('%d/%m/%y'))+'\n')
 f.write('Reason for running iteration: ' +reason+'\n')
 f.write('Number of walkers : '+str(nwalkers)+'\n')
 f.write('Number of steps :'+str(nsteps)+'\n')
-f.write('Number of starting points of walkers : '+str(nstarts)+'\n')
+f.write('Starting point of walkers : '+str(start)+'\n')
 f.write('Prior assumptions, w :'+str(w)+'\n')
 f.write('Number of galaxies used was : '+str(len(age))+'\n')
 f.write('Ages of galaxies used found at : '+str(age_save)+'\n')
@@ -97,22 +96,21 @@ f.close()
 # w = [mu_tqs, mu_taus, mu_tqd, mu_taud, sig_tqs, sig_taus, sig_tqd, sig_taud]
 start_time = time.time()
 #The rest calls the emcee code and makes plots....
-# The function takes the following arguments: sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
-samples, fig, samples_save = sample(4, nwalkers, nsteps, nstarts, w, colours[0:1,0], colours[0:1,4], colours[0:1, 1], colours[0:1, 5], age[0:1], colours[0:1,3], colours[0:1,2])
+# The function takes the following arguments: sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps);
+samples, fig, samples_save = sample(4, nwalkers, nsteps, start, w, colours[:,0], colours[:,4], colours[:, 1], colours[:, 5], age[:], colours[:,3], colours[:,2])
 elap = (time.time() - start_time)/60
 print 'Minutes taken for '+str(len(samples)/nwalkers
                                )+' steps and '+str(nwalkers)+' walkers', elap
 
 #samples = N.load('samples_all_50000_126128_19_21_13_03_14.npy')
-samples = samples.reshape(nwalkers, -1, 4)
-unburnt_samples = samples[:,:,:].reshape(-1, 4)
-samples = samples[:,:,:].reshape(-1, 4)
+s = samples.reshape(nwalkers, -1, 4)
+
 
 tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0:1]), zip(*N.percentile(samples, [16,50,84],axis=0)))
 
 f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
 f.write('Samples found at : '+str(samples_save)+'\n')
-f.write('Total number of positions for each parameter (after being "burnt in") : '+str(len(unburnt_samples))+'\n')
+f.write('Total number of positions for each parameter : '+str(len(samples))+'\n')
 f.write('t_smooth from MCMC : '+str(tqs_mcmc)+'\n')
 f.write('tau_smooth from MCMC : '+str(taus_mcmc)+'\n')
 f.write('t_disc from MCMC : '+str(tqd_mcmc)+'\n')
@@ -128,11 +126,11 @@ print 'tau_smooth',taus_mcmc
 print 'tq_disc',tqd_mcmc
 print 'tau_disc',taud_mcmc
 
-fig_s = triangle.corner(samples[:,0:2], labels = [r'$ t_{smooth}$', r'$ \tau_{smooth}$'])
+fig_s = corner_plot(samples[:,0:2], labels = [r'$ t_{smooth}$', r'$ \tau_{smooth}$'])
 fig_s.savefig('triangle_t_tau_smooth_all_'+str(len(samples))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
-fig_d = triangle.corner(samples[:,2:4], labels = [r'$t_{disc}$', r'$\tau_{disc}$'])
+fig_d = corner_plot(samples[:,2:4], labels = [r'$t_{disc}$', r'$\tau_{disc}$'])
 fig_d.savefig('triangle_t_tau_disc_all_'+str(len(samples))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
 
-fig_samp = walker_plot(unburnt_samples, nwalkers, 350)
+fig_samp = walker_plot(s, nwalkers, nsteps)
 
-fig_2 = walker_steps(samples, nwalkers, 350)
+fig_2 = walker_steps(s, nwalkers, nsteps)

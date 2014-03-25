@@ -17,7 +17,7 @@ cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 # values.
 #########################################################################################################################
 
-dir ='/home/smethurst/Projects/Green-Valley-Project/bc03/models/Padova1994/chabrier/ASCII/'
+dir ='/Users/becky/Projects/Green-Valley-Project/bc03/models/Padova1994/chabrier/ASCII/'
 model = 'extracted_bc2003_lr_m62_chab_ssp.ised_ASCII'
 data = N.loadtxt(dir+model)
 
@@ -63,7 +63,7 @@ def get_mag(time_steps, total_flux, wave, trans, data):
 
 
 #Load the filters in order to calculate fluxes in each bandpass
-filters = idlsave.read('/home/smethurst/Projects/Green-Valley-Project/Kevin_IDL/ugriz.sav')
+filters = idlsave.read('/Users/becky/Projects/Green-Valley-Project/Kevin_IDL/ugriz.sav')
 fuvwave= filters.ugriz.fuvwave[0]
 fuvtrans = filters.ugriz.fuvtrans[0]
 nuvwave= filters.ugriz.nuvwave[0]

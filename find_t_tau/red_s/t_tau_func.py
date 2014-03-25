@@ -19,6 +19,11 @@ import time
 
 cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 
+font = {'family':'serif', 'size':14}
+P.rc('font', **font)
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
+
 ########################################################################################
 # The data files .ised_ASCII contain the extracted bc03 models and have a 0 in the origin at [0,0]. The first row contains
 # the model ages (from the second column) - data[0,1:]. The first column contains the model lambda values (from the second
@@ -107,12 +112,16 @@ def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     return lp + lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
 
 
-def sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
+def sample(ndim, nwalkers, nsteps,  start, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     if len(age) != len(ur):
         raise SystemExit('Number of ages does not coincide with number of galaxies...')
-    pos = [[13.0, 3.0, 13.0, 3.0] + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
+    p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
-    sampler.run_mcmc(pos, 250)
+    #burn in
+    pos, prob, state = sampler.run_mcmc(p0, 50)
+    sampler.reset()
+    print 'RESET', pos
+    sampler.run_mcmc(pos, nsteps)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
     samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
     N.save(samples_save, samples)
@@ -123,6 +132,7 @@ def sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
 
 #Define function to plot the walker positions as a function of the step
 def walker_plot(samples, nwalkers, limit):
+    P.ion()
     s = samples.reshape(nwalkers, -1, 4)
     s = s[:,:limit, :]
     fig = P.figure(figsize=(8,10))
@@ -135,6 +145,7 @@ def walker_plot(samples, nwalkers, limit):
         ax2.plot(s[n,:,1], 'k')
         ax3.plot(s[n,:,2], 'k')
         ax4.plot(s[n,:,3], 'k')
+        P.draw()
     ax1.tick_params(axis='x', labelbottom='off')
     ax2.tick_params(axis='x', labelbottom='off')
     ax3.tick_params(axis='x', labelbottom='off')
@@ -143,12 +154,14 @@ def walker_plot(samples, nwalkers, limit):
     ax2.set_ylabel(r'$\tau_{smooth}$')
     ax3.set_ylabel(r'$t_{disc}$')
     ax4.set_ylabel(r'$\tau_{disc}$')
+    P.draw()
     P.subplots_adjust(hspace=0.1)
     save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/walkers_steps_all_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
     fig.savefig(save_fig)
     return fig
 
 def walker_steps(samples, nwalkers, limit):
+    P.ion()
     ur = N.load('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_plot/ur.npy')
     nuv = N.load('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_plot/nuvu.npy')
     s = samples.reshape(nwalkers, -1, 4)
@@ -158,10 +171,10 @@ def walker_steps(samples, nwalkers, limit):
     ax2 = P.subplot(222,  autoscale_on = False, aspect='auto', xlim=[0,13.8], ylim=[0,3])
     ax3 = P.subplot(223,  autoscale_on = False, aspect='auto', xlim=[0,13.8], ylim=[0,3])
     ax4 = P.subplot(224,  autoscale_on = False, aspect='auto', xlim=[0,13.8], ylim=[0,3])
-    ax1.imshow(ur, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3])
-    ax2.imshow(ur, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3])
-    ax3.imshow(nuv, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3])
-    ax4.imshow(nuv, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3])
+    ax1.imshow(ur, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3], cmap = P.cm.get_cmap('spectral'), alpha=0.3)
+    ax2.imshow(ur, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3], cmap = P.cm.get_cmap('spectral'), alpha=0.3)
+    ax3.imshow(nuv, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3], cmap = P.cm.get_cmap('spectral'), alpha=0.3)
+    ax4.imshow(nuv, origin='lower', aspect='auto', extent=[0, 13.8, 0, 3], cmap = P.cm.get_cmap('spectral'), alpha=0.3)
     for n in range(len(s)):
         ax1.plot(s[n,:,0], s[n,:,1], 'k', alpha=0.5)
         ax2.plot(s[n,:,2], s[n,:,3], 'k', alpha=0.5)
@@ -180,6 +193,30 @@ def walker_steps(samples, nwalkers, limit):
     fig.savefig(save_fig)
     return fig
 
+def corner_plot(s, labels):
+    x, y = s[:,0], s[:,1]
+    fig = P.figure(figsize=(10,10))
+    ax2 = P.subplot(223)
+    ax2.set_xlabel(labels[0])
+    ax2.set_ylabel(labels[1])
+    im = triangle.histo2d(x, y, ax=ax2, extent=[[0, 13.807108309208775],[0, 3.0]])
+    [l.set_rotation(45) for l in ax2.get_xticklabels()]
+    [j.set_rotation(45) for j in ax2.get_yticklabels()]
+    ax1 = P.subplot(221, xlim=[0, 13.807108309208775])
+    ax1.tick_params(axis='x', labelbottom='off')
+    ax1.tick_params(axis='y', labelleft='off')
+    ax1.hist(x, bins=50, histtype='step', color='k', range=(0, 13.807108309208775))
+    ax3 = P.subplot(224)
+    ax3.tick_params(axis='x', labelbottom='off')
+    ax3.tick_params(axis='y', labelleft='off')
+    ax3.hist(y, bins=50, orientation='horizontal', histtype='step',color='k', range=(0,3))
+    P.subplots_adjust(wspace=0.05)
+    P.subplots_adjust(hspace=0.05)
+    cbar_ax = fig.add_axes([0.522, 0.51, 0.02, 0.39])
+    cb = fig.colorbar(im, cax = cbar_ax)
+    cb.solids.set_edgecolor('face')
+    cb.set_label(r'model $NUV-u$ prediction', labelpad = 20)
+    return fig
 
 #Load the filters in order to calculate fluxes in each bandpass
 filters = idlsave.read('/Users/becky/Projects/Green-Valley-Project/Kevin_IDL/ugriz.sav')
