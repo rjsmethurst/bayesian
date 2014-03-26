@@ -96,3 +96,24 @@ Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
 Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
 Number of galaxies used was : 10494
 Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/smooth/age_smooth.npy
+
+_____________________________________________________________
+ 
+Run started at 12:29 on 26/03/14
+Reason for running iteration: To look at how the extra burn in reset effects the red_s plots.
+Number of walkers : 20
+Number of steps :200
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_4000_27971_13_29_26_03_14.npy
+Total number of positions for each parameter : 4000
+t_smooth from MCMC : (8.1780200957646194, 0.38260621831190456, 1.0856906252207237)
+tau_smooth from MCMC : (1.4712798430780039, 0.064975519221293077, 0.13276787716705618)
+t_disc from MCMC : (6.9582347117893519, 0.6077889980973703, 0.31718248467710719)
+tau_disc from MCMC : (1.4671435958023324, 0.47735234679609007, 0.1324369358040971)
+Time taken to complete : 0.995375519196 hours 
+ 
+------------------------------------------------------------------ 
+ 

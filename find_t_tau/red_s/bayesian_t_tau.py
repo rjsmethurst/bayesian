@@ -67,8 +67,8 @@ else:
 print len(age)
 
 w = [7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
-nwalkers = 150
-nsteps= 300
+nwalkers = 100
+nsteps= 200
 start = [7.5, 1.5, 7.5, 1.5]
 
 f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
@@ -88,7 +88,7 @@ f.close()
 start_time = time.time()
 #The rest calls the emcee code and makes plots....
 # The function takes the following arguments: sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
-samples, fig = sample(4, nwalkers, nsteps, start, w, red_s[:,0], red_s[:,4], red_s[:, 1], red_s[:, 5], age, red_s[:,3], red_s[:,2])
+samples, fig, samples_save = sample(4, nwalkers, nsteps, start, w, red_s[:,0], red_s[:,4], red_s[:, 1], red_s[:, 5], age, red_s[:,3], red_s[:,2])
 elap = (time.time() - start_time)/60
 print 'Minutes taken for '+str(len(samples)/nwalkers)+' steps and '+str(nwalkers)+' walkers', elap
 

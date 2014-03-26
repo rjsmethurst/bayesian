@@ -118,7 +118,7 @@ def sample(ndim, nwalkers, nsteps, start, w, ur, sigma_ur, nuvu, sigma_nuvu, age
     p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
     #burn in
-    pos, prob, state = sampler.run_mcmc(p0, 50)
+    pos, prob, state = sampler.run_mcmc(p0, 75)
     sampler.reset()
     print 'RESET', pos
     sampler.run_mcmc(pos, nsteps)
@@ -127,7 +127,7 @@ def sample(ndim, nwalkers, nsteps, start, w, ur, sigma_ur, nuvu, sigma_nuvu, age
     N.save(samples_save, samples)
     fig = triangle.corner(samples, labels=[r'$ t_{smooth} $', r'$ \tau_{smooth} $', r'$ t_{disc} $', r'$ \tau_{disc}$'])
     fig.savefig('triangle_t_tau_smooth_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
-    return samples, fig
+    return samples, fig, samples_save
 
 
 #Define function to plot the walker positions as a function of the step

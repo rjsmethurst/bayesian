@@ -87,12 +87,12 @@ f.close()
 start_time = time.time()
 #The rest calls the emcee code and makes plots....
 # The function takes the following arguments: sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
-samples, fig = sample(4, nwalkers, nsteps, start, w, smooth[:,0], smooth[:,4], smooth[:, 1], smooth[:, 5], age, smooth[:,3], smooth[:,2])
+samples, fig, samples_save = sample(4, nwalkers, nsteps, start, w, smooth[:,0], smooth[:,4], smooth[:, 1], smooth[:, 5], age, smooth[:,3], smooth[:,2])
 elap = (time.time() - start_time)/60
 print 'Minutes taken for '+str(len(samples)/nwalkers
                                )+' steps and '+str(nwalkers)+' walkers', elap
 
-#samples = N.load('samples_smooth_20000_10494_12_52_12_03_14.npy')
+samples = N.load('samples_smooth_20000_10494_12_52_12_03_14.npy')
 s = samples.reshape(nwalkers, -1, 4)
 
 tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
