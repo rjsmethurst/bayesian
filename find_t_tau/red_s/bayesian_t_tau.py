@@ -67,8 +67,8 @@ else:
 print len(age)
 
 w = [7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
-nwalkers = 100
-nsteps= 200
+nwalkers = 150
+nsteps= 250
 start = [7.5, 1.5, 7.5, 1.5]
 
 f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')

@@ -1,0 +1,85 @@
+\documentclass{article}[11pt]
+\usepackage{footnote}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{natbib}
+
+\begin{document}
+\title{Galaxy Zoo: Bayesian Analysis of the Green Valley}
+\author{R. ~J. ~Smethurst}
+
+\maketitle
+To conduct a fully Bayesian analysis of the problem outlined above, we must consider all possible combinations of $(t_{q}, \tau) = \theta$ which will be distributed with a mean and standard deviation, so that:
+\begin{equation*}
+w = (\mu_{\theta}, \sigma_{\theta}) = (\mu_{t_{q}}, \sigma_{t_{q}}, \mu_{\tau}, \sigma_{\tau})
+\end{equation*}
+We can then define the Bayesian probability $P(\theta|w) = P(t_{q}, \tau|w) = P(t_{q}|w)P(\tau|w)$ assuming that $ P(t_{q}|w)$ and $P(\tau|w)$ are independent of each other:
+\begin{equation*}
+P(t_{q}, \tau|w) = \frac{1}{\sqrt[]{4\pi^2\sigma^2_{t_{q}}\sigma^2_{\tau}}} \exp\left(-\frac{(t_{q}-\mu_{t_{q}})^2}{2\sigma^2_{t_{q}}}\right)\exp\left(-\frac{(\tau-\mu_{\tau})^2}{2\sigma^2_{\tau}}\right).
+\end{equation*}
+Which is equivalent to:
+\begin{equation*}
+P(\theta|w) = \frac{1}{Z_{\theta}} \exp\left(-\frac{\chi_{\theta}^2}{2}\right).
+\end{equation*}
+Therefore if we work in logarithmic probabilities:
+\begin{equation*}
+\log[P(\theta|w)] = - \log(Z_{\theta}) - \frac{\chi_{\theta}^2}{2}.
+\end{equation*}
+We must then find the probability of the data given these values of theta, $P(\underline{d}|\theta, t_{k}^{lb})$:
+\begin{equation*}
+P(\underline{d}|\theta, t_{k}^{lb}) = \prod_{k} P(d_{k}|\theta, t_{k}^{lb}),
+\end{equation*}
+where $d_{k}$ is a single data point (optical and NUV colours of one galaxy). We calculate $P(d_{k}|\theta, t_{k}^{lb})$ using the predicted values for the optical ($c=opt$) and NUV ($c=NUV$) colours, $d_{c,p}(\theta, t_{k}^{lb})$, for a given combination of $\theta = (t_{q}, \tau)$ and a calculated galaxy age $t^{lb}$ (look back time, calculated from a galaxy's redshift, equivalent to the age of the galaxy assuming that all galaxies formed at $t=0~Gyr$):
+\begin{equation*}
+P(d_{k}|\theta, t^{lb}) = \frac{1}{\sqrt{2\pi\sigma_{opt, k}^2}}\frac{1}{\sqrt{2\pi\sigma_{NUV, k}^2}} \\  \exp{\left( - \frac{(d_{opt, k} - d_{opt, p}(\theta, t_{k}^{lb}))^2}{\sigma_{opt, k}^2} \right)} \\ \exp{\left( - \frac{(d_{NUV, k} - d_{NUV, p}(\theta, t_{k}^{lb}))^2}{\sigma_{NUV, k}^2} \right)},
+\end{equation*}
+where for one combination of $\theta = (t_{q}, \tau)$,
+\begin{equation*}
+\chi_{c, k}^2 = \frac{(d_{c, k} - d_{c, p}(\theta, t_{k}^{lb}))^2}{\sigma_{c, k}^2}
+\end{equation*}
+and
+\begin{equation*}
+Z_{k} = \sqrt[]{2\pi\sigma_{c, k}^2}.
+\end{equation*}
+Again working in logarithmic probabilities:
+\begin{equation*}
+\log{(P(\underline{d}|\theta, \underline{t}^{lb}))} = \sum_{c, k} log(P(d_{c, k}|\theta, t_{k}^{lb}))
+\end{equation*}
+\begin{equation*}
+\log{(P(\underline{d}|\theta,  \underline{t}^{lb}))}  = K - \sum_{c, k} \frac{\chi_{c, k}^2}{2},
+\end{equation*}
+where K is a constant:
+\begin{equation*}
+K = - \sum_{c, k} \log{Z_{c, k}}. 
+\end{equation*}
+What we need however is the probability of each combination of $\theta$ given the GZ2 data, $P(\theta|\underline{d})$, which we can find by:
+\begin{equation*}
+P(\theta|\underline{d}) = \frac{P(\underline{d}|\theta, \underline{t}^{lb})P(\theta)}{\int P(\underline{d}|\theta, \underline{t}^{lb})P(\theta) d\theta},
+\end{equation*}
+where,
+\begin{equation*}
+P(\underline{d}|\theta, \underline{t}^{lb})P(\theta) = \exp{\left[\log{[P(\underline{d}|\theta, \underline{t}^{lb})]} + \log{[P(\theta)]}\right]},
+\end{equation*}
+and the denominator $\int P(\underline{d}|\theta, \underline{t}^{lb})P(\theta) d\theta$ is given by the sum across all the elements of $P(\underline{d}|\theta, \underline{t}^{lb})P(\theta)$. This denominator is a mere normalisation factor, therefore when comparing the likelihoods between two different combinations of $\theta = (t_{q}, \tau)$ we need only compare the numerator and can also remain in logarithmic probability space. So given the data from the GZ2 sample, we can calculate $\log[P(\theta|\underline{d}, \underline{t}^{lb})]$ for all possible $\theta$ values and compare these to determine the most likely values for $\theta$ given the GZ2 data. In order to this robustly, we performed a Markov Chain Monte Carlo (MCMC) sampling method to cycle through the defined parameter space using a Python implementation of an affine invariant ensemble sampler (\cite{Dan}); \emph{emcee}.
+
+In addition to the colours, the GZ2 data is unique in that it provides information on a galaxy's morphology. Vote fractions from GZ2 users are available for each galaxy, for example if 80 of 100 people thought a galaxy was disc shaped, whereas 20 out of 100 people thought the same galaxy was smooth in shape (i.e. elliptical), that galaxy would have $p_{s} = 0.2$ and $p_{d} = 0.8$. We can incorporate these GZ2 vote fractions  into our sampling by considering them as fractions which that galaxy contributes to the likelihood $P(d_{k}|\theta)$. For example a galaxy which has $p_{s} = 0.9$ should carry more weight in the overall likelihood than a galaxy with $p_{s} = 0.1$. Therefore the likelihood can now be thought of as:
+\begin{equation*}
+P(\underline{d}|\theta, \underline{t}^{lb}) = \prod_{k} p_{k} P(d_{k}|\theta, t_{k}^{lb}),
+\end{equation*}
+where $p_{k}$ is either $p_{s}$ or $p_{d}$ for an individual galaxy. We can then feed the code with the colours for all of the GZ2 data along with first the $p_{s}$ vote fractions to find the most likely parameters for $\theta$ for elliptical galaxies and then with the $p_{d}$ vote fractions to find the most likely parameters for $\theta$ for disc galaxies. However, this is costly in computing time, therefore we perform our sampling across four parameters so that $\theta = (t_{s}, \tau_{s}, t_{d}, \tau_{d})$ and our likelihood function is then:
+\begin{equation*}
+P(\underline{d}|\theta, \underline{t}^{lb}) = \prod_{k} \left [p_{s, k} P(d_{k}|\theta_{s}, t_{k}^{lb}) + p_{d, k} P(d_{k}|\theta_{d}, t_{k}^{lb}) \right],
+\end{equation*}
+or,
+\begin{equation*}
+\log \left[ P(\underline{d}|\theta, \underline{t}^{lb}) \right] = \sum_{k} \log \left [p_{s, k} P(d_{k}|\theta_{s}, t_{k}^{lb}) + p_{d, k} P(d_{k}|\theta_{d}, t_{k}^{lb}) \right]. 
+\end{equation*}
+The code searches through the $\theta$ paramater space to find the region that maximises $P(\theta|\underline{d})$ to return four parameter values for $t_{s}, \tau_{s}, t_{d}$ and $\tau_{d}$.
+
+
+\begin{thebibliography}{}
+\bibitem[\protect\citeauthoryear{Foreman-Mackey et al.}{2013}]{Dan} Foreman-Mackey, D., Hogg, D. W., Lang, D., Goodman, J., 2013, PASP, 125, 306
+\bibitem[\protect\citeauthoryear{Willett et al.}{2013}]{GZ2} Willett, K. et al., 2014, MNRAS, 435, 2835
+\end{thebibliography}{}
+\end{document}

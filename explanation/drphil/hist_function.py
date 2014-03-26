@@ -62,7 +62,7 @@ def griddata(x, xres, y, yres, z):
 
 def probgrid(px,py,x,y):
     extent = (min(x), max(x), min(y), max(y))
-    prob = N.outer(px,py)
+    prob = N.outer(py,px)
     return prob, extent
 
 def normaldist(x, u, s):

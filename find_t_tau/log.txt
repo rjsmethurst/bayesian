@@ -117,3 +117,11 @@ Time taken to complete : 0.995375519196 hours
  
 ------------------------------------------------------------------ 
  
+Run started at 14:38 on 26/03/14
+Reason for running iteration: Increased number of walkers
+Number of walkers : 150
+Number of steps :250
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
