@@ -38,9 +38,11 @@ data = N.loadtxt(dir+model)
 
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
+    ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
+    c_sfr = N.interp(tq, time, ssfr)*(1E10)/(1E9) # definition is for 10^10 M_solar galaxies and per gyr - convert to M_solar/year
     a = time.searchsorted(tq)
-    sfr = N.ones(len(time))*100
-    sfr[a:] = 100*N.exp(-(time[a:]-tq)/tau)
+    sfr = N.ones(len(time))*c_sfr
+    sfr[a:] = c_sfr*N.exp(-(time[a:]-tq)/tau)
     return sfr
 
 # predict the colour of a galaxy of a given age given a sf model of tau and tq

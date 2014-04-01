@@ -24,10 +24,15 @@ data = N.loadtxt(dir+model)
 
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
+    ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
+    c_sfr = N.interp(tq, time, ssfr)*(1E10)/(1E9) # definition is for 10^10 M_solar galaxies and per gyr - convert to M_solar/year
     a = time.searchsorted(tq)
-    sfr = N.ones(len(time))*100
-    sfr[a:] = 100*N.exp(-(time[a:]-tq)/tau)
-    return sfr
+    sfr = N.ones(len(time))*c_sfr
+    sfr[a:] = c_sfr*N.exp(-(time[a:]-tq)/tau)
+    m_array = (sfr.T)*(N.append(1, N.diff(time*1E9)))
+    mass_array = S.linalg.toeplitz(m_array, N.zeros_like(sfr/sfr[0])).T
+    mass = N.sum(mass_array, axis=0)
+    return sfr, mass
 
 # predict the colour of a galaxy of a given age given a sf model of tau and tq
 def predict_c_one(theta, age):
@@ -46,7 +51,7 @@ def predict_c_one(theta, age):
     nuv_u, u_r = get_colours(t*1E9, total_flux, data)
     nuv_u_age = N.interp(age, t, nuv_u)
     u_r_age = N.interp(age, t, u_r)
-    return nuv_u_age, u_r_age
+    return nuv_u_age, u_r_age, mass
 
 #Calculate colours and magnitudes for functions above
 def get_colours(time_steps, sfh, data):

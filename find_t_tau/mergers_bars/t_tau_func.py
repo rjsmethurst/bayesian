@@ -19,11 +19,11 @@ import time
 
 cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 
+
 font = {'family':'serif', 'size':14}
 P.rc('font', **font)
 P.rc('xtick', labelsize='medium')
 P.rc('ytick', labelsize='medium')
-
 
 ########################################################################################
 # The data files .ised_ASCII contain the extracted bc03 models and have a 0 in the origin at [0,0]. The first row contains
@@ -36,11 +36,6 @@ P.rc('ytick', labelsize='medium')
 dir ='/Users/becky/Projects/Green-Valley-Project/bc03/models/Padova1994/chabrier/ASCII/'
 model = 'extracted_bc2003_lr_m62_chab_ssp.ised_ASCII'
 data = N.loadtxt(dir+model)
-
-ti = N.arange(0, 0.01, 0.003)
-t = N.linspace(0,14.0,100)
-t = N.append(ti, t[1:])
-times = write('times.txt', [0,0], t)
 
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
@@ -64,29 +59,22 @@ def predict_c_one(theta, age):
     # Work out total flux at each time given the sfh model of tau and tq (calls assign_fluxes function)
     total_flux = assign_fluxes.assign_total_flux(data[0,1:], data[1:,0], data[1:,1:], t*1E9, sfr)
     # Calculate fluxes from the flux at all times then interpolate to get one colour for the age you are observing the galaxy at - if many galaxies are being observed, this also works with an array of ages to give back an array of colours
-    nuv_u, u_r, rmag = get_colours(t*1E9, total_flux, data)
+    nuv_u, u_r = get_colours(t*1E9, total_flux, data)
     nuv_u_age = N.interp(age, t, nuv_u)
     u_r_age = N.interp(age, t, u_r)
-    urs = write('opticals.txt', theta u_r)
-    nuvs = write('nuvs.txt', theta nuv_u)
-    mags = write('rmags.txt', theta, rmag)
     return nuv_u_age, u_r_age
 
-def write(fname, theta, array):
-    t, tau = theta
-    f = open(fname, 'a')
-    f.write(str(t)+','+str(tau)+','+','.join(repr(e) for e in list(array))+'\n')
-    f.close()
-    return array
-            
 #Calculate colours and magnitudes for functions above
 def get_colours(time_steps, sfh, data):
     nuvmag = get_mag(time_steps, sfh, nuvwave, nuvtrans, data)
+    print nuvmag
     umag = get_mag(time_steps, sfh, uwave, utrans, data)
+    print umag
     rmag = get_mag(time_steps, sfh, rwave, rtrans, data)
+    print rmag
     nuv_u = nuvmag - umag
     u_r = umag - rmag
-    return nuv_u, u_r, rmag
+    return nuv_u, u_r
 
 def get_mag(time_steps, total_flux, wave, trans, data):
     mag = assign_fluxes.calculate_AB_mag(time_steps, data[1:,0],total_flux, wave, trans)
@@ -102,15 +90,11 @@ def lnlike_one(theta, ur, sigma_ur, nuvu, sigma_nuvu, age):
 
 # Function which includes GZ likelihoods and sums across all galaxies to return one value for a given set of theta 
 def lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
-    st = time.time()
     ts, taus, td, taud = theta
     d = lnlike_one([td, taud], ur, sigma_ur, nuvu, sigma_nuvu, age)
     s = lnlike_one([ts, taus], ur, sigma_ur, nuvu, sigma_nuvu, age)
     D = N.log(pd) + d
-    ds = write('likelihoods.txt', [ts, taus], D)
     S = N.log(ps) + s
-    ss = write('likelihoods.txt', [td, taud], S)
-    print time.time() - st
     return N.sum(N.logaddexp(D, S))
 
 # Prior likelihood on theta values given the inital w values assumed for the mean and stdev
@@ -133,36 +117,24 @@ def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
         return -N.inf
     return lp + lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
 
-def positions(nwalkers, nstarts, ndim):
-    if nwalkers%nstarts == 0 and float(nstarts**0.5).is_integer() == True:
-        ts = N.linspace(3, 12, nstarts**0.5)
-        print ts
-        taus = N.linspace(0.6, 2.4, nstarts**0.5)
-        print taus
-        p = list(product(ts, taus))
-        ps = N.array(p*(nwalkers/nstarts))
-        pos = N.append(ps, ps, axis=1)
-        return list(pos + N.array([1e-4*N.random.rand(ndim) for i in range(nwalkers)]))
-    else:
-        raise SystemExit('nwalkers must be divisble by nstarts to give a whole number and nstarts must be the square of an integer..')
-
 
 def sample(ndim, nwalkers, nsteps, start, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     if len(age) != len(ur):
         raise SystemExit('Number of ages does not coincide with number of galaxies...')
     p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
-    #burn in
+    # burn in
     pos, prob, state = sampler.run_mcmc(p0, 50)
+    # reset and run with last positions of burn in run
     sampler.reset()
     print 'RESET', pos
     sampler.run_mcmc(pos, nsteps)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
-    samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/samples_all_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
+    samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/samples_mergers_bars_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
     N.save(samples_save, samples)
-    fig = triangle.corner(samples, labels=[r'$ t_{smooth} $', r'$ \tau_{smooth} $', r'$ t_{disc} $', r'$ \tau_{disc}$'])
-    fig.savefig('triangle_t_tau_all_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
-    return samples, fig, samples_save
+    fig = triangle.corner(samples, labels=[r'$ t_{mergers} $', r'$ \tau_{mergers} $', r'$ t_{bars} $', r'$ \tau_{bars}$'])
+    fig.savefig('triangle_t_tau_mergers_bars_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
+    return samples, fig
 
 
 #Define function to plot the walker positions as a function of the step
@@ -188,7 +160,7 @@ def walker_plot(samples, nwalkers, limit):
     ax3.set_ylabel(r'$t_{disc}$')
     ax4.set_ylabel(r'$\tau_{disc}$')
     P.subplots_adjust(hspace=0.1)
-    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/walkers_steps_all_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
+    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/walkers_steps_all_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
     fig.savefig(save_fig)
     return fig
 
@@ -220,7 +192,7 @@ def walker_steps(samples, nwalkers, limit):
     ax4.set_xlabel(r'$t_{disc}$')
     ax4.set_ylabel(r'$\tau_{disc}$')
     P.tight_layout()
-    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/all/walkers_2d_steps_all_'+str(nwalkers)+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
+    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/walkers_2d_steps_mergers_bars_'+str(nwalkers)+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
     fig.savefig(save_fig)
     return fig
 

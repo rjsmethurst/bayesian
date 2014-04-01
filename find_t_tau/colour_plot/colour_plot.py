@@ -38,10 +38,17 @@ ur = N.load('ur.npy')
 nuv = N.load('nuvu.npy')
 
 sfr = N.zeros((len(tau), len(tq)))
+mass = N.zeros_like(sfr)
+ssfr = N.zeros_like(sfr)
 for n in range(len(tq)):
     for m in range(len(tau)):
-        full_sfr = expsfh(tau[m], tq[n], t)
-        sfr[m,n] = 100 - (N.interp(age, t, full_sfr)/full_sfr[0])*100
+        full_sfr, full_mass = expsfh(tau[m], tq[n], t)
+        sfr[m,n] = N.interp(age, t, full_sfr)
+        mass[m,n] = N.interp(age, t, full_mass)
+        ssfr[m,n] = sfr[m,n]/mass[m,n]
+
+print sfr
+print ssfr
 
 #P.figure()
 #P.imshow(sfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)])
@@ -73,14 +80,14 @@ cbar.set_ticklabels([0.4, 1.2, 2.0, 2.8])
 
 
 P.subplot(1,3,3)
-ax3 = P.imshow(sfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.7)
-P.text(0.5, 2.75, r'$t_{obs} = 13.7 ~Gyr$')
+ax3 = P.imshow(ssfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.7, cmap=P.cm.spectral_r)
+#P.text(0.5, 2.75, r'$t_{obs} = 13.7 ~Gyr$')
 P.xlabel(r'$t_{quench} (Gyr)$')
 P.ylabel(r'$\tau$ (Gyr)')
 cbar = P.colorbar(ax3, orientation='horizontal')
-cbar.set_label(r'% drop in SFR', labelpad=10)
-cbar.set_ticks([0, 20, 40, 60, 80, 100])
-cbar.set_ticklabels([0, 20, 40, 60, 80, 100])
+cbar.set_label(r'$ sSFR [M_{\odot} yr^{-1}]$', labelpad=10)
+#cbar.set_ticks([0, 20, 40, 60, 80, 100])
+#cbar.set_ticklabels([0, 20, 40, 60, 80, 100])
 
 save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_plot/sfr_drop_and_colours_'+str(len(tq))+'_t_tau_obs_'+str(age)+'_Gyr_with_203_timesteps.pdf'
 fig.tight_layout()

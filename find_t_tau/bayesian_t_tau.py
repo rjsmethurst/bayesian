@@ -22,7 +22,6 @@ file = '/Users/becky/Projects/Green-Valley-Project/data/GZ2_all_GALEX_match_GZ1_
 dat = F.open(file)
 gz2data = dat[1].data
 dat.close()
-
 col = N.zeros(12*len(gz2data)).reshape(len(gz2data), 12)
 col[:,0] = gz2data.field('MU_MR')
 col[:,1] = gz2data.field('NUV_U')
@@ -36,8 +35,6 @@ col[:,8] = gz2data.field('GV_first')
 col[:,9] = gz2data.field('GV_sec')
 col[:,10] = gz2data.field('upper_GV')
 col[:,11] = gz2data.field('lower_GV')
-
-
 non_nan = N.logical_not(N.isnan(col[:,1])).astype(int)
 colours = N.compress(non_nan, col, axis=0)
 gvf = colours[colours[:,8]==1]
