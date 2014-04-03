@@ -36,6 +36,8 @@ dir ='/Users/becky/Projects/Green-Valley-Project/bc03/models/Padova1994/chabrier
 model = 'extracted_bc2003_lr_m62_chab_ssp.ised_ASCII'
 data = N.loadtxt(dir+model)
 
+n=0
+
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
     ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
@@ -66,11 +68,8 @@ def predict_c_one(theta, age):
 #Calculate colours and magnitudes for functions above
 def get_colours(time_steps, sfh, data):
     nuvmag = get_mag(time_steps, sfh, nuvwave, nuvtrans, data)
-    print 'nuvmag', nuvmag
     umag = get_mag(time_steps, sfh, uwave, utrans, data)
-    print 'umag', umag
     rmag = get_mag(time_steps, sfh, rwave, rtrans, data)
-    print 'rmag', rmag
     nuv_u = nuvmag - umag
     u_r = umag - rmag
     return nuv_u, u_r
@@ -90,12 +89,10 @@ def lnlike_one(theta, ur, sigma_ur, nuvu, sigma_nuvu, age):
 # Function which includes GZ likelihoods and sums across all galaxies to return one value for a given set of theta 
 def lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     ts, taus, td, taud = theta
-    st = time.time()
     d = lnlike_one([td, taud], ur, sigma_ur, nuvu, sigma_nuvu, age)
     s = lnlike_one([ts, taus], ur, sigma_ur, nuvu, sigma_nuvu, age)
     D = N.log(pd) + d
     S = N.log(ps) + s
-    print time.time() - st
     return N.sum(N.logaddexp(D, S))
 
 # Prior likelihood on theta values given the inital w values assumed for the mean and stdev
@@ -113,6 +110,10 @@ def lnprior(w, theta):
 
 # Overall likelihood function combining prior and model
 def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
+    global n
+    n+=1
+    if n %100 == 0:
+        print 'step number', n/100
     lp = lnprior(w, theta)
     if not N.isfinite(lp):
         return -N.inf
@@ -130,7 +131,7 @@ def sample(ndim, nwalkers, nsteps,  start, w, ur, sigma_ur, nuvu, sigma_nuvu, ag
     print 'RESET', pos
     sampler.run_mcmc(pos, nsteps)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
-    samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_clean_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
+    samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
     N.save(samples_save, samples)
     fig = triangle.corner(samples, labels=[r'$ t_{smooth} $', r'$ \tau_{smooth} $', r'$ t_{disc} $', r'$ \tau_{disc}$'])
     fig.savefig('triangle_t_tau_red_s_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
@@ -163,7 +164,7 @@ def walker_plot(samples, nwalkers, limit):
     ax4.set_ylabel(r'$\tau_{disc}$')
     P.draw()
     P.subplots_adjust(hspace=0.1)
-    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/walkers_steps_red_s_clean_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
+    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/walkers_steps_red_s_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
     fig.savefig(save_fig)
     return fig
 
@@ -196,7 +197,7 @@ def walker_steps(samples, nwalkers, limit):
     ax4.set_xlabel(r'$t_{disc}$')
     ax4.set_ylabel(r'$\tau_{disc}$')
     P.tight_layout()
-    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/walkers_2d_steps_red_s_clean_'+str(nwalkers)+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
+    save_fig = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/walkers_2d_steps_red_s_'+str(nwalkers)+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
     fig.savefig(save_fig)
     return fig
 

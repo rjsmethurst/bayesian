@@ -37,6 +37,8 @@ dir ='/Users/becky/Projects/Green-Valley-Project/bc03/models/Padova1994/chabrier
 model = 'extracted_bc2003_lr_m62_chab_ssp.ised_ASCII'
 data = N.loadtxt(dir+model)
 
+n=0
+
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
     ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
@@ -109,6 +111,10 @@ def lnprior(w, theta):
 
 # Overall likelihood function combining prior and model
 def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
+    global n
+    n+=1
+    if n %100 == 0:
+        print 'step number', n/100
     lp = lnprior(w, theta)
     if not N.isfinite(lp):
         return -N.inf

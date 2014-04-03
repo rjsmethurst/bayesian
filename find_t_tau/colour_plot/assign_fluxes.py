@@ -11,7 +11,7 @@ model_ages = data[0,1:]
 model_lambda = data[1:,0]
 model_fluxes = data[1:,1:]
 time = N.arange(0, 0.01, 0.003)
-t = N.linspace(0, 13.7, 200)
+t = N.linspace(0, 13.7, 100)
 t = N.append(time, t[1:])
 time_steps = t*1E9
 

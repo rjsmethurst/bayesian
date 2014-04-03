@@ -11,14 +11,15 @@ from astropy.cosmology import FlatLambdaCDM
 import time
 
 
-font = {'family':'serif', 'size':12}
+font = {'family':'serif', 'size':14}
 P.rc('font', **font)
-P.rc('xtick', labelsize='small')
-P.rc('ytick', labelsize='small')
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
+P.rc('axes', labelsize='large')
 
 
 #Using PyFits to open up the Galaxy Zoo data
-file = '/Users/becky/Projects/Green-Valley-Project/data/GZ2_all_GALEX_match_GZ1_k_correct_MPA_JHU_SFR_mass.fits'
+file = '/Users/becky/Projects/Green-Valley-Project/data/GZ2_all_GALEX_match_GZ1_k_correct_green_valley.fits'
 dat = F.open(file)
 gz2data = dat[1].data
 dat.close()
@@ -31,71 +32,29 @@ col[:,4] = gz2data.field('Err_MU_MR')
 col[:,5] = gz2data.field('Err_NUV_U')
 col[:,6] = gz2data.field('z_1')
 col[:,7] = gz2data.field('zErr_1')
-col[:,8] = gz2data.field('AVG_MASS')
-col[:,9] = gz2data.field('AVG_SFR')
 col[:,10] = gz2data.field('MR')
 non_nan = N.logical_not(N.isnan(col[:,1])).astype(int)
 colours = N.compress(non_nan, col, axis=0)
 colours = colours[colours[:,8] > -1]
 
-meanz = N.mean(colours[:,6])
-cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
-meanage = cosmo.age(meanz)
-#age_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_mag_diag/age_masses.npy'
-#age_path = os.path.exists(age_save)
-#cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
-#if age_path ==False:
-#    age = N.array(cosmo.age(colours[:,6]))
-#    N.save(age_save, age)
-#else:
-#    age = N.load(age_save)
-#print len(age)
-
-tq = N.linspace(0.0, 13.8, 50)
-tau = N.linspace(0.001, 3, 50)
-tqs = N.outer(N.ones(len(tq)), tq)
-taus = N.outer(tau, N.ones(len(tau)))
-
-time = N.arange(0, 0.01, 0.003)
-t = N.linspace(0, 13.7, 100)
-t = N.append(time, t[1:])
-
-ur = N.zeros((len(tau), len(tq)))
-nuv = N.zeros_like(ur)
-rmag = N.zeros_like(ur)
-mass = N.zeros_like(ur)
-k = 0
-for n in range(len(tq)):
-    for m in range(len(tau)):
-        ur[m,n], nuv[m,n], rmag[m,n], mass[m,n] = predict_c_one([tq[n], tau[m]], meanage)
-        k+=1
-        print k
-
-N.save('ur.npy', ur)
-N.save('nuv.npy', nuv)
-N.save('rmag.npy', rmag)
-N.save('mass.npy', mass)
-
-#ur = N.load('ur.npy')
-#nuv = N.load('nuv.npy')
-#rmag = N.load('rmag.npy')
-#mass = N.load('mass.npy')
+Mr = N.linspace(N.min(colours[:,10]), N.max(colours[:,10]), 200)
+C_dash = 2.06 - 0.244*N.tanh((Mr + 20.07)/1.09)
+upper = C_dash + 0.128
+lower = C_dash - 0.128
 
 
 P.figure()
-ax=P.subplot(121)
-triangle.hist2d(colours[:,8], colours[:,0], ax=ax, extent=[(8,12),(0.5,3.5)], bins=50, plot_datapoints=False)
+ax=P.subplot(111)
+triangle.hist2d(colours[:,10], colours[:,0], ax=ax, extent=[(-24, -18),(0.5,3.5)], bins=75, plot_datapoints=False)
+ax.plot(Mr, C_dash, 'g', ls='dashed')
+ax.plot(Mr, upper, 'g', lw = 2)
+ax.plot(Mr, lower, 'g', lw=2)
 [l.set_rotation(45) for l in ax.get_xticklabels()]
 [l.set_rotation(45) for l in ax.get_yticklabels()]
+ax.set_xlim((-18, -24))
 ax.set_xlabel(r'$M_r$')
 ax.set_ylabel(r'$u-r$')
-ax1 = P.subplot(122)
-ax1.scatter(N.log10(mass), ur, c=tqs, s=taus*10)
-[l.set_rotation(45) for l in ax1.get_xticklabels()]
-[l.set_rotation(45) for l in ax1.get_yticklabels()]
-ax1.set_xlabel(r'$M_r$')
-ax1.set_ylabel(r'$u-r$')
 P.tight_layout()
-P.savefig('col_mag_diagram.pdf')
+P.savefig('col_mag_with GV.pdf')
 P.show()
 

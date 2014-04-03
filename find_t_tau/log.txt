@@ -178,76 +178,38 @@ tau_disc from MCMC : (1.4999936096632689, 9.7730218040714689e-05, array([  9.365
 Time taken to complete : 8.41781543308 hours 
  
 ------------------------------------------------------------------ 
+
+Run started at 14:34 on 01/04/14
+Reason for running iteration: SFH parameters for barred and non barred galaxies with N > 10
+Number of walkers : 100
+Number of steps :100
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 52566
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/bars/age_bar_sample.npy
+Run started at 22:57 on 01/04/14
+Reason for running iteration: Re-run all red sequence with new sfh functions and burn in method
+Number of walkers : 100
+Number of steps :200
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 23:00 on 01/04/14
+Reason for running iteration: Blue cloud galaxies (all) with new sfhs and burn in method
+Number of walkers : 100
+Number of steps :200
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 74194
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/blue_c/age_blue_c.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_20000_27971_15_20_02_04_14.npy
+Total number of positions for each parameter : 20000
+t_smooth from MCMC : (7.0418208948172332, 0.42831829380988573, 0.43230111103528213)
+tau_smooth from MCMC : (1.3638594795757599, 0.63447003749125597, 0.079200610496726442)
+t_disc from MCMC : (6.3074570532106815, 1.0853265799687746, 2.2957656851410064)
+tau_disc from MCMC : (1.846859834103415, 0.82291817138683987, 0.47913303268609853)
+Time taken to complete : 16.3847185436 hours 
  
-Run started at 23:44 on 27/03/14
-Reason for running iteration: because
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 23:46 on 27/03/14
-Reason for running iteration: shape
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 23:57 on 27/03/14
-Reason for running iteration: Why didnt it walk before?
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 23:59 on 27/03/14
-Reason for running iteration: Hopefully this time the walkers will walk places - last time they stayed in the xrazy Gaussian ball around the starting point. Why?! Must've been something I changed with the code by accident. So I cop[C[Dcopied the original t_tau_func back and just changed the pd and ps valuess to pm and pb.
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 10:52 on 28/03/14
-Reason for running iteration: testing sfrs
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 10:57 on 28/03/14
-Reason for running iteration: testing sfrs
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 10:59 on 28/03/14
-Reason for running iteration: testing sfrs
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 11:00 on 28/03/14
-Reason for running iteration: testing sfrs
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
-Run started at 11:05 on 28/03/14
-Reason for running iteration: testing sfrs
-Number of walkers : 100
-Number of steps :200
-Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
-Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
-Number of galaxies used was : 45609
-Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers_bars/age_mergers_bars_high_count.npy
+------------------------------------------------------------------ 
+ 

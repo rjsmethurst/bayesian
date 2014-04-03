@@ -24,7 +24,10 @@ data = N.loadtxt(dir+model)
 
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
-    ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
+    ssfr = 2.5*(((10**20)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
+    for n in range(len(time)):
+        if time[n] < 3.0:
+            ssfr[n] = N.interp(3.0, time, ssfr)
     c_sfr = N.interp(tq, time, ssfr)*(1E10)/(1E9) # definition is for 10^10 M_solar galaxies and per gyr - convert to M_solar/year
     a = time.searchsorted(tq)
     sfr = N.ones(len(time))*c_sfr
@@ -38,10 +41,10 @@ def expsfh(tau, tq, time):
 def predict_c_one(theta, age):
     # Time, tq and tau are in units of Gyrs
     time = N.arange(0, 0.01, 0.003)
-    t = N.linspace(0, 13.7, 200)
+    t = N.linspace(0, 13.7, 100)
     t = N.append(time, t[1:])
     tq, tau = theta
-    sfr = expsfh(tau, tq, t)
+    sfr, mass = expsfh(tau, tq, t)
     nuv_u = N.zeros_like(sfr)
     u_r = N.zeros_like(sfr)
     # Work out total flux at each time given the sfh model of tau and tq (calls assign_fluxes function)
@@ -51,7 +54,7 @@ def predict_c_one(theta, age):
     nuv_u, u_r = get_colours(t*1E9, total_flux, data)
     nuv_u_age = N.interp(age, t, nuv_u)
     u_r_age = N.interp(age, t, u_r)
-    return nuv_u_age, u_r_age, mass
+    return nuv_u_age, u_r_age
 
 #Calculate colours and magnitudes for functions above
 def get_colours(time_steps, sfh, data):

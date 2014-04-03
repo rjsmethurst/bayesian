@@ -34,6 +34,9 @@ data = N.loadtxt(dir+model)
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
     ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
+    for n in range(len(time)):
+        if time[n] < 3.0:
+            ssfr[n] = N.interp(3.0, time, ssfr)
     c_sfr = N.interp(tq, time, ssfr)*(1E10)/(1E9) # definition is for 10^10 M_solar galaxies and per gyr - convert to M_solar/year
     a = time.searchsorted(tq)
     sfr = N.ones(len(time))*c_sfr
@@ -85,6 +88,7 @@ def lnlike_one(theta, ur, sigma_ur, nuvu, sigma_nuvu, age):
 # Function which includes GZ likelihoods and sums across all galaxies to return one value for a given set of theta 
 def lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     ts, taus, td, taud = theta
+    print ts, taus
     d = lnlike_one([td, taud], ur, sigma_ur, nuvu, sigma_nuvu, age)
     s = lnlike_one([ts, taus], ur, sigma_ur, nuvu, sigma_nuvu, age)
     D = N.log(pd) + d
@@ -111,7 +115,7 @@ def lnprob(theta, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     if not N.isfinite(lp):
         return -N.inf
     ln_prob = lp + lnlike(theta, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps)
-    return ln_prob
+    return (-1)*(ln_prob)
 
 
 def sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
@@ -121,7 +125,7 @@ def sample(ndim, nwalkers, w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps):
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
     pos, prob, state = sampler.run_mcmc(p0, 50)
     sampler.reset()
-    sampler.run_mcmc(pos, 350, rstate0=state)
+    sampler.run_mcmc(pos, 200)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
     samples_save = '/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/gv/samples_all_'+str(len(samples))+'_'+str(len(age))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.npy'
     N.save(samples_save, samples)
