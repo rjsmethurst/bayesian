@@ -24,7 +24,7 @@ data = N.loadtxt(dir+model)
 
 # Function which given a tau and a tq calculates the sfr at all times
 def expsfh(tau, tq, time):
-    ssfr = 2.5*(((10**20)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
+    ssfr = 2.5*(((10**10.27)/1E10)**(-0.1))*(time/3.5)**(-2.2) #ssfr as defined by Peng et al (2010)
     for n in range(len(time)):
         if time[n] < 3.0:
             ssfr[n] = N.interp(3.0, time, ssfr)

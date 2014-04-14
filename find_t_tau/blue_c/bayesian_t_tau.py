@@ -11,10 +11,11 @@ from astropy.cosmology import FlatLambdaCDM
 import time
 
 
-font = {'family':'serif', 'size':12}
+font = {'family':'serif', 'size':16}
 P.rc('font', **font)
-P.rc('xtick', labelsize='small')
-P.rc('ytick', labelsize='small')
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
+P.rc('axes', labelsize='x-large')
 
 #reason = str(raw_input('Why are you running this iteration? : '))
 #

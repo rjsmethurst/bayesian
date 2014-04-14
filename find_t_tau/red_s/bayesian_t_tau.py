@@ -11,10 +11,12 @@ from astropy.cosmology import FlatLambdaCDM
 import time
 
 
-font = {'family':'serif', 'size':12}
+font = {'family':'serif', 'size':16}
 P.rc('font', **font)
-P.rc('xtick', labelsize='small')
-P.rc('ytick', labelsize='small')
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
+P.rc('axes', labelsize='x-large')
+
 
 #reason = str(raw_input('Why are you running this iteration? : '))
 #
@@ -68,12 +70,12 @@ P.rc('ytick', labelsize='small')
 #else:
 #    age = N.load(age_save)
 #print len(age)
-
-w = [7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
-nwalkers = 100
-nsteps= 200
-start = [7.5, 1.5, 7.5, 1.5]
-
+#
+#w = [7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+#nwalkers = 100
+#nsteps= 150
+#start = [4.0, 1.0, 10.0, 2.0]
+#
 #f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
 #f.write('Run started at '+str(time.strftime('%H:%M'))+' on '+str(time.strftime('%d/%m/%y'))+'\n')
 #f.write('Reason for running iteration: ' +reason+'\n')
@@ -96,12 +98,12 @@ start = [7.5, 1.5, 7.5, 1.5]
 #print 'Minutes taken for '+str(len(samples)/nwalkers)+' steps and '+str(nwalkers)+' walkers', elap
 
 samples = N.load('samples_red_s_45000_27971_05_52_11_03_14.npy')
-samples = samples.reshape(nwalkers, -1, 4)
-s = samples[:,150:, :]
+s = samples.reshape(150, -1, 4)
+s = s[:,100:,:]
 samples = s.reshape(-1,4)
-
-tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
-
+#
+#tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
+#
 #f = open('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/log.txt', 'a')
 #f.write('Samples found at : '+str(samples_save)+'\n')
 #f.write('Total number of positions for each parameter : '+str(len(samples))+'\n')
@@ -114,17 +116,17 @@ tqs_mcmc, taus_mcmc, tqd_mcmc, taud_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-
 #f.write('------------------------------------------------------------------ \n')
 #f.write(' \n')
 #f.close()
-
-print 'tq_smooth',tqs_mcmc
-print 'tau_smooth',taus_mcmc
-print 'tq_disc',tqd_mcmc
-print 'tau_disc',taud_mcmc
+#
+#print 'tq_smooth',tqs_mcmc
+#print 'tau_smooth',taus_mcmc
+#print 'tq_disc',tqd_mcmc
+#print 'tau_disc',taud_mcmc
 
 fig_s = corner_plot(samples[:,0:2], labels = [r'$ t_{smooth}$', r'$ \tau_{smooth}$'])
 fig_s.savefig('triangle_t_tau_smooth_red_s_'+str(len(samples))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
 fig_d = corner_plot(samples[:,2:4], labels = [r'$t_{disc}$', r'$\tau_{disc}$'])
 fig_d.savefig('triangle_t_tau_disc_red_s_'+str(len(samples))+'_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf')
-
-fig_samp = walker_plot(s, nwalkers, nsteps)
-fig_2 = walker_steps(s, nwalkers, nsteps)
+#
+#fig_samp = walker_plot(s, nwalkers, nsteps)
+#fig_2 = walker_steps(s, nwalkers, nsteps)
 

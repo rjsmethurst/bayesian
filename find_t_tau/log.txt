@@ -213,3 +213,89 @@ Time taken to complete : 16.3847185436 hours
  
 ------------------------------------------------------------------ 
  
+Run started at 10:55 on 04/04/14
+Reason for running iteration: All red sequence galaxies
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_15000_27971_15_00_04_04_14.npy
+Total number of positions for each parameter : 15000
+t_smooth from MCMC : (7.0896818382283024, 0.43425194257452038, 0.35048110403244781)
+tau_smooth from MCMC : (1.3377999711863267, 0.61586903371629331, 0.038954232969926395)
+t_disc from MCMC : (6.4870377377256139, 0.85405219014930012, 2.5522390295404711)
+tau_disc from MCMC : (1.9679784424565876, 0.7114525041707076, 0.65096740219361648)
+Time taken to complete : 4.10152995719 hours 
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 15:08 on 04/04/14
+Reason for running iteration: Red seq all galaxies with different start positions for smooth and disc paramters 
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [4.0, 1.0, 10.0, 2.0]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_15000_27971_11_54_07_04_14.npy
+Total number of positions for each parameter : 15000
+t_smooth from MCMC : (6.9788239972739063, 0.21502189713685826, 0.8365511414957556)
+tau_smooth from MCMC : (1.31222235047235, 0.13120769471853011, 0.082864085331264992)
+t_disc from MCMC : (8.8064315074770718, 1.4081194443517546, 4.5798785397872148)
+tau_disc from MCMC : (1.5248100898577912, 1.0982030265527138, 0.46704247721706116)
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 17:58 on 07/04/14
+Reason for running iteration: Mergers with N_count > 10 for Merger and N count > 10 for nothing odd. ps = merger_debiased and pd = no_odd_debiased
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 153639
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers/age_merger_sample.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers/samples_mergers_15000_153639_02_03_08_04_14.npy
+Total number of positions for each parameter : 15000
+t_bar from MCMC : (7.5000138539894072, 9.6636544710371197e-05, 0.00012197028209826044)
+tau_bar from MCMC : (1.4999832219407803, 0.00012206651902513244, 7.6991045964147631e-05)
+t_no_bar from MCMC : (7.499997893756694, 7.9248242508711542e-05, 9.6931129384358883e-05)
+tau_no_bar from MCMC : (1.4999882957016144, 9.5400284324531626e-05, 9.914761722829013e-05)
+Time taken to complete : 8.09518833505 hours 
+ 
+------------------------------------------------------------------ 
+Run started at 11:50 on 08/04/14
+Reason for running iteration:  Mergers against non mergers SFHs - last time there were too many and the walkers didnt move anywhere
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.0, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 7196
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers/age_merger_sample.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/mergers/samples_mergers_15000_7196_16_20_08_04_14.npy
+Total number of positions for each parameter : 15000
+t_bar from MCMC : (7.3157336355784794, 0.20054884462116007, 0.48794914398049638)
+tau_bar from MCMC : (1.6598693414079526, 0.10018492518869304, 0.20860175923043922)
+t_no_bar from MCMC : (8.5968237947624448, 0.4395353841662768, 1.0704984563896716)
+tau_no_bar from MCMC : (1.8014195185748592, 0.36585881903703399, 0.1194991653180757)
+Time taken to complete : 4.50605062279 hours 
+ 
+------------------------------------------------------------------ 
+ 
+Run started at 16:22 on 09/04/14
+Reason for running iteration: Not clean gv galaxies
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 29224
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/gv/not_clean/age_gv_not_clean.npy
+Run started at 15:43 on 10/04/14
+Reason for running iteration: Not clean red sequence galaxies
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [4.0, 1.0, 10.0, 2.0]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 46182
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/not_clean/age_red_s_nc.npy

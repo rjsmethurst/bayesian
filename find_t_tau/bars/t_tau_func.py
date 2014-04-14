@@ -19,6 +19,12 @@ import time
 
 cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 
+font = {'family':'serif', 'size':16}
+P.rc('font', **font)
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
+P.rc('axes', labelsize='x-large')
+
 ########################################################################################
 # The data files .ised_ASCII contain the extracted bc03 models and have a 0 in the origin at [0,0]. The first row contains
 # the model ages (from the second column) - data[0,1:]. The first column contains the model lambda values (from the second
@@ -213,10 +219,11 @@ def corner_plot(s, labels):
     ax3.hist(y, bins=50, orientation='horizontal', histtype='step',color='k', range=(0,3))
     P.subplots_adjust(wspace=0.05)
     P.subplots_adjust(hspace=0.05)
-    cbar_ax = fig.add_axes([0.522, 0.51, 0.02, 0.39])
+    cbar_ax = fig.add_axes([0.55, 0.565, 0.02, 0.405])
     cb = fig.colorbar(im, cax = cbar_ax)
     cb.solids.set_edgecolor('face')
-    cb.set_label(r'predicted SFR $[M_{\odot} yr^{-1}]$', labelpad = 20)
+    cb.set_label(r'predicted SFR $[M_{\odot} yr^{-1}]$', labelpad = 20, fontsize=16)
+    P.tight_layout()
     return fig
 
 #Load the filters in order to calculate fluxes in each bandpass
