@@ -9,7 +9,7 @@ import triangle
 #cosmo = FlatLambdaCDM(H0 = 71.0, Om0 = 0.26)
 #av_z = 0.076401
 #age = cosmo.age(av_z).value
-age=N.array([12, 9, 6, 3])
+age=N.array([13.8, 12.8, 10, 8, 6])
 
 font = {'family':'serif', 'size':16}
 P.rc('font', **font)
@@ -21,6 +21,8 @@ datm = F.open(filem)
 gz2datam = datm[1].data
 avg_mass = gz2datam.field('AVG_MASS')
 avg_sfr = gz2datam.field('AVG_SFR')
+u_r = gz2datam.field('MU_MR')
+nuv_u = gz2datam.field('NUV_U')
 
 time = N.arange(0, 0.01, 0.003)
 t = N.linspace(0, 13.8, 100)
@@ -44,23 +46,23 @@ P.figure()
 P.hist(tau, bins=10)
 P.show()
 
-full_sfr = N.load('full_sfr.npy')
-full_mass = N.load('full_mass.npy')
+#full_sfr = N.load('full_sfr.npy')
+#full_mass = N.load('full_mass.npy')
 
-ur = N.zeros((len(tau), len(age)))
-nuv = N.zeros_like(ur)
-sfr = N.zeros(len(tau)*len(age)).reshape(len(tau), len(age))
-mass = N.zeros_like(sfr)
-ssfr = N.zeros_like(sfr)
-dsfr = N.zeros_like(sfr)
-#full_sfr = N.zeros((len(tau), len(t)))
-#full_mass = N.zeros((len(tau), len(t)))
-for m in range(len(tau)):
+#ur = N.zeros((len(tau), len(age)))
+#nuv = N.zeros_like(ur)
+#sfr = N.zeros(len(tau)*len(age)).reshape(len(tau), len(age))
+#mass = N.zeros_like(sfr)
+#ssfr = N.zeros_like(sfr)
+#dsfr = N.zeros_like(sfr)
+##full_sfr = N.zeros((len(tau), len(t)))
+##full_mass = N.zeros((len(tau), len(t)))
+#for m in range(len(tau)):
 #    nuv[m,:], ur[m,:], full_sfr[m,:], full_mass[m,:] = predict_c_one([tq[m], tau[m]], age)
-    sfr[m, :] = N.interp(age, t, full_sfr[m,:])
-    mass[m,:] = N.interp(age, t, full_mass[m,:])
-    ssfr[m,:] = sfr[m,:]/mass[m,:]
-    dsfr[m,:] = full_sfr[m,0] - sfr[m,:]
+#    sfr[m, :] = N.interp(age, t, full_sfr[m,:])
+#    mass[m,:] = N.interp(age, t, full_mass[m,:])
+#    ssfr[m,:] = sfr[m,:]/mass[m,:]
+#    dsfr[m,:] = full_sfr[m,0] - sfr[m,:]
 #N.save('ur_new_sfhs_avg_age.npy', ur)
 #N.save('nuvu_new_sfhs_avg_age.npy', nuv)
 
@@ -70,16 +72,33 @@ nuv = N.load('nuvu_new_sfhs_avg_age.npy')
 
 #N.save('sfr_new_sfhs_avg_age.npy', sfr)
 #N.save('mass_new_sfhs_avg_age.npy', mass)
-
+#
 #N.save('full_sfr.npy', full_sfr)
 #N.save('full_mass.npy', full_mass)
 
 #sfr = N.load('sfr_new_sfhs_avg_age.npy')
 #mass = N.load('mass_new_sfhs_avg_age.npy')
 
-#P.figure()
-#P.scatter(ur, nuv, c='k', marker='x')
-#P.show()
+P.figure(figsize=(30,5))
+for n in range(len(age)):
+    ax = P.subplot(1, len(age)+1, n+2, aspect='auto')
+    triangle.hist2d(ur[:,n], nuv[:,n], ax=ax,bins=50, extent=([0.0, 3.0],[-1.0,5.0]))
+    [l.set_rotation(45) for l in ax.get_xticklabels()]
+    [l.set_rotation(45) for l in ax.get_yticklabels()]
+    ax.set_ylabel(r'predicted $NUV-u$')
+    ax.set_xlabel(r'predicted $u-r$')
+    ax.text(0.25, 4.5, 't = '+str(age[n])+' Gyr')
+    print n
+ax5 = P.subplot(1,6,1, aspect='auto')
+triangle.hist2d(u_r, nuv_u, ax=ax5, bins=50, extent=([0.0, 3.0],[-1.0,5.0]))
+ax5.set_xlabel(r'$u-r$')
+ax5.set_ylabel(r'$NUV-u$')
+[l.set_rotation(45) for l in ax5.get_xticklabels()]
+[l.set_rotation(45) for l in ax5.get_yticklabels()]
+ax5.text(0.25, 4.5, 'GZ2 galaxies')
+P.tight_layout()
+P.savefig('pred_colour.pdf')
+P.show()
 
 x = N.arange(8, 12.25, 0.25)
 m = (1.0--1)/(11.0-9)

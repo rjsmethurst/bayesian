@@ -299,3 +299,59 @@ Starting point of walkers : [4.0, 1.0, 10.0, 2.0]
 Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
 Number of galaxies used was : 46182
 Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/not_clean/age_red_s_nc.npy
+Run started at 13:12 on 29/04/14
+Reason for running iteration: All red sequence galaxies
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 13:13 on 29/04/14
+Reason for running iteration: All red sequence galaxies
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 13:15 on 29/04/14
+Reason for running iteration: All red sequence galaxies
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 13:16 on 29/04/14
+Reason for running iteration: red s
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 13:17 on 29/04/14
+Reason for running iteration: red s
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 13:20 on 29/04/14
+Reason for running iteration: re ds]
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Run started at 13:36 on 29/04/14
+Reason for running iteration: All red sequence galaxies starting at middle point rather than top right like currently in the paper draft
+Number of walkers : 100
+Number of steps :150
+Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
+Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
+Number of galaxies used was : 27971
+Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy

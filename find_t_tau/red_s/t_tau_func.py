@@ -127,7 +127,7 @@ def sample(ndim, nwalkers, nsteps,  start, w, ur, sigma_ur, nuvu, sigma_nuvu, ag
     p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(w, ur, sigma_ur, nuvu, sigma_nuvu, age, pd, ps))
     #burn in
-    pos, prob, state = sampler.run_mcmc(p0, 50)
+    pos, prob, state = sampler.run_mcmc(p0, 30)
     N.save('reset.npy', sampler.chain[:,:,:].reshape(-1,ndim))
     sampler.reset()
     print 'RESET', pos
