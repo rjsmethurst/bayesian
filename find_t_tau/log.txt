@@ -355,3 +355,13 @@ Starting point of walkers : [7.5, 1.5, 7.5, 1.5]
 Prior assumptions, w :[7.5, 1.5, 7.5, 1.5, 4.0, 1.5, 4.0, 1.5]
 Number of galaxies used was : 27971
 Ages of galaxies used found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/age_red_s.npy
+Samples found at : /Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/red_s/samples_red_s_15000_27971_19_48_29_04_14.npy
+Total number of positions for each parameter : 15000
+t_smooth from MCMC : (7.0334203537691504, 0.6782024901817687, 0.31774078808401107)
+tau_smooth from MCMC : (1.4463812971257837, 0.43169634194884887, 0.11454205873118517)
+t_disc from MCMC : (7.0435800825800259, 0.67396883396736218, 0.94334964097374208)
+tau_disc from MCMC : (1.7520606016065341, 0.35914102601746078, 0.4174920029449225)
+Time taken to complete : 6.21559333079 hours 
+ 
+------------------------------------------------------------------ 
+ 
