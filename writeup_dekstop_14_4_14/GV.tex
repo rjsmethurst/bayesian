@@ -6,7 +6,11 @@
 
 \begin{document}
 \title[The Star Fomation History of the Green Valley]{Galaxy Zoo: Investigating the Star Formation History of the Green Valley}
-\author[Smethurst et al. 2014]{R. ~J. ~Smethurst,$^1$ C. ~J. ~Lintott,$^{1,2}$ B. ~D. ~Simmons,$^{1}$ \\ $^1$ Oxford Astrophysics, Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK \\ $^2$ Adler Planetarium, 1300 S Lake Shore Drive, Chicago, IL, 60605, USA }
+\author[Smethurst et al. 2014]{R. ~J. ~Smethurst,$^1$ C. ~J. ~Lintott,$^{1,2}$ B. ~D. ~Simmons,$^{1}$ K. ~Schawinski,$^{3}$ K.~L.~Masters,$^{4}$ 
+\\ $^1$ Oxford Astrophysics, Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK 
+\\ $^2$ Adler Planetarium, 1300 S Lake Shore Drive, Chicago, IL, 60605, USA 
+\\ $^3$ Institute for Astronomy, Department of Physics, ETH Zurich, Wolfgang-Pauli Strasse 27, CH-8093 Zurich, Switzerland 
+\\ $^4$ Institute of Cosmology and Gravitation, University of Portsmouth, Dennis Sciama Building, Barnaby Road, Portsmouth, PO1 3FX, UK }
 
 \maketitle
 
@@ -18,7 +22,7 @@ Does galactic evolution proceed through the Green Valley via multiple pathways o
 \footnotetext[1]{This investigation has been made possible by the participation of more than 250,000 volunteers in the Galaxy Zoo project. Their contributions are individually acknowledged at http://www.galaxyzoo.org/volunteers.aspx}
 
 \section{Introduction}
-The Green Valley galaxies occupy a low density area of the colour-magnitude diagram between the \emph{red sequence} and \emph{blue cloud}. How they came to be there and why there are relatively so few of them has been a source of debate for many years (\emph{cite lots of people here}). 
+The Green Valley galaxes occupy a low density area of the colour-magnitude diagram between the \emph{red sequence} and \emph{blue cloud}. How they came to be there and why there are relatively so few of them has been a source of debate for many years (\emph{cite lots of people here}). 
 \\
 \\
 \emph{WHAT is the green valley?\\ WHY do we think quenching is important? \\ WHAT is causing this quenching? \\ WHY do we care? \\ WHAT is our motivation? \\ WHAT are we going to do about it that's different?}
@@ -76,13 +80,32 @@ c_{SFR} \times exp{\left( \frac{-(t-t_{q})}{\tau}\right)} & \text{if } t > t_{q}
 \end{cases}
 \]
 
-where $t_{q}$ is the onset time of quenching, $\tau$ is the timescale over which the quenching occurs and $c_{SFR}$ is a constant star formation rate. \citet{Peng} defined a relation in their equation 1, which is shown in their figure 3, between the average SFR and lookback time. This was used to constrain our initial constant SFR in the models; at the time $t_{q}$, the models are defined to have a SFR which lies on this relationship; see right hand panel of figure \ref{sfr_mass}. 
-\\
-\\
-\emph{WHY is it okay to do this? - B\'ethermin et al. (2012)}
-\\
-\\
-The left hand plot in figure \ref{sfr_mass} show how these models reproduce the observed relationship between the SFR and the mass of a galaxy, including how at the time of quenching they reside on the \emph{``main sequence"} of star formation, shown by the solid black line. We can also see in figure \ref{sfr_mass_evo} how this diagram evolves with cosmic time. The \emph{``main sequence"} of star formation as observed at the current epoch, is plotted in each panel in blue as a reference point. 
+where $t_{q}$ is the onset time of quenching, $\tau$ is the timescale over which the quenching occurs and $c_{SFR}$ is a constant star formation rate. \citet{Peng} defined a relation in their equation 1, which is shown in their figure 3, between the average SFR and cosmic time as:
+\begin{equation*}
+sSFR(m,t) = 2.5 \left( \frac{m}{10^{10} M_{\odot}} \right)^{-0.1} \left(\frac{t}{3.5}\right)^{-2.2} Gyr^{-1}
+\end{equation*}
+
+\begin{figure*}
+\centering{
+\includegraphics[width=\textwidth]{sfr_mass_diagram.pdf}}
+\caption{The right hand panel shows the relationship between the star formation rate and stellar mass for the galaxies in the GZ2 sample (black contours), which trace the "main sequence" of star formation (solid line from \cite{Peng} with $\pm0.3$ dex scatter shown by the dotted lines). The SFRs and masses of the model galaxies are also shown with corresponding star formation histories shown in the left hand panel. The dashed line in the left hand panel shows the relationship between the SFR and time as defined in equation 1 of \citet{Peng}.}
+\label{sfr_mass}
+\end{figure*}
+
+\begin{figure*}
+\centering{
+\includegraphics[width=\textwidth]{sfr_mass_evo.pdf}}
+\caption{Plots to show the evolution of the SFR against the mass as predicted by the most likely exponential SFH model for each GZ2 galaxy. Each panel shows the models at different look-back times in the history of the Universe. The panel on the far left also includes the contours of the observed SFR against the mass of the GZ2 galaxies. Each panel also shows the ``main sequence'' of star formation as measured at the current epoch.}
+\label{sfr_mass_evo}
+\end{figure*}
+
+ This was used to constrain our initial constant SFR in the models; at the time $t_{q}$, the models are defined to have a SFR which lies on this relationship for a galaxy with mass, $M = 10^{10.27} M_{\odot}$ the average mass of the GZ2 sample; see right hand panel of figure \ref{sfr_mass}. \citet{Peng} state that beyond $z \sim 2$ the characteristic sSFR flattens and is roughly constant back to $z\sim6$. The cause for this change is not well understood but can be seen across similar observational data (\cite{Gonzalez} and \cite{Beth}). Motivated by these observations, we took the relation as defined in \citet{Peng} up to a cosmic time of $t=3~Gyr (z \sim 2.3)$ and prior to this assumed constant SFR, as shown by the dotted line in the right panel of figure \ref{sfr_mass}.
+ 
+We are aware that the average SFR of our models will result in a lower value than the relation defined in the \citet{Peng} relation at all cosmic times with this treatment, as each galaxy only resides on the `main sequence' at the point of quenching. However, as \citet{Beth} points out, galaxies cannot remain on the `main sequence' from early to late times throughout it's lifetime given the resultant stellar masses and SFR they would then have at the current epoch in the local Universe. If we were to include prescriptions for galaxies which never undergo quenching or those with energetic starbursts into our models we would improve on our reproduction of the average SFR across cosmic time; however we have chosen to focus only on describing galaxies through a quenching model. 
+
+The left hand plot in figure \ref{sfr_mass} shows how well these models reproduce the observed relationship between the SFR and the mass of a galaxy, including how at the time of quenching they reside on the \emph{``main sequence"} of star formation, shown by the solid black line for a galaxy of mass, $M = 10^{10.27} M_{\odot}$.  We can also see in figure \ref{sfr_mass_evo} how this diagram evolves with cosmic time according to our model predictions. 
+
+
 
 In our models a smaller $\tau$ value corresponds to a rapid quench (almost instantaneous suppression of star formation), whereas a large value of $\tau$ corresponds to a slower quench (slower than the dynamical timescale of a galaxy).  This model assumes that all of the populations form an initial burst of stars at $t=0$, the mass of which is set by the value of $c_{SFR}$. %The $c_{SFR}$ value is set by using the relation defined in \citet{Peng} between the average sSFR and the lookback time (i.e. redshift); at $t_{quench}$ the SFR is set to lie on this relationship (see bottom panel of figure \ref{kev}). 
 
@@ -92,6 +115,8 @@ Once this evolutionary SFR is obtained, we convolved it with the BC03 population
 We can ``observe'' these model stellar populations at a given time in their history; this correlates to the lookback time at which we observe them and therefore, if they were real populations, a measurable redshift (assuming all galaxies are formed at a time $t=0$). Therefore, for each galaxy in the GZ2 sample, the lookback time was calculated from the redshift (using the \emph{cosmolopy} package provided in the Python module \emph{astroPy}) in order to compare the observed colours to the predicted models colours at that time. This lookback time $t^{lb}$ can be thought of as a galaxy's age if we assume that all galaxies formed with an initial burst of star formation at $t=0$. 
 
 Figure \ref{pred} shows the predicted optical and NUV colours at a time of $t^{lb} = 12.8 ~Gyr$ (the average look back time of the Galaxy Zoo 2 sample) provided by the exponential SFH model. These predicted colours will be referred to as $d_{p}(t_{q}, \tau, t^{lb})$. The SFR at a time of $t^{lb}=12.8~Gyr$ is also shown in Figure \ref{pred} to compare how this correlates with the predicted colours. The $u-r$ predicted colour shows an immediate correlation with the SFR, however the $NUV-u$ colour is more sensitive to the value of $\tau$ and so is ideal for tracing any recent star formation in a population . At small $\tau$ (rapid quenching timescales) the $NUV-u$ colour is insensitive to $t_{q}$, whereas at large $\tau$ (slow quenching timescales) the colour is very sensitive to $t_{q}$. Together the two colours are ideal for tracing the effects of $t_{q}$ and $\tau$ in a population. 
+
+
 
 \begin{figure}
 \centering{
@@ -150,26 +175,14 @@ K = - \sum_{c, k} \log{Z_{c, k}},
 \end{equation*}
 where $c=\{opt, NUV\}. 
 
-\begin{figure*}
-\centering{
-\includegraphics[width=\textwidth]{sfr_mass_diagram.pdf}}
-\caption{The right hand panel shows the relationship between the star formation rate and stellar mass for the galaxies in the GZ2 sample (black contours), which trace the "main sequence" of star formation (solid line from \cite{Peng} with $\pm0.3$ dex scatter shown by the dotted lines). The SFRs and masses of the model galaxies are also shown with corresponding star formation histories shown in the left hand panel. The dashed line in the left hand panel shows the relationship between the SFR and time as defined in equation 1 of \citet{Peng}.}
-\label{sfr_mass}
-\end{figure*}
 
-\begin{figure*}
-\centering{
-\includegraphics[width=\textwidth]{sfr_mass_evo.pdf}}
-\caption{Plots to show the evolution of the SFR against the mass as predicted by the most likely exponential SFH model for each GZ2 galaxy. Each panel shows the models at different look-back times in the history of the Universe. The panel on the far left also includes the contours of the observed SFR against the mass of the GZ2 galaxies. Each panel also shows the ``main sequence'' of star formation as measured at the current epoch.}
-\label{sfr_mass_evo}
-\end{figure*}
 
-\begin{figure*}
-\centering{
-\includegraphics[width=\textwidth]{c_c_evo_numpy.pdf}}
-\caption{Plots to show the evolution of the colour-colour diagram as predicted by the most likely exponential SFH model for each GZ2 galaxy. Each panel shows the model at different look-back times in the history of the Universe. The panel on the far right also includes the contours of the observed colours for the GZ2 galaxies in black, as well as the most likely predicted colours, in red, as a comparison.}
-\label{c_c_evo}
-\end{figure*}
+%\begin{figure*}
+%\centering{
+%\includegraphics[width=\textwidth]{c_c_evo_numpy.pdf}}
+%\caption{Plots to show the evolution of the colour-colour diagram as predicted by the most likely exponential SFH model for each GZ2 galaxy. Each panel shows the model at different look-back times in the history of the Universe. The panel on the far right also includes the contours of the observed colours for the GZ2 galaxies in black, as well as the most likely predicted colours, in red, as a comparison.}
+%\label{c_c_evo}
+%\end{figure*}
 
 What we need however is the probability of each combination of $\theta$ values given the GZ2 data: $P(\theta|\underline{d})$, i.e. how likely is a single SFH model given the observed colours of all of the GZ2 galaxies. We can find this by:
 \begin{equation*}
@@ -320,8 +333,10 @@ There is not one specific route to each part of the colour-colour or colour-magn
 
 \begin{thebibliography}{}
 \bibitem[\protect\citeauthoryear{Baldry et al. }{2004}]{Baldry} Baldry, I. K. et al., 2004, ApJ, 600, 681
+\bibitem[\protect\citeauthoryear{B\'ethermin et al. }{2012}]{Beth} B\'ethermin, M. et al., 2012, ApJ, 757, L23
 \bibitem[\protect\citeauthoryear{Bruzual \& Charlot }{2003}]{BC03} Bruzual, G. \& Charlot, S., 2003, MNRAS, 344, 1000
 \bibitem[\protect\citeauthoryear{Foreman-Mackey et al. }{2013}]{Dan} Foreman-Mackey, D., Hogg, D. W., Lang, D., Goodman, J., 2013, PASP, 125, 306
+\bibitem[\protect\citeauthoryear{Gonz\'alez et al. }{2010}]{Gonzalez} Gonz\'alez, V. et al., 2010, ApJ, 713, 115
 \bibitem[\protect\citeauthoryear{Jarosik et al. }{2011}]{WMAP} Jarosik, N. et al., 2011, ApJSS, 192, 18
 \bibitem[\protect\citeauthoryear{Peng et al. }{2010}]{Peng} Peng, Y. et al., 2010, ApJ, 721, 193
 \bibitem[\protect\citeauthoryear{Schawinski et al. }{2014}]{Sch2014} Schawinski, K. et al., 2014 (arXiv: 1402.4814)

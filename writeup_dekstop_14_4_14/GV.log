@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  30 APR 2014 19:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  2 MAY 2014 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -220,217 +220,206 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Overfull \hbox (1.71568pt too wide) in paragraph at lines 11--11
+Overfull \hbox (49.21805pt too wide) in paragraph at lines 15--15
 [][]  
  []
 
 
-./GV.tex:18: LaTeX Error: There's no line here to end.
+./GV.tex:22: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 \footnotetext
+l.22 \footnotetext
                   [1]{This investigation has been made possible by the parti...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--28
+Underfull \hbox (badness 10000) in paragraph at lines 25--32
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--28
+Underfull \hbox (badness 10000) in paragraph at lines 25--32
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--45
+Underfull \hbox (badness 10000) in paragraph at lines 45--49
 
  []
 
 
-LaTeX Warning: File `col_mag_with GV.pdf' not found on input line 51.
+Underfull \vbox (badness 6094) has occurred while \output is active []
 
-<col_mag_with GV.pdf, id=1, 578.16pt x 433.62pt>
-File: col_mag_with GV.pdf Graphic file (type pdf)
- <use col_mag_with GV.pdf>
-Package pdftex.def Info: col_mag_with GV.pdf used on input line 51.
-(pdftex.def)             Requested size: 226.79846pt x 170.09697pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 52.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
  [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<kev.pdf, id=23, 361.35pt x 650.43pt>
+
+LaTeX Warning: File `col_mag_with GV.pdf' not found on input line 55.
+
+<col_mag_with GV.pdf, id=21, 578.16pt x 433.62pt>
+File: col_mag_with GV.pdf Graphic file (type pdf)
+ <use col_mag_with GV.pdf>
+Package pdftex.def Info: col_mag_with GV.pdf used on input line 55.
+(pdftex.def)             Requested size: 226.79846pt x 170.09697pt.
+
+<kev.pdf, id=22, 361.35pt x 650.43pt>
 File: kev.pdf Graphic file (type pdf)
  <use kev.pdf>
-Package pdftex.def Info: kev.pdf used on input line 65.
+Package pdftex.def Info: kev.pdf used on input line 69.
 (pdftex.def)             Requested size: 226.79846pt x 408.23473pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+<sfr_mass_diagram.pdf, id=23, 722.7pt x 361.35pt>
+File: sfr_mass_diagram.pdf Graphic file (type pdf)
+ <use sfr_mass_diagram.pdf>
+Package pdftex.def Info: sfr_mass_diagram.pdf used on input line 90.
+(pdftex.def)             Requested size: 504.0pt x 252.00043pt.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
-
- []
-
-[2 <./col_mag_with GV.pdf> <./kev.pdf
+<sfr_mass_evo.pdf, id=24, 1734.48pt x 361.35pt>
+File: sfr_mass_evo.pdf Graphic file (type pdf)
+ <use sfr_mass_evo.pdf>
+Package pdftex.def Info: sfr_mass_evo.pdf used on input line 97.
+(pdftex.def)             Requested size: 504.0pt x 104.99834pt.
+ [2 <./col_mag_with GV.pdf> <./kev.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./kev.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
->] <colours.pdf, id=233, 469.755pt x 1084.05pt>
+>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./sfr_mass_diagram.pdf> <./sfr_mass_evo.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./sfr_mass_evo.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>] <colours.pdf, id=575, 469.755pt x 1084.05pt>
 File: colours.pdf Graphic file (type pdf)
  <use colours.pdf>
-Package pdftex.def Info: colours.pdf used on input line 98.
+Package pdftex.def Info: colours.pdf used on input line 123.
 (pdftex.def)             Requested size: 226.79846pt x 523.38168pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./colours.pdf>]
-./GV.tex:152: Missing $ inserted.
+ [4 <./colours.pdf>]
+./GV.tex:177: Missing $ inserted.
 <inserted text> 
                 $
-l.152 
+l.177 
       
 ? 
-<sfr_mass_diagram.pdf, id=1093, 722.7pt x 361.35pt>
-File: sfr_mass_diagram.pdf Graphic file (type pdf)
- <use sfr_mass_diagram.pdf>
-Package pdftex.def Info: sfr_mass_diagram.pdf used on input line 155.
-(pdftex.def)             Requested size: 504.0pt x 252.00043pt.
 
-<sfr_mass_evo.pdf, id=1094, 1734.48pt x 361.35pt>
-File: sfr_mass_evo.pdf Graphic file (type pdf)
- <use sfr_mass_evo.pdf>
-Package pdftex.def Info: sfr_mass_evo.pdf used on input line 162.
-(pdftex.def)             Requested size: 504.0pt x 104.99834pt.
-
-<c_c_evo_numpy.pdf, id=1095, 1734.48pt x 361.35pt>
-File: c_c_evo_numpy.pdf Graphic file (type pdf)
- <use c_c_evo_numpy.pdf>
-Package pdftex.def Info: c_c_evo_numpy.pdf used on input line 169.
-(pdftex.def)             Requested size: 504.0pt x 104.99834pt.
-
-Overfull \hbox (14.45973pt too wide) detected at line 197
+Overfull \hbox (14.45973pt too wide) detected at line 210
 [] [] \OT1/cmr/m/n/9 = [] [] [] \OML/cmm/m/it/9 :
  []
 
-<all_smooth.pdf, id=1096, 722.7pt x 722.7pt>
+<all_smooth.pdf, id=1436, 722.7pt x 722.7pt>
 File: all_smooth.pdf Graphic file (type pdf)
  <use all_smooth.pdf>
-Package pdftex.def Info: all_smooth.pdf used on input line 204.
+Package pdftex.def Info: all_smooth.pdf used on input line 217.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<all_disc.pdf, id=1097, 722.7pt x 722.7pt>
+<all_disc.pdf, id=1437, 722.7pt x 722.7pt>
 File: all_disc.pdf Graphic file (type pdf)
  <use all_disc.pdf>
-Package pdftex.def Info: all_disc.pdf used on input line 205.
+Package pdftex.def Info: all_disc.pdf used on input line 218.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./sfr_mass_diagram.pdf> <./sfr_mass_evo.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./sfr_mass_evo.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./c_c_evo_numpy.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./c_c_evo_numpy.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
->] <red_s_smooth.pdf, id=1515, 722.7pt x 722.7pt>
+ [5]
+<red_s_smooth.pdf, id=1441, 722.7pt x 722.7pt>
 File: red_s_smooth.pdf Graphic file (type pdf)
  <use red_s_smooth.pdf>
-Package pdftex.def Info: red_s_smooth.pdf used on input line 221.
+Package pdftex.def Info: red_s_smooth.pdf used on input line 234.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<red_s_disc.pdf, id=1516, 722.7pt x 722.7pt>
+<red_s_disc.pdf, id=1442, 722.7pt x 722.7pt>
 File: red_s_disc.pdf Graphic file (type pdf)
  <use red_s_disc.pdf>
-Package pdftex.def Info: red_s_disc.pdf used on input line 222.
+Package pdftex.def Info: red_s_disc.pdf used on input line 235.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<red_s_smooth_clean.pdf, id=1517, 722.7pt x 722.7pt>
+<red_s_smooth_clean.pdf, id=1443, 722.7pt x 722.7pt>
 File: red_s_smooth_clean.pdf Graphic file (type pdf)
 
 <use red_s_smooth_clean.pdf>
-Package pdftex.def Info: red_s_smooth_clean.pdf used on input line 228.
+Package pdftex.def Info: red_s_smooth_clean.pdf used on input line 241.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<red_s_disc_clean.pdf, id=1518, 722.7pt x 722.7pt>
+<red_s_disc_clean.pdf, id=1444, 722.7pt x 722.7pt>
 File: red_s_disc_clean.pdf Graphic file (type pdf)
  <use red_s_disc_clean.pdf>
-Package pdftex.def Info: red_s_disc_clean.pdf used on input line 229.
+Package pdftex.def Info: red_s_disc_clean.pdf used on input line 242.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<gv_smooth.pdf, id=1519, 722.7pt x 722.7pt>
+<gv_smooth.pdf, id=1445, 722.7pt x 722.7pt>
 File: gv_smooth.pdf Graphic file (type pdf)
  <use gv_smooth.pdf>
-Package pdftex.def Info: gv_smooth.pdf used on input line 235.
+Package pdftex.def Info: gv_smooth.pdf used on input line 248.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<gv_disc.pdf, id=1520, 722.7pt x 722.7pt>
+<gv_disc.pdf, id=1446, 722.7pt x 722.7pt>
 File: gv_disc.pdf Graphic file (type pdf)
  <use gv_disc.pdf>
-Package pdftex.def Info: gv_disc.pdf used on input line 236.
+Package pdftex.def Info: gv_disc.pdf used on input line 249.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<gv_smooth_clean.pdf, id=1521, 722.7pt x 722.7pt>
+<gv_smooth_clean.pdf, id=1447, 722.7pt x 722.7pt>
 File: gv_smooth_clean.pdf Graphic file (type pdf)
  <use gv_smooth_clean.pdf>
-Package pdftex.def Info: gv_smooth_clean.pdf used on input line 242.
+Package pdftex.def Info: gv_smooth_clean.pdf used on input line 255.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<gv_disc_clean.pdf, id=1522, 722.7pt x 722.7pt>
+<gv_disc_clean.pdf, id=1448, 722.7pt x 722.7pt>
 File: gv_disc_clean.pdf Graphic file (type pdf)
  <use gv_disc_clean.pdf>
-Package pdftex.def Info: gv_disc_clean.pdf used on input line 243.
+Package pdftex.def Info: gv_disc_clean.pdf used on input line 256.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<blue_c_smooth.pdf, id=1523, 722.7pt x 722.7pt>
+<blue_c_smooth.pdf, id=1449, 722.7pt x 722.7pt>
 File: blue_c_smooth.pdf Graphic file (type pdf)
  <use blue_c_smooth.pdf>
-Package pdftex.def Info: blue_c_smooth.pdf used on input line 250.
+Package pdftex.def Info: blue_c_smooth.pdf used on input line 263.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<blue_c_disc.pdf, id=1524, 722.7pt x 722.7pt>
+<blue_c_disc.pdf, id=1450, 722.7pt x 722.7pt>
 File: blue_c_disc.pdf Graphic file (type pdf)
  <use blue_c_disc.pdf>
-Package pdftex.def Info: blue_c_disc.pdf used on input line 251.
+Package pdftex.def Info: blue_c_disc.pdf used on input line 264.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<blue_c_smooth_clean.pdf, id=1525, 722.7pt x 722.7pt>
+<blue_c_smooth_clean.pdf, id=1451, 722.7pt x 722.7pt>
 File: blue_c_smooth_clean.pdf Graphic file (type pdf)
 
 <use blue_c_smooth_clean.pdf>
-Package pdftex.def Info: blue_c_smooth_clean.pdf used on input line 257.
+Package pdftex.def Info: blue_c_smooth_clean.pdf used on input line 270.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<blue_c_disc_clean.pdf, id=1526, 722.7pt x 722.7pt>
+<blue_c_disc_clean.pdf, id=1452, 722.7pt x 722.7pt>
 File: blue_c_disc_clean.pdf Graphic file (type pdf)
 
 <use blue_c_disc_clean.pdf>
-Package pdftex.def Info: blue_c_disc_clean.pdf used on input line 258.
+Package pdftex.def Info: blue_c_disc_clean.pdf used on input line 271.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <bars.pdf, id=1527, 722.7pt x 722.7pt>
+ <bars.pdf, id=1453, 722.7pt x 722.7pt>
 File: bars.pdf Graphic file (type pdf)
 
 <use bars.pdf>
-Package pdftex.def Info: bars.pdf used on input line 264.
+Package pdftex.def Info: bars.pdf used on input line 277.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <no_bars.pdf, id=1528, 722.7pt x 722.7pt>
+ <no_bars.pdf, id=1454, 722.7pt x 722.7pt>
 File: no_bars.pdf Graphic file (type pdf)
  <use no_bars.pdf>
-Package pdftex.def Info: no_bars.pdf used on input line 265.
+Package pdftex.def Info: no_bars.pdf used on input line 278.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
 [6 <./all_smooth.pdf> <./all_disc.pdf
@@ -503,13 +492,13 @@ pdfTeX warning: /usr/texbin/pdflatex (file ./no_bars.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
 >]
 
-./GV.tex:321: LaTeX Error: \newblock undefined.
+./GV.tex:334: LaTeX Error: \newblock undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.321 \begin{thebibliography}{}
+l.334 \begin{thebibliography}{}
                                
 ? 
 [11
@@ -520,10 +509,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2867 strings out of 493315
- 37624 string characters out of 6137904
- 114872 words of memory out of 5000000
- 6268 multiletter control sequences out of 15000+600000
+ 2868 strings out of 493315
+ 37603 string characters out of 6137904
+ 112936 words of memory out of 5000000
+ 6270 multiletter control sequences out of 15000+600000
  14365 words of font info for 49 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,14n,25p,1000b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -548,10 +537,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2013/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on GV.pdf (11 pages, 6248816 bytes).
+Output written on GV.pdf (11 pages, 6129664 bytes).
 PDF statistics:
- 7986 PDF objects out of 8907 (max. 8388607)
- 555 compressed objects within 6 object streams
+ 7912 PDF objects out of 8907 (max. 8388607)
+ 530 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
