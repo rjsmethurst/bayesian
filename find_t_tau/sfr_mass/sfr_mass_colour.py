@@ -13,8 +13,8 @@ age=N.array([13.8, 12.8, 10, 8, 6])
 
 font = {'family':'serif', 'size':16}
 P.rc('font', **font)
-P.rc('xtick', labelsize='small')
-P.rc('ytick', labelsize='small')
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
 
 filem = '/Users/becky/Projects/Green-Valley-Project/data/GZ2_all_GALEX_match_GZ1_k_correct_MPA_JHU_SFR_mass.fits'
 datm = F.open(filem)
