@@ -39,6 +39,13 @@ In this investigation we aim to determine:
 \item What previous SFHs allow for the composition of the colour-magnitude diagram at the current epoch? 
 \end{enumerate}
 
+\begin{figure*}
+\centering{
+\includegraphics[width=0.9\textwidth]{sfr_mass_subsets.pdf}}
+\caption{Star formation rate versus stellar mass diagrams show how the different populations of galaxies contribute to the `main sequence' (from \citet{Peng}, shown by the solid blue line with 0.3 dex scatter by the dashed lines) of star formation for the Galaxy Zoo 2 sample. This shows why the green valley is considered a transitional population between the blue cloud and the red sequence in terms of star formation rate. Interestingly, when we compare those galaxies which reside on the main sequence we find that the tail ends of this population (the low and high mass galaxies) are primarily made up of smooth (i.e. elliptical) galaxies as opposed to disc galaxies.}
+\label{sfr_mass}
+\end{figure*}
+
 This paper proceeds as follows. Section \ref{data} contains a description of the Galaxy Zoo 2 (GZ2) sample data, which is used in the Bayesian statistics analysis of an exponentially declining star formation history model, all described in section \ref{models}. Section \ref{results} contains the results produced by this analysis, with section \ref{diss} providing a detailing discussion of the results obtained. We also conclude our findings in section \ref{conc}. The zero points of all ugriz magnitudes are in the AB system and where necessary we adopt the WMAP Seven-Year Cosmological parameters \citep{WMAP} with $(\Omega_m, \Omega_{\lambda}, h) = (0.26, 0.73, 0.71)$. 
 
 \section{Data}\label{data}
@@ -98,8 +105,6 @@ At the point of quenching, $t_{q}$, the models are defined to have a SFR which l
 We are aware that the average SFR of our models will result in a lower value than the relation defined in the \citet{Peng} relation at all cosmic times with this treatment, as each galaxy only resides on the `main sequence' at the point of quenching. However, as \citet{Beth} points out, galaxies cannot remain on the `main sequence' from early to late times throughout it's lifetime given the resultant stellar masses and SFR they would then have at the current epoch in the local Universe. If we were to include prescriptions for galaxies which never undergo quenching or those with energetic starbursts into our models we would improve on our reproduction of the average SFR across cosmic time; however we have chosen to focus only on describing galaxies through a quenching model. 
 
 The left hand plot in figure \ref{sfr_mass} shows how well these models reproduce the observed relationship between the SFR and the mass of a galaxy, including how at the time of quenching they reside on the \emph{``main sequence"} of star formation, shown by the solid black line for a galaxy of mass, $M = 10^{10.27} M_{\odot}$.  We can also see in figure \ref{sfr_mass_evo} how this diagram evolves with cosmic time according to our model predictions. 
-
-
 
 In our models a smaller $\tau$ value corresponds to a rapid quench (almost instantaneous suppression of star formation), whereas a large value of $\tau$ corresponds to a slower quench (slower than the dynamical timescale of a galaxy).  This model assumes that all of the populations form an initial burst of stars at $t=0$, the mass of which is set by the value of $c_{SFR}$. %The $c_{SFR}$ value is set by using the relation defined in \citet{Peng} between the average sSFR and the lookback time (i.e. redshift); at $t_{quench}$ the SFR is set to lie on this relationship (see bottom panel of figure \ref{kev}). 
 
