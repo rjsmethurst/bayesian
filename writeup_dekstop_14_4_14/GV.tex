@@ -62,7 +62,7 @@ To define which of the GZ2 galaxies are in the Green Valley, we used the definit
 Using an assumed initial mass function (IMF),  stellar population synthesis models (SPS) models calculate the total flux emitted by a population, as described in \cite{BC03}
 
 \subsection{Modelling the Star Formation History}\label{sfh}
-The star formation history of a population is modelled with an exponentially declining star formation rate (SFR) at time steps from $t =0 ~Gyr$ to $t=13.7 ~Gyr$ as:
+We model the star formation history of a population with an exponentially declining star formation rate (SFR) at time steps from $t =0 ~Gyr$ to $t=13.7 ~Gyr$ as:
 
 \begin{figure}
 \centering{
@@ -80,26 +80,20 @@ c_{SFR} \times exp{\left( \frac{-(t-t_{q})}{\tau}\right)} & \text{if } t > t_{q}
 \end{cases}
 \]
 
-where $t_{q}$ is the onset time of quenching, $\tau$ is the timescale over which the quenching occurs and $c_{SFR}$ is a constant star formation rate. \citet{Peng} defined a relation in their equation 1, which is shown in their figure 3, between the average SFR and cosmic time as:
+where $t_{q}$ is the onset time of quenching, $\tau$ is the timescale over which the quenching occurs and $c_{SFR}$ is a constant star formation rate. This constant star formation rate is set using \citet{Peng}, who defined a relation (in their equation 1) between the average SFR and cosmic time as:
 \begin{equation*}
 sSFR(m,t) = 2.5 \left( \frac{m}{10^{10} M_{\odot}} \right)^{-0.1} \left(\frac{t}{3.5}\right)^{-2.2} Gyr^{-1}
 \end{equation*}
 
 \begin{figure*}
 \centering{
-\includegraphics[width=\textwidth]{sfr_mass_diagram.pdf}}
+\includegraphics[width=0.9\textwidth]{sfr_mass_diagram.pdf}}
 \caption{The right hand panel shows the relationship between the star formation rate and stellar mass for the galaxies in the GZ2 sample (black contours), which trace the "main sequence" of star formation (solid line from \cite{Peng} with $\pm0.3$ dex scatter shown by the dotted lines). The SFRs and masses of the model galaxies are also shown with corresponding star formation histories shown in the left hand panel. The dashed line in the left hand panel shows the relationship between the SFR and time as defined in equation 1 of \citet{Peng}.}
 \label{sfr_mass}
 \end{figure*}
 
-\begin{figure*}
-\centering{
-\includegraphics[width=\textwidth]{sfr_mass_evo.pdf}}
-\caption{Plots to show the evolution of the SFR against the mass as predicted by the most likely exponential SFH model for each GZ2 galaxy. Each panel shows the models at different look-back times in the history of the Universe. The panel on the far left also includes the contours of the observed SFR against the mass of the GZ2 galaxies. Each panel also shows the ``main sequence'' of star formation as measured at the current epoch.}
-\label{sfr_mass_evo}
-\end{figure*}
 
- This was used to constrain our initial constant SFR in the models; at the time $t_{q}$, the models are defined to have a SFR which lies on this relationship for a galaxy with mass, $M = 10^{10.27} M_{\odot}$ the average mass of the GZ2 sample; see right hand panel of figure \ref{sfr_mass}. \citet{Peng} state that beyond $z \sim 2$ the characteristic sSFR flattens and is roughly constant back to $z\sim6$. The cause for this change is not well understood but can be seen across similar observational data (\cite{Gonzalez} and \cite{Beth}). Motivated by these observations, we took the relation as defined in \citet{Peng} up to a cosmic time of $t=3~Gyr (z \sim 2.3)$ and prior to this assumed constant SFR, as shown by the dotted line in the right panel of figure \ref{sfr_mass}.
+At the point of quenching, $t_{q}$, the models are defined to have a SFR which lies on this relationship for a galaxy with mass, $M = 10^{10.27} M_{\odot}$ the average mass of the GZ2 sample; see bottom panel of figure \ref{kev} and right panel of figure \ref{sfr_mass}. \citet{Peng} state that beyond $z \sim 2$ the characteristic sSFR flattens and is roughly constant back to $z\sim6$. The cause for this change is not well understood but can be seen across similar observational data (\cite{Gonzalez} and \cite{Beth}). Motivated by these observations, we took the relation as defined in \citet{Peng} up to a cosmic time of $t=3~Gyr (z \sim 2.3)$ and prior to this assumed constant SFR, as shown by the dotted line in the right panel of figure \ref{sfr_mass}.
  
 We are aware that the average SFR of our models will result in a lower value than the relation defined in the \citet{Peng} relation at all cosmic times with this treatment, as each galaxy only resides on the `main sequence' at the point of quenching. However, as \citet{Beth} points out, galaxies cannot remain on the `main sequence' from early to late times throughout it's lifetime given the resultant stellar masses and SFR they would then have at the current epoch in the local Universe. If we were to include prescriptions for galaxies which never undergo quenching or those with energetic starbursts into our models we would improve on our reproduction of the average SFR across cosmic time; however we have chosen to focus only on describing galaxies through a quenching model. 
 
@@ -113,6 +107,13 @@ Once this evolutionary SFR is obtained, we convolved it with the BC03 population
 
 
 We can ``observe'' these model stellar populations at a given time in their history; this correlates to the lookback time at which we observe them and therefore, if they were real populations, a measurable redshift (assuming all galaxies are formed at a time $t=0$). Therefore, for each galaxy in the GZ2 sample, the lookback time was calculated from the redshift (using the \emph{cosmolopy} package provided in the Python module \emph{astroPy}) in order to compare the observed colours to the predicted models colours at that time. This lookback time $t^{lb}$ can be thought of as a galaxy's age if we assume that all galaxies formed with an initial burst of star formation at $t=0$. 
+
+\begin{figure*}
+\centering{
+\includegraphics[width=0.9\textwidth]{sfr_mass_evo.pdf}}
+\caption{Plots to show the evolution of the SFR against the mass as predicted by the most likely exponential SFH model for each GZ2 galaxy. Each panel shows the models at different look-back times in the history of the Universe. The panel on the far left also includes the contours of the observed SFR against the mass of the GZ2 galaxies. Each panel also shows the ``main sequence'' of star formation as measured at the current epoch.}
+\label{sfr_mass_evo}
+\end{figure*}
 
 Figure \ref{pred} shows the predicted optical and NUV colours at a time of $t^{lb} = 12.8 ~Gyr$ (the average look back time of the Galaxy Zoo 2 sample) provided by the exponential SFH model. These predicted colours will be referred to as $d_{p}(t_{q}, \tau, t^{lb})$. The SFR at a time of $t^{lb}=12.8~Gyr$ is also shown in Figure \ref{pred} to compare how this correlates with the predicted colours. The $u-r$ predicted colour shows an immediate correlation with the SFR, however the $NUV-u$ colour is more sensitive to the value of $\tau$ and so is ideal for tracing any recent star formation in a population . At small $\tau$ (rapid quenching timescales) the $NUV-u$ colour is insensitive to $t_{q}$, whereas at large $\tau$ (slow quenching timescales) the colour is very sensitive to $t_{q}$. Together the two colours are ideal for tracing the effects of $t_{q}$ and $\tau$ in a population. 
 
