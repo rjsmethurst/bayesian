@@ -8,7 +8,7 @@
 \usepackage{url}
 
 \begin{document}
-\title[The Star Fomation History of the Green Valley]{Galaxy Zoo 2: Investigating the Star Formation History of the Green Valley}
+\title[The Star Fomation History of the Green Valley]{Galaxy Zoo 2: The Grass is Always Redder on the Other Side}
 \author[Smethurst et al. 2014]{R. ~J. ~Smethurst,$^1$ C. ~J. ~Lintott,$^{1,2}$ B. ~D. ~Simmons,$^{1}$ K. ~Schawinski,$^{3}$ \newauthor K.~L.~Masters,$^{4}$ and the Galaxy Zoo Team
 \\ $^1$ Oxford Astrophysics, Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK 
 \\ $^2$ Adler Planetarium, 1300 S Lake Shore Drive, Chicago, IL, 60605, USA 
@@ -86,9 +86,6 @@ This work uses classifications collected during the second release of the projec
 
 The classifications from users produce a vote fraction for each galaxy; for example if 80 of 100 people thought a galaxy was disc shaped, whereas 20 out of 100 people thought the same galaxy was smooth in shape (i.e. elliptical), that galaxy would have vote fractions $p_{s} = 0.2$ and $p_{d} = 0.8$. In this example this galaxy would be included in the \emph{`clean'} disc sample ($p_d \geq 0.8$) according to \cite{GZ2} and would be considered a late-type galaxy. These vote fractions allow each galaxy to be considered in a large statistical analysis of how smooth and disc galaxies differ in their SFHs; the like of which has not been possible prior to this investigation and the Galaxy Zoo project. 
 
-
-Specifically, the Galaxy Zoo 2 project consists of $304, 022$ images from the SDSS DR8 (a subset of those classified in Galaxy Zoo 1) all classified by \emph{at least} 17 independent users, with the mean number of classifications standing at $\sim42$. The only further selection that was made to the sample was for the removal of  objects considered to be stars or artifacts by the volunteers. Further to this, we required NUV photometry from the GALEX survey, within which $\sim42\%$ of the GZ2 sample were observed, giving a total sample size of $126316$ galaxies. 
-
 \begin{figure}
 \centering{
 \includegraphics[width=0.45\textwidth]{col_mag_with_GV.pdf}}
@@ -96,13 +93,19 @@ Specifically, the Galaxy Zoo 2 project consists of $304, 022$ images from the SD
 \label{CMGV}
 \end{figure}
 
-\subsection{Definining the Green Valley}\label{defGV}
 \begin{figure*}
 \centering{
 \includegraphics[width=\textwidth]{sfr_mass_colour_diagram.pdf}}
 \caption{The SFR versus time for four model galaxies with various star formation histories are shown in the middle panel of this diagram.The dashed line shows the relationship between the sSFR and time from \citet{Peng} which was used to constrain these models at $t=t_{quench}$. The evolution of each of these four model galaxies across the SFR-mass diagram (from $t=0~Gyr$) and optical-NUV colour-colour diagram (from $t=t_q$) are shown in the left and right panels respectively; with each point representing a time step of $t=0.5~Gyr$. These plots show how the models are capable of reproducing the observed properties of the GZ2 sample of galaxies.}
 \label{sfr_mass_col}
 \end{figure*}
+
+Specifically, the Galaxy Zoo 2 project consists of $304, 022$ images from the SDSS DR8 (a subset of those classified in Galaxy Zoo 1) all classified by \emph{at least} 17 independent users, with the mean number of classifications standing at $\sim42$. The only further selection that was made to the sample was for the removal of  objects considered to be stars or artifacts by the volunteers. Further to this, we required NUV photometry from the GALEX survey, within which $\sim42\%$ of the GZ2 sample were observed, giving a total sample size of $126316$ galaxies. 
+
+
+
+\subsection{Definining the Green Valley}\label{defGV}
+
 
 To define which of our sample of $126316$ galaxies were in the green valley, we used the definition outlined in \citet{Baldry}, which is shown in figure \ref{CMGV} by the dashed line. Any galaxy within $\pm 1\sigma$ of this relationship, shown by the solid lines in figure \ref{CMGV}, was considered a green valley galaxy. A conservative definition for the green valley was adopted in order to remove any influence from tail galaxies from either the red sequence or blue cloud. The break down of our sample into red sequence, green valley and blue cloud galaxies is shown in table \ref{subs} along with a further break down by galaxy type. 
 
@@ -368,23 +371,15 @@ All of this evidence suggests that there are not just two routes for galaxies th
 
 
 \subsection{Blue Cloud Galaxies}
-Since the blue cloud is considered to be primarily made of star forming galaxies we expect the model to have some difficulty in determining the most likely quenching model to describe them. In figure \ref{blue_c} both sets of parameters show high likelihood for slow quenching at late times, with a higher likelihood for the disc-like galaxies. We believe that this is the model picking up on those galaxies which have so far not undergone any quenching. However we also see a trimodality in both sets of parameters, again which is more pronounced in the disc-like galaxies, suggesting that there is still quenching occurring within the blue cloud. We note that in this case there is no quenching below $\tau \sim 1.0~Gyr$ for either population, confirming that any galaxy undergoing a rapid quench will very quickly leave the blue cloud. 
+Since the blue cloud is considered to be primarily made of star forming galaxies we expect the model to have some difficulty in determining the most likely quenching model to describe them, considering . In figure \ref{blue_c} both sets of parameters show high likelihood for slow quenching at late times, with a higher likelihood for the disc-like galaxies. We believe that this is the model picking up on those galaxies which have so far not undergone any quenching. However we also see a trimodality in both sets of parameters, again which is more pronounced in the disc-like galaxies, suggesting that there is still quenching occurring within the blue cloud. We note that in this case there is no quenching below $\tau \sim 1.0~Gyr$ for either population, confirming that any galaxy undergoing a rapid quench will very quickly leave the blue cloud. 
 
-There is also high likelihood in both samples for medium rate quenching at relatively recent times which could account for those galaxies on the edge of the blue cloud after beginning to quench. The SFH parameter space for the smooth-like and disc-like galaxies appear very similar, suggesting so too are galaxies in the blue cloud, irrespective of their morphology. Of all of the regions of the CMD, this is to be expected in the blue cloud since it consists of galaxies that are mostly still star forming. The way these galaxies differ is the mechanisms and triggers by which they have formed their stars, having no effect on the observed colours but a discernible effect on their morphologies.
+There is also high likelihood in both samples for medium rate quenching at relatively recent times which could account for those galaxies near the edge of the blue cloud that have begun to quench. This area of high likelihood is again at very similar ranges of the quenching timescale $\tau$, but occurring at yet earlier quenching times, $t_q$, suggesting that those galaxies which have begun to quench in the blue cloud are already tracing the parameters of the green valley. Confirming once more that the green valley is a transitional population between the blue cloud and red sequence regardless of morphology.
 
-When we compare figures \ref{blue_c} and \ref{blue_c_clean} which shows the likely model parameters for the `clean' blue cloud galaxies, only the smooth galaxies have high likelihood for a slow quench model at late times, suggesting that most of the obviously smooth blue galaxies in the GZ2 sample still have star formation occurring. Perhaps as their star formation begins to cease their morphology is not as pronounced; does a lack of star formation in a galaxy relax the rigidity on it's morphology?
+The SFH parameter space for the smooth-like and disc-like galaxies appear very similar, suggesting so too are galaxies in the blue cloud, irrespective of their morphology. Of all of the regions of the CMD, this is to be expected in the blue cloud since it consists of galaxies that are mostly still star forming. The way these galaxies differ is the mechanisms and triggers by which they have formed their stars, having no effect on the observed colours but a discernible effect on their morphologies.
 
-The disc-like galaxies in the right panel of figure \ref{blue_c_clean} show a high likelihood for any timescale of quenching at late times, which again is most likely indicative of star formation still occurring. We still retain some preference however for medium quenching at recent (late) times (which we do not for the smooth parameters), suggesting that the edge of the blue cloud is made primarily of disc-like galaxies rather than the smooth-like galaxies. 
+When we compare figures \ref{blue_c} and \ref{blue_c_clean} which shows the likely model parameters for the `clean' blue cloud galaxies, only the smooth galaxies have high likelihood for a slow quench model at late times, suggesting that most of the obviously smooth blue galaxies in the GZ2 sample still have star formation occurring. 
 
-%In figure \ref{bars} we can compare the star formation history parameters for barred and unbarred galaxies, selected so that $N_{count, bar} > 10$ and $N_{count, no bar} > 10$. The analysis was then run with $p_{bar}$ and $p_{no bar}$ in place of $p_{smooth}$ and $p_{disc}$ in the final equation in section \ref{stats}. We can see that two the populations occupy different areas in the SFH parameter space suggesting that bars have indeed undergone a different formation history to non barred disc galaxies.  Barred galaxies simultaneously are more likely to have both bluer and redder colours than non barred galaxies, as the bimodality seen in the SFH parameters of the non barred galaxies in the right hand panel of figure \ref{bars} has moved apart. 
-%
-%This suggests that the argument for whether bars promote or quench star formation rates in galaxies could have evidence for both possibilities. Perhaps the amount and distribution of gas present in a galaxy prior to the formation of the bar determines what effect the bar will have on the star formation rate. There is also a region of likelihood at very rapid quenching timescales for barred galaxies which is not present in the parameters for the non barred galaxies, supporting the hypothesis that bars turn galaxies red (\emph{cite Maraston papers here}). To explain what we see here we can say either that:
-%\begin{enumerate}
-%\item As a bar forms it can cause a rapid quenching of star formation in it's host galaxy,
-%\item A rapid quenching of star formation in a galaxy can cause a bar to form.
-%\end{enumerate}
-%This analysis however, does not allow for this to be determined. 
-
+The disc-like galaxies in the right panel of figure \ref{blue_c_clean} show a high likelihood for any timescale of quenching at late times, which again is most likely indicative of star formation still occurring. We still retain some preference however for medium quenching at recent (late) times (which we do not for the smooth parameters), suggesting that the edge of the blue cloud is made primarily of disc-like galaxies rather than the smooth-like galaxies, as is observed.
 
 
 \section{Discussion}\label{diss}
@@ -395,15 +390,11 @@ The disc-like galaxies in the right panel of figure \ref{blue_c_clean} show a hi
 %\\ Methods for quenching - Binney + fountain models cut off when galaxy starts to move through IGM. 
 The results from the previous section allow us to build up a picture of a galaxy's journey from the blue cloud to the red sequence as it evolves. Firstly, there is a definitive morphological dependance on the evolution of a galaxy; smooth- and disc-like galaxies evolve with very different quenching timescales, but what is the mechanism driving this difference? We can put constraints on this by considering how they evolve differently.
 
-We can confirm that the green valley is indeed a transitional population, with many different SFH parameters to describe the possible path of a galaxy through it. If it were a static population we would expect a results such as the one for the clean red sequence smooth galaxies in figure \ref{red_s_clean}, where the likelihood clusters in a specific area due to the fact that they are all very similar. 
+We can confirm that the green valley is indeed a transitional population for all morphologies, with many different SFH parameters to describe the possible path of a galaxy through it, as shown by the parameters for the green valley galaxies tracing those of the red sequence but at earlier quenching times. The only morphological difference is for the rate at which galaxies transition through it; only smooth-like galaxies pass through rapidly, whereas disc-like galaxies pass through much more slowly. We therefore theorise that with enough cosmic time, eventually late-type galaxies will come to populate the red sequence as well as early-types. At our current epoch and at the timescales at which disc-like galaxies are found to be quenching we therefore would not see a large number of red disc-like galaxies, which is supported by our observations of the frequency of `red-spiral' galaxies (?,?,?).
 
-The green valley consists of a composite population however of disc-like galaxies which pass very slowly though (with only a small number having it made it to the red sequence at the current time) and smooth-like galaxies which pass through so rapidly we have very minimal likelihood for rapid quenching. We also argue that there is a third population residing in the green valley from the intermediate galaxies (by comparing figures \ref{gv} and \ref{gv_clean}) which are passing through at middling quenching timescales. 
+Therfore the green valley consists of a composite transiting population of disc-like galaxies which pass very slowly though (with only a small number having it made it to the red sequence at the current time) and smooth-like galaxies which pass through so rapidly we have very minimal likelihood for rapid quenching. We also argue that there is a third population residing in the green valley from the intermediate galaxies (by comparing figures \ref{gv} and \ref{gv_clean}) which are passing through at middling quenching timescales. Since \citet{Sch2014} did not consider intermediate galaxies, their conclusions that there are 2 routes through the green valley for galaxies contradicts with our statements that their are currently three routes, dependant on whether a galaxy is early-, intermediate- or late-type. 
 
-Since \citet{Sch2014} did not consider intermediate galaxies, their conclusions that there are 2 routes through the green valley for galaxies contradicts with our statements that their are currently three routes, dependant on whether a galaxy is early-, intermediate- or late-type. 
-
-Our figure \ref{red_s_clean} however shows that for disc galaxies there are many possible SFHs that can lead them to the red sequence and consequently though the green valley. This suggests that at some time during the past there were many more paths an evolving galaxy could take, therefore many more galaxies quenching resulting in the well populated main sequence that we observe today. 
-
-One of the crucial aspects of this discussion is if an environmental dependance is somehow causing the morphological dependance we are detecting. We see a correlation between $t_q$ and $\tau$ in most cases, particularly for the disc-like galaxies. 
+We cannot draw any conclusions about the blue ellipticals unfortunately. Those clean blue cloud early-type galaxies have high likelihoods clustered only at late times with slow quenching timescales suggesting that these galaxies have not undergone any quenching and cannot be described by our quenching model. This confirms the theories concerning blue early-type galaxies as previously `red and dead' ellipticals that have had recently promoted new star formation.
 
 Another important point to discuss is the lack of likelihood for rapid quenching timescales $\tau < 1.0~Gyr$. This is most apparent in the disc parameters where no likelihood below this is detected, except at very recent times for the clean disc blue cloud galaxies. For the smooth galaxies only a small amount of likelihood is found for these extremely rapid quenching timescales, this suggests the mechanism which drives this quenching is only apparent for smooth-like galaxies and not for disc-like galaxies and is also extremely rare. We believe that this coincides with what we know about major mergers. 
 
@@ -417,7 +408,7 @@ For the clean disc galaxies across all of the populations the highest likelihood
 
 
 \section{Conclusion}\label{conc}
-The three most important points: 
+We have used morphological classifications from the Galaxy Zoo 2 project to determine the morphological dependant star formation histories of galaxies through a Bayesian analysis of an exponentially declining star formation rate model of quenching. We determined the most likely parameters for the quenching time, $t_q$ and quenching timescale $\tau$ in this model for galaxies across the blue cloud, green valley and red sequence to trace galactic evolution across the colour-magnitude diagram. We find that the green valley is indeed a transitional population for all morphological types, however this transition proceeds much slower for disc-like galaxies and can occur very rapidly for smooth-like galaxies. We conclude that:
 \begin{enumerate}
 \item There is a clear correlation between $t_{quench}$ and $\tau$. At earlier times, the quenching timescale is longer, whereas at more recent times, the quenching timescale is shorter on average suggesting an environmental quenching dependance with cosmic time
 \item The most likely SFH parameters for the green valley trace those for the red sequence at later times, pre-empting the formation of the red sequence suggesting that the green valley is indeed a transitional population with morphological dependant routes through it
