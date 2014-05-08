@@ -12,10 +12,10 @@ a = N.array(cosmo.age(z))
 #age = cosmo.age(av_z).value
 age=12.878505072906682
 
-font = {'family':'serif', 'size':14}
+font = {'family':'serif', 'size':16}
 P.rc('font', **font)
-P.rc('xtick', labelsize='small')
-P.rc('ytick', labelsize='small')
+P.rc('xtick', labelsize='medium')
+P.rc('ytick', labelsize='medium')
 P.rc('axes', labelsize='medium')
 
 
@@ -71,18 +71,18 @@ print mean_dsfr
 
 print N.shape(mean_dsfr)
 
-P.figure()
-ax1 = P.subplot(111)
-ax1.plot(t, mean_dsfr, c='r', linewidth=2)
-#ax1.plot(t, mean_dsfr+1, c='k', linestyle='dashed')
-#ax1.plot(t, mean_dsfr-1, c='k', linestyle='dashed')
-[l.set_rotation(45) for l in ax1.get_xticklabels()]
-[j.set_rotation(45) for j in ax1.get_yticklabels()]
-ax1.set_xlabel('cosmic time $[Gyr]$')
-ax1.set_ylabel('average amount of quenching $[M_{\odot} yr^{-1}]$')
-P.tight_layout()
-P.savefig('mean_amount_quenching_with_time.pdf')
-P.show()
+#P.figure()
+#ax1 = P.subplot(111)
+#ax1.plot(t, mean_dsfr, c='r', linewidth=2)
+##ax1.plot(t, mean_dsfr+1, c='k', linestyle='dashed')
+##ax1.plot(t, mean_dsfr-1, c='k', linestyle='dashed')
+#[l.set_rotation(45) for l in ax1.get_xticklabels()]
+#[j.set_rotation(45) for j in ax1.get_yticklabels()]
+#ax1.set_xlabel('cosmic time $[Gyr]$')
+#ax1.set_ylabel('average amount of quenching $[M_{\odot} yr^{-1}]$')
+#P.tight_layout()
+#P.savefig('mean_amount_quenching_with_time.pdf')
+#P.show()
 
 #P.figure()
 #ax1 = P.subplot(111)
@@ -103,12 +103,12 @@ N.save('full_new_sfhs_all_times.npy', full_sfr)
 N.save('full_mass_new_sfhs_all_times.npy', full_mass)
 N.save('full_amount_quenching_all_times.npy', full_dsfr)
 
-P.figure()
-P.scatter(N.log10(mass), N.log10(sfr), c=tqs, s=taus*10, linewidth=0.1)
-P.ylim(ymin=-2.5, ymax = 2)
-P.xlim((8.5,12.0))
-P.colorbar()
-P.show()
+#P.figure()
+#P.scatter(N.log10(mass), N.log10(sfr), c=tqs, s=taus*10, linewidth=0.1)
+#P.ylim(ymin=-2.5, ymax = 2)
+#P.xlim((8.5,12.0))
+#P.colorbar()
+#P.show()
 
 print sfr
 print ssfr
@@ -132,6 +132,12 @@ P.xlabel(r'$t_{quench} (Gyr)$')
 P.ylabel(r'$\tau$ (Gyr)')
 cbar = P.colorbar(im, orientation='vertical')
 cbar.set_label(r'predicted $u-r$ colour', labelpad=10)
+ax12 = ax1.twiny()
+ax12.set_xlim((0, 14.0))
+ax12.set_xticks(N.array([1.87, 3.40, 6.03, 8.77, 10.9, 12.5]))
+ax12.set_xticklabels(N.array([3.5, 2.0 , 1.0, 0.5, 0.25, 0.1]))
+[l.set_rotation(45) for l in ax12.get_xticklabels()]
+ax12.set_xlabel(r'$z$')
 #cbar.set_ticks([0.75, 1.25, 1.75, 2.25])
 #cbar.set_ticklabels([0.75, 1.25, 1.75, 2.25])
 
@@ -149,7 +155,7 @@ cbar.set_label(r'predicted $NUV-u$ colour', labelpad=10)
 
 
 ax3 = P.subplot(3,1,3)
-im = ax3.imshow(dsfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.5, cmap=P.cm.spectral_r)
+im = ax3.imshow(sfr, origin='lower', aspect='auto', extent=[N.min(tq), N.max(tq), N.min(tau), N.max(tau)], alpha = 0.5, cmap=P.cm.spectral_r)
 [l.set_rotation(45) for l in ax3.get_xticklabels()]
 [j.set_rotation(45) for j in ax3.get_yticklabels()]
 P.text(0.5, 2.75, r'$t_{obs} = 12.8  Gyr$')
