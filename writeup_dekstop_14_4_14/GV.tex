@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{natbib}
 \usepackage{array}
+\usepackage{color}
+\usepackage{url}
 
 \begin{document}
 \title[The Star Fomation History of the Green Valley]{Galaxy Zoo 2: Investigating the Star Formation History of the Green Valley}
@@ -27,7 +29,7 @@ Previous large scale surveys of galaxies have revealed a bimodality in the colou
 
 The intriguing part of this diagram however was the sparsely populated colour space between these two populations, the so-called `green valley'. Why should a minimum such as this exist, rather than a uniform distribution through-out colour-magnitude space? If we assume galaxies evolve by gaining mass and exhausting their gas reservoirs through star formation, they are expected to move from the low mass, blue cloud to the higher mass, red sequence with time (?,?,?). 
 
-This transition must therefore occur on rapid timescales, otherwise we would find an accumulation of galaxies residing in the green valley, rather than an accumulation in the red sequence as is observed (?,?). Green valley galaxies have therefore long been thought of as the `crossroads' of galaxy evolution; a transition population between the two main galactic stages of the star forming blue cloud and the `dead' red sequence (?,?).
+This transition must therefore occur on rapid timescales, otherwise we would find an accumulation of galaxies residing in the green valley, rather than an accumulation in the red sequence as is observed (?,?). Green valley galaxies have therefore long been thought of as the `crossroads' of galaxy evolution; a transition population between the two main galactic stages of the star forming blue cloud and the `dead' red sequence (?,?). Note also that there are late-type galaxies (clean disc galaxies; see section \ref{class}) that do not lie on the `main sequence' and early-type galaxies (clean smooth galaxies; see section \ref{class}) that are star forming on the `main sequence'. This discovery of outliers of red spirals and blue ellipticals is considered one of the Galaxy Zoo project's main achievements prove valuable evidence to the overall picture of galaxy evolution. 
 
 The intermediate green colours of these galaxies have been interpreted as evidence for recent quenching (suppression) of star formation (?,?). Quenching causes a galaxy to leave the so-called `main sequence' of star formation (?,?), as shown in figure \ref{sfr_mass_sub} by the solid blue line (with $\pm ~0.3$ dex scatter shown by the dashed lines). Those galaxies whose star formation has ceased are found below the `main sequence'. The processes which cause these galaxies to depart from this sequence however, are still unknown (?,?).
 
@@ -58,14 +60,15 @@ This paper proceeds as follows. Section \ref{data} contains a description of the
 \section{Data}\label{data}
 \subsection{Multi-wavelength data}\label{multi}
 \begin{table*}
-\begin{tabular}{r|cccc}
- & All                                                      & Red Sequence                                              & Green Valley                                              & Blue Cloud \\  \hline \hline
-Smooth ($p_s > 0.5$)        & \begin{tabular}[c]{@{}c@{}}42453\\ (33.6\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}17424\\ (13.8\%)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}10687\\ (8.4\%)\end{tabular}   & \begin{tabular}[c]{@{}c@{}}14342\\ (11.3\%)\end{tabular}  \\ \hline
-Disc ($p_d > 0.5$)          & \begin{tabular}[c]{@{}c@{}}83863\\ (66.4\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}10722\\ (8.4\%)\end{tabular}   & \begin{tabular}[c]{@{}c@{}}13257\\ (10.5\%)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}59884\\ (47.4\%)\end{tabular}  \\\hline
-Early-type ($p_s \geq 0.8$) & \begin{tabular}[c]{@{}c@{}}10517\\ (8.3\%)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}5337\\ (4.2\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}2496\\ (2.0\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}2684\\ (2.1\%)\end{tabular}    \\\hline
-Late-type ($p_s \geq 0.8$)  & \begin{tabular}[c]{@{}c@{}}51470\\ (40.9\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}4493\\ (3.6\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}6817\\ (5.4\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}40430\\ (32.0\%)\end{tabular}  \\\hline\hline
-Total                       & \begin{tabular}[c]{@{}c@{}}126316 \\ (100.0\%)\end{tabular}                                                & \begin{tabular}[c]{@{}c@{}}28146 \\ (22.3\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}23944 \\ (18.9\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}74226 \\ (58.7\%)\end{tabular}
-\end{tabular}
+\begin{tabular*}{0.9\textwidth}{r| @{\extracolsep{\fill}}cccc}
+\hline
+\begin{tabular}[c]{@{}c@{}} {\color{white} -} \\ {\color{white} -}  \end{tabular} & All                                                      & Red Sequence                                              & Green Valley                                              & Blue Cloud \\  \hline 
+Smooth ($p_s > 0.5$)        & \begin{tabular}[c]{@{}c@{}}42453\\ (33.6\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}17424\\ (13.8\%)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}10687\\ (8.4\%)\end{tabular}   & \begin{tabular}[c]{@{}c@{}}14342\\ (11.3\%)\end{tabular}  \\ 
+Disc ($p_d > 0.5$)          & \begin{tabular}[c]{@{}c@{}}83863\\ (66.4\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}10722\\ (8.4\%)\end{tabular}   & \begin{tabular}[c]{@{}c@{}}13257\\ (10.5\%)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}59884\\ (47.4\%)\end{tabular}  \\
+Early-type ($p_s \geq 0.8$) & \begin{tabular}[c]{@{}c@{}}10517\\ (8.3\%)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}5337\\ (4.2\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}2496\\ (2.0\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}2684\\ (2.1\%)\end{tabular}    \\
+Late-type ($p_s \geq 0.8$)  & \begin{tabular}[c]{@{}c@{}}51470\\ (40.9\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}4493\\ (3.6\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}6817\\ (5.4\%)\end{tabular}    & \begin{tabular}[c]{@{}c@{}}40430\\ (32.0\%)\end{tabular}  \\ \hline
+\textbf{Total}                       & \begin{tabular}[c]{@{}c@{}}\textbf{126316} \\ (100.0\%)\end{tabular}                                                & \begin{tabular}[c]{@{}c@{}}28146 \\ (22.3\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}23944 \\ (18.9\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}74226 \\ (58.7\%)\end{tabular} \\\hline
+\end{tabular*}
 \caption{Table showing the break down of the GZ2 sample into the subsets of the colour-magnitude diagram by galaxy type.}
 \label{subs}
 \end{table*}
@@ -287,8 +290,8 @@ For the disc-like galaxies we have a bimodal likelihood in the SFH parameter spa
 
 
 \begin{figure*}
-\includegraphics[width=0.4975\textwidth]{red_s_smooth_clean.pdf}
-\includegraphics[width=0.4975\textwidth]{red_s_disc_clean.pdf}
+\includegraphics[width=0.4975\textwidth]{red_s_smooth_clean_new.pdf}
+\includegraphics[width=0.4975\textwidth]{red_s_disc_clean_new.pdf}
 \caption{Same as for Figure \ref{all} but for galaxies from the clean sample and defined as optical Red Sequence \cite{Baldry}.}
 \label{red_s_clean}
 \end{figure*}
@@ -328,34 +331,43 @@ For the disc-like galaxies we have a bimodal likelihood in the SFH parameter spa
 %\label{bars}
 %\end{figure*}
 
-In figure \ref{red_s} we can see those galaxies which are defined to be in the optical red sequence, show a prevalence for fast quenching timescales for the smooth-like galaxies and slow quenching timescales for the disc-like galaxies; again confirming the results found by \citet{Sch2014}. However there is also a significant likelihood for blue NUV colours in the smooth parameters (slow quenching at late timescales) and for red NUV colours in the disc parameters. Could this be due to:
-\begin{enumerate}
-\item a population of S0 galaxies (with GZ2 likelihoods $p_s \sim p_d \sim 0.5$) which contribute to both sets of parameters? 
-\item bulge dominated disc galaxies impacting on the likely disc parameters?
-\item NUV blue smooth galaxies impacting on the likely smooth parameters? 
-\end{enumerate}
-In figure \ref{red_s_clean} we try to remove the influence from these intermediate galaxies; the figure shows the SFH parameters but only for those galaxies defined to be both in the optical red sequence and the GZ2 `clean' samples (i.e. $p_d \geq 0.8$ and $p_s \geq 0.8$). This enables us to disentangle which galaxies are contributing to which areas of high likelihood in figure \ref{red_s}. We can therefore see that the typical clean, smooth, red sequence galaxy has undergone a SFH with a relatively rapid quench at various early times, resulting in a very low current SFR. These are therefore the typical \emph{`red and dead'} galaxies expected to be found in the red sequence. 
+In figure \ref{red_s} we can see those galaxies which are defined to be in the optical red sequence, show a prevalence for medium quenching timescales ($\tau \sim1.5~Gyr$) at early times for the smooth-like galaxies and slow quenching timescales ($\tau > 1.5~Gyr$) at medium for the disc-like galaxies; again confirming the results found by \citet{Sch2014}. We can see that the areas of high likelihood for the disc-like galaxies occupy areas that also have some residual star formation occurring after evolving with very slow quenching timescales, suggesting that the disc galaxies which make up the red sequence seem to reside at its edge, on the border with the green valley. 
 
-However for the clean disc  galaxies in the red sequence (presumably the red spiral galaxies, ?) there is no region of the parameter space which has a preferred higher likelihood, suggesting that although these disc galaxies are optically red, they have a wide range of NUV-u colours, giving rise to a wide range of timescales for the most recent episode of star formation. Although we can pick out a similar region of high likelihood, for fast quenching at early times for disc galaxies as seen for smooth galaxies in the left panel of figure \ref{red_s_clean}, we can see a preference for high likelihood across all regions of the parameter space. This suggests that there is no `typical' red sequence disc galaxy and that there are many possible routes for a disc galaxy to the red sequence. 
+For the smooth parameters in the left panel of figure \ref{red_s} we also get some high likelihood for slow quenching timescales ($\tau > 1.5~Gyr$) at very early times, which according to figure \ref{all} should not be the case. Perhaps this is the influence of intermediate galaxies (with $p_s \sim p_d \sim 0.5$), hence why similar high likelihood areas exist for both the smooth-like and disc-like galaxies. Considering there are far more of these intermediate galaxies than those that are definitively early-types (see table \ref{subs})) these galaxies have overwhelmed the likelihoods creating a bimodality in the likelihoods. This is also the case for the disc-like galaxies suggesting that there is still a morphological bimodality in both populations.
 
-This has many implications for green valley galaxies, as all of these routes must have passed through this region on their way to the red sequence. We therefore expect to see a large range of SFH parameters for disc-like green valley galaxies, pre-empting what is observed for the red sequence. 
+In figure \ref{red_s_clean} we try to remove the influence from these intermediate galaxies; the figure shows the SFH parameters but only for those galaxies defined to be both in the optical red sequence and the GZ2 `clean' samples (i.e. $p_d \geq 0.8$ and $p_s \geq 0.8$). This enables us to disentangle which galaxies are contributing to which areas of high likelihood in figure \ref{red_s}. We can therefore see that the typical clean, smooth, red sequence galaxy has undergone a SFH with a relatively rapid quench at various early times, resulting in a very low current SFR. These are therefore the typical \emph{`red and dead'} galaxies expected to be found in the red sequence. Note however that still, there is only a small amount of likelihood for quenching timescales below ($\tau < 1.0~Gyr$) and that the early-type galaxies favour a medium quenching. 
+
+What has disappeared from the parameter likelihood space is the preference for slow quenching at very early times, this suggests that it is the intermediate galaxies with $0.5 < p_s < 0.8$ which were contributing to this region of likelihood. These galaxies are those whose morphology cannot easily be distinguished or deliberated either because it is at a large distance or because it is an S0 galaxy whose morphology can be deliberated by different users in different ways. These galaxies were behaving more like disc galaxies than smooth ones. 
+
+%However for the clean disc  galaxies in the red sequence (presumably the red spiral galaxies, ?) there is no region of the parameter space which has a preferred higher likelihood, suggesting that although these disc galaxies are optically red, they have a wide range of NUV-u colours, giving rise to a wide range of timescales for the most recent episode of star formation. Although we can pick out a similar region of high likelihood, for fast quenching at early times for disc galaxies as seen for smooth galaxies in the left panel of figure \ref{red_s_clean}, we can see a preference for high likelihood across all regions of the parameter space. This suggests that there is no `typical' red sequence disc galaxy and that there are many possible routes for a disc galaxy to the red sequence. 
+
+We can also see the influence from removing the intermediate galaxies on the likelihoods for the disc parameters; we no longer have a bimodal distribution, instead one that clearly favours very slow quenching at relatively early times. However we do still have a tail towards a preference for more rapid quenching at more recent times, however none with $\tau < 1.0~Gyr$ suggesting that disc galaxies do not make it to the red sequence via this rapid mechanism.
+
+This preference for large quenching timescales suggests that these galaxies have only just reached the red sequence after a very slow evolution across the colour-magnitude diagram. Considering their limited number it is likely that these galaxies are currently on the edge of the red sequence having recently (and finally) moved off the green valley. This therefore describes the typical SFH of a red spiral galaxy (?,?). 
+
+This has many implications for green valley galaxies, as all of these routes must have passed through this region on their way to the red sequence. We therefore expect to see a similar distribution of likelihoods for the green valley disc-like and smooth-like galaxies but perhaps at later quenching times, pre-empting what will become the red sequence over time. 
 
 \subsection{Green Valley Galaxies}
 
 
-In figures \ref{gv} and \ref{gv_clean} we can make similar comparisons for the green valley galaxies as we did previously for the red sequence. In figure \ref{gv} we still see the correlation between the two parameters as seen in figure \ref{all} but the areas of high likelihood for the parameters has changed. We have a very clear triimodal likelihood in the parameter space for smooth galaxies and a bimodal likelihood for the parameters for the disc-like green valley galaxies. 
+In figures \ref{gv} and \ref{gv_clean} we can make similar comparisons for the green valley galaxies as we did previously for the red sequence. In figure \ref{gv} we still see the correlation between the two parameters as seen in figure \ref{all} but the areas of high likelihood for the parameters have changed. We no longer have a trimodal likelihood in the parameter space for smooth galaxies but retain a bimodal likelihood for the parameters for the disc-like green valley galaxies. 
 
-We can also see that quenching for the green valley occurs on longer quenching timescales; there is little to no likelihood for $\tau$ below $\sim 1.0 ~Gyr$ for either the smooth- or disc-like galaxies, unlike in the previous plots. However there is a small likelihood for recent (within $\sim 2~Gyr$) rapid quenching of the smooth-like galaxies. This may be counter intuitive at first, as one of the main arguments for the lack of galaxies in the green valley is due to the hypothesised rapid movement across it; however, if this is the case then the expected number of galaxies in this region with a very rapidly quenched SFH will be very small. 
+We can also see that quenching for the green valley occurs on similar quenching timescales to that of the red sequence; there is little to no likelihood for $\tau$ below $\sim 1.0 ~Gyr$ for either the smooth- or disc-like galaxies, unlike in the previous plots, however at differing quenching times. We also see for the disc-like galaxies a preference for very slow quenching at recent times which we believe to be those galaxies that have only just left the edge of the blue cloud and entered the green valley, hence they have some higher recent star formation than the other galaxies in the blue cloud.
 
-It is remarkable therefore that we have managed to find a preference for this type of SFH in the parameter space (as seen in the left hand panel of figure \ref{gv}). This is only apparent for the smooth-like galaxies, suggesting that it is only early-type galaxies which traverse the green valley in this rapid fashion. Conversely the disc galaxies come to reside in the green valley after a relatively slow quench causing a transition from the centre of the blue cloud to its edge and eventually into the green valley. Given enough time with this slow decline of star formation these galaxies may also make it to the edge of the red sequence, fully passing through the green valley (the right panel of figure \ref{sfr_mass_col} shows galaxies with $\tau > 1.0~Gyr$ do not approach the red sequence within $3~Gyr$ post quench). This is most likely the origin of the `red spirals' and explains why there are currently so few of them.
+There is a very little likelihood however, for rapid quenching of the smooth-like galaxies. This may be counter intuitive at first, as one of the main arguments for the lack of galaxies in the green valley is due to the hypothesised rapid movement across it; however, if this is the case then catching a galaxy with this quenching history will be difficult. Especially considering the amount of intermediate galaxies which are present in the green valley compared to those that are in the clean samples. These galaxies will be overwhelming the `walker' positions in the algorithm. 
 
-If we compare figure \ref{gv} to figure \ref{gv_clean}, which shows the regions of high likelihood for the model parameters for only the `clean' green valley galaxies, we can see that the various modes have disappeared for both the smooth- and disc- like populations. We now have single area of likelihood for clean smooth and disc populations all at similar $t_q$ but at more rapid quenching timescales for the smooth galaxies. This suggests that there are not just two routes for galaxies through the green valley but \emph{three}: with the smooth, intermediate (e.g. S0 galaxies) and disc galaxies each having different SFHs which eventually lead them across the Green Valley.
+Therefore if we remove the influence of such galaxies as in figure \ref{gv_clean}, which shows the regions of high likelihood for the model parameters for only the `clean' green valley galaxies, we can see that we do indeed detect some very rapid quenching at very recent times. However we only find this for smooth galaxies, just as in figure \ref{red_s_clean} suggesting again that it is only early-type galaxies which can progress through the green valley and into the red sequence in such a way. 
+
+For the disc-like galaxies, whose parameters were also overwhelmed by the sheer number of intermediate galaxies in the green valley, we can see a large shift in likelihood for the clean disc galaxies seen in the right panel of figure \ref{gv_clean}. Upon removal of the intermediate galaxies the regions of high likelihood now reside at much longer quenching timescales, as expected for a late-type galaxy.  We still retain some likelihood for galaxies with higher SFR than the other galaxies, suggesting there are also some late-type galaxies that have just progressed from the blue cloud into the green valley. 
+
+Given enough time, these galaxies will eventually pass fully through the green valley and make it out to the other side in the red sequence (the right panel of figure \ref{sfr_mass_col} shows galaxies with $\tau > 1.0~Gyr$ do not approach the red sequence within $3~Gyr$ post quench). This is most likely the origin of the `red spirals' and explains why there are currently so few of them. If our Universe was older this suggests we would observe more red spirals on the red sequence. 
+
+We can see by comparing figure \ref{gv_clean} with figure \ref{red_s_clean} for the clean red sequence galaxies, that both populations the parameters occupy similar regions of space in the $\tau$ parameter but have gained a shift to later times in the $t$ parameter. This means that both populations are tracing the evolution of the red sequence confirming that green valley is indeed a transitional population between blue cloud and red sequence regardless of morphology. Currently as we observe the green valley, it's main constituent are very slowly evolving disc-like galaxies along with intermediate- and some smooth-like galaxies which manage to pass across it within $\sim 1.0-1.5~Gyr$.
+
+All of this evidence suggests that there are not just two routes for galaxies through the green valley but \emph{three}: with the smooth- ($1.0 < \tau < 1.5 ~Gyr$), intermediate- ($1.5 < \tau < 2.0~Gyr$) and disc-like ($\tau > 2.0~Gyr$) galaxies each having different SFHs which lead them across the green valley, given enough cosmic time. In this instance, the grass is always redder on the other side.
 
 
 \subsection{Blue Cloud Galaxies}
-
-
-
 Since the blue cloud is considered to be primarily made of star forming galaxies we expect the model to have some difficulty in determining the most likely quenching model to describe them. In figure \ref{blue_c} both sets of parameters show high likelihood for slow quenching at late times, with a higher likelihood for the disc-like galaxies. We believe that this is the model picking up on those galaxies which have so far not undergone any quenching. However we also see a trimodality in both sets of parameters, again which is more pronounced in the disc-like galaxies, suggesting that there is still quenching occurring within the blue cloud. We note that in this case there is no quenching below $\tau \sim 1.0~Gyr$ for either population, confirming that any galaxy undergoing a rapid quench will very quickly leave the blue cloud. 
 
 There is also high likelihood in both samples for medium rate quenching at relatively recent times which could account for those galaxies on the edge of the blue cloud after beginning to quench. The SFH parameter space for the smooth-like and disc-like galaxies appear very similar, suggesting so too are galaxies in the blue cloud, irrespective of their morphology. Of all of the regions of the CMD, this is to be expected in the blue cloud since it consists of galaxies that are mostly still star forming. The way these galaxies differ is the mechanisms and triggers by which they have formed their stars, having no effect on the observed colours but a discernible effect on their morphologies.
@@ -376,26 +388,52 @@ The disc-like galaxies in the right panel of figure \ref{blue_c_clean} show a hi
 
 
 \section{Discussion}\label{diss}
-Build up of red sequence - many paths passed through the green valley previously.
-\\ Green valley both static and transitional
-\\ Spare because fraction of galaxies quenching at any one time is few
-\\ Different paths across for smooth, intermediate and disc galaxies
-\\ Methods for quenching - Binney + fountain models cut off when galaxy starts to move through IGM. 
+%Build up of red sequence - many paths passed through the green valley previously.
+%\\ Green valley both static and transitional
+%\\ Spare because fraction of galaxies quenching at any one time is few
+%\\ Different paths across for smooth, intermediate and disc galaxies
+%\\ Methods for quenching - Binney + fountain models cut off when galaxy starts to move through IGM. 
+The results from the previous section allow us to build up a picture of a galaxy's journey from the blue cloud to the red sequence as it evolves. Firstly, there is a definitive morphological dependance on the evolution of a galaxy; smooth- and disc-like galaxies evolve with very different quenching timescales, but what is the mechanism driving this difference? We can put constraints on this by considering how they evolve differently.
+
+We can confirm that the green valley is indeed a transitional population, with many different SFH parameters to describe the possible path of a galaxy through it. If it were a static population we would expect a results such as the one for the clean red sequence smooth galaxies in figure \ref{red_s_clean}, where the likelihood clusters in a specific area due to the fact that they are all very similar. 
+
+The green valley consists of a composite population however of disc-like galaxies which pass very slowly though (with only a small number having it made it to the red sequence at the current time) and smooth-like galaxies which pass through so rapidly we have very minimal likelihood for rapid quenching. We also argue that there is a third population residing in the green valley from the intermediate galaxies (by comparing figures \ref{gv} and \ref{gv_clean}) which are passing through at middling quenching timescales. 
+
+Since \citet{Sch2014} did not consider intermediate galaxies, their conclusions that there are 2 routes through the green valley for galaxies contradicts with our statements that their are currently three routes, dependant on whether a galaxy is early-, intermediate- or late-type. 
+
+Our figure \ref{red_s_clean} however shows that for disc galaxies there are many possible SFHs that can lead them to the red sequence and consequently though the green valley. This suggests that at some time during the past there were many more paths an evolving galaxy could take, therefore many more galaxies quenching resulting in the well populated main sequence that we observe today. 
+
+One of the crucial aspects of this discussion is if an environmental dependance is somehow causing the morphological dependance we are detecting. We see a correlation between $t_q$ and $\tau$ in most cases, particularly for the disc-like galaxies. 
+
+Another important point to discuss is the lack of likelihood for rapid quenching timescales $\tau < 1.0~Gyr$. This is most apparent in the disc parameters where no likelihood below this is detected, except at very recent times for the clean disc blue cloud galaxies. For the smooth galaxies only a small amount of likelihood is found for these extremely rapid quenching timescales, this suggests the mechanism which drives this quenching is only apparent for smooth-like galaxies and not for disc-like galaxies and is also extremely rare. We believe that this coincides with what we know about major mergers. 
+
+Major mergers, once thought to be the main drivers of galactic evolution (?,?,?) are now believed to be much rarer events (?,?). They are also considered to be very violent events causing huge bursts of star formation which rapidly use all of the available cold gas for star formation, triggering AGN activity which in turn is thought to quench star formation (?,?) and trigger a major morphological transformation to an early-type galaxy. Hence, we do not detect likelihood at rapid quenching for disc galaxies because all of those which have undergone a quench such as this (for example our own galaxy when it collides with M31 in $2~Gyrs$ time) have become smooth in morphology. We then find a scattering of likelihood (due to the rarity of major mergers) at these rapid quenching timescales for the smooth-like galaxies; the remnants of these major mergers. 
+
+There is also a strong preference at all quenching times for the intermediate galaxies to have middle quenching timescales ($\tau \sim 1.5~Gyr$). Minor mergers, which are thought to promote star formation in a similar but not as drastically as major mergers(?,?), are thought to also trigger AGN activity (?,?) which can cause a quenching of star formation but at a slower rate than a major merger (without the added help of the sudden using up of all of the cold gas; ?,?). Such minor mergers can cause some morphological changes to a featured galaxy by disrupting spiral arms ?,?) from the inflow of gas from the smaller, satellite galaxy. In \citet{Darg} in their figure ? we can see that minor mergers with mass ratio's over 1:100 are typically spiral-spiral interactions and also display typically green optical colours; the merger remnants would be classified as green valley. We therefore believe that a minor merger can cause both a quench on a medium timescale along with a morphological change from a disc-like to an intermediate galaxy.
+
+However minor mergers are also as rare as major mergers. Therefore any trigger of AGN activity could also have the same effect, along with galaxy harassment, interactions, ram pressure stripping and cluster interactions; anything which could cause slight morphological changes or changes in the cold gas available within a galaxy would fall into the \emph{medium quenching} category. Considering the majority of galaxies reside in clusters it is not surprising that the majority of our galaxies are considered to be intermediate in morphology. 
+
+For the clean disc galaxies across all of the populations the highest likelihood always occurs at the largest quenching timescales. This means for those disc galaxies whose morphology is least contested, i.e. most obviously spiral or barred, they evolve across the colour-magnitude diagram with cosmic time extremely slowly. Such a SFH does not deplete a galaxy of it's cold gas supply entirely but merely reduces the amount of star formation occurring over time without anything untoward occurring to upset this gentle decline. This suggests that the preference for late-type galaxies moving across the colour-magnitude diagram is via evolution that is secular in nature (i.e. non-violent mechanisms often occurring in isolated environments, ?,?,?). This can include the shut down of feedback of cold gas from the galactic halo or IGM (Binney's stuff) or through the formation of a bar, which are thought to channel gas towards the centre of a galaxy (?). 
+
 
 \section{Conclusion}\label{conc}
 The three most important points: 
 \begin{enumerate}
-\item There is a clear correlation between $t_{quench}$ and $\tau$. At earlier times, the quenching timescale is longer, whereas at more recent times, the quenching timescale is shorter on average. Could this be an environmental dependance of quenching with cosmic time?
-\item There are a wide range of possible routes to the red sequence for disc galaxies. Some have similar SFHs to the red sequence smooth galaxies, whereas some have similar SFHs to blue cloud disc galaxies. Morphology seems to be irrelevant to the SFH. 
-\item There are three possible routes through the green valley dependant on morphology (smooth-like, intermediate and disc-like galaxies).
+\item There is a clear correlation between $t_{quench}$ and $\tau$. At earlier times, the quenching timescale is longer, whereas at more recent times, the quenching timescale is shorter on average suggesting an environmental quenching dependance with cosmic time
+\item The most likely SFH parameters for the green valley trace those for the red sequence at later times, pre-empting the formation of the red sequence suggesting that the green valley is indeed a transitional population with morphological dependant routes through it
+\item There are three possible routes through the green valley dependant on morphology for smooth-like, intermediate and disc-like galaxies. These are thought to be caused by major mergers, minor mergers/galaxy interactions/AGN activity and secular evolution respectively.
 \end{enumerate}
 
-There is not one specific route to each part of the colour-colour or colour-magnitude diagram, due to the complex interplay between the SFH parameters, however the morphology of a galaxy can have varying impacts and constraints on what these parameters can be.
+There is not one specific route to each part of the colour-colour or colour-magnitude diagram, due to the complex interplay between the SFH parameters, however the morphology of a galaxy reveal the previous possible steps to reach it's current location. If a galaxy is a late-type at the current epoch, independent of where it is on the colour-magnitude diagram) then it cannot have undergone rapid quenching and consequently any mechanism that drives this, such as a major merger. Conversely for a galaxy to be early-type at the current epoch, independent of where it is on the colour-magnitude diagram then it cannot have undergone slow quenching and consequently any mechanism that drives this, such as secular evolution. 
+
+\section*{Acknowledgements}
+The authors would like to thank D. Forman-Mackey and P. Marshal for extremely useful Bayesian statistics discussions and J. Binney for an interesting discussion on the nature of quenching and feedback in disc galaxies. GALEX would like to thank NASA. SDSS would like to thank lots of people. This publication made extensive use of the Tool for Operations on Catalogues And Tables (TOPCAT) which can be found at \url{http://starlink.ac.uk/topcat/}. This research has also made use of NASA's ADS service and Cornell's ArXiv. 
 
 \begin{thebibliography}{}
 \bibitem[\protect\citeauthoryear{Baldry et al.}{2004}]{Baldry} Baldry, I. K. et al., 2004, ApJ, 600, 681
 \bibitem[\protect\citeauthoryear{B\'ethermin et al.}{2012}]{Beth} B\'ethermin, M. et al., 2012, ApJ, 757, L23
 \bibitem[\protect\citeauthoryear{Bruzual \& Charlot}{2003}]{BC03} Bruzual, G. \& Charlot, S., 2003, MNRAS, 344, 1000
+\bibitem[\protect\citeauthoryear{Darg et al.}{2009}]{Darg} Darg, D. et al., 2009, MNRAS, 401, 1552
 \bibitem[\protect\citeauthoryear{Foreman-Mackey et al.}{2013}]{Dan} Foreman-Mackey, D., Hogg, D. W., Lang, D., Goodman, J., 2013, PASP, 125, 306
 \bibitem[\protect\citeauthoryear{Gonz\'alez et al.}{2010}]{Gonzalez} Gonz\'alez, V. et al., 2010, ApJ, 713, 115
 \bibitem[\protect\citeauthoryear{Jarosik et al.}{2011}]{WMAP} Jarosik, N. et al., 2011, ApJSS, 192, 18
