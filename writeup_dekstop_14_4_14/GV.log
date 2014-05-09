@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  8 MAY 2014 21:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  9 MAY 2014 10:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -260,7 +260,21 @@ Underfull \hbox (badness 6927) in paragraph at lines 32--33
 []\OT1/cmr/m/n/9 This tran-si-tion must there-fore oc-cur on rapid
  []
 
-<sfr_mass_subsets.pdf, id=1, 939.51pt x 650.43pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+ [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+<sfr_mass_subsets.pdf, id=21, 939.51pt x 650.43pt>
 File: sfr_mass_subsets.pdf Graphic file (type pdf)
  <use sfr_mass_subsets.pdf>
 Package pdftex.def Info: sfr_mass_subsets.pdf used on input line 40.
@@ -268,31 +282,22 @@ Package pdftex.def Info: sfr_mass_subsets.pdf used on input line 40.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 45.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
- [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./sfr_mass_subsets.pdf>] <col_mag_with_GV.pdf, id=309, 578.16pt x 433.62pt
->
+<col_mag_with_GV.pdf, id=22, 578.16pt x 433.62pt>
 File: col_mag_with_GV.pdf Graphic file (type pdf)
-
-<use col_mag_with_GV.pdf>
+ <use col_mag_with_GV.pdf>
 Package pdftex.def Info: col_mag_with_GV.pdf used on input line 91.
 (pdftex.def)             Requested size: 226.79846pt x 170.09697pt.
 
-<sfr_mass_colour_diagram.pdf, id=310, 1228.59pt x 433.62pt>
+
+Package natbib Warning: Citation `Baldry' on page 2 undefined on input line 92.
+
+
+
+Package natbib Warning: Citation `Baldry' on page 2 undefined on input line 92.
+
+
+[2] <sfr_mass_colour_diagram.pdf, id=29, 1228.59pt x 433.62pt>
 File: sfr_mass_colour_diagram.pdf Graphic file (type pdf)
 
 <use sfr_mass_colour_diagram.pdf>
@@ -303,8 +308,20 @@ Underfull \hbox (badness 1231) in paragraph at lines 103--104
 []\OT1/cmr/m/n/9 Specifically, the Galaxy Zoo 2 project con-sists of
  []
 
-[3 <./col_mag_with_GV.pdf>] [4 <./sfr_mass_colour_diagram.pdf>]
-<sfr_mass_evo.pdf, id=571, 939.51pt x 650.43pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package natbib Warning: Citation `Baldry' on page 3 undefined on input line 110
+.
+
+[3 <./sfr_mass_subsets.pdf>] [4 <./sfr_mass_colour_diagram.pdf> <./col_mag_with
+_GV.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./col_mag_with_GV.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+>] <sfr_mass_evo.pdf, id=570, 939.51pt x 650.43pt>
 File: sfr_mass_evo.pdf Graphic file (type pdf)
  <use sfr_mass_evo.pdf>
 Package pdftex.def Info: sfr_mass_evo.pdf used on input line 145.
@@ -312,112 +329,143 @@ Package pdftex.def Info: sfr_mass_evo.pdf used on input line 145.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 162.
 
-<colours.pdf, id=572, 469.755pt x 1084.05pt>
+Underfull \vbox (badness 3690) has occurred while \output is active []
+
+
+<colours.pdf, id=571, 469.755pt x 1084.05pt>
 File: colours.pdf Graphic file (type pdf)
  <use colours.pdf>
 Package pdftex.def Info: colours.pdf used on input line 167.
 (pdftex.def)             Requested size: 226.79846pt x 523.38168pt.
 
+Underfull \vbox (badness 1412) has occurred while \output is active []
+
+ [5]
+[6 <./sfr_mass_evo.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./colours.pdf>] [6 <./sfr_mass_evo.pdf>]
 Overfull \hbox (14.45973pt too wide) detected at line 255
 [] [] \OT1/cmr/m/n/9 = [] [] [] \OML/cmm/m/it/9 :
  []
 
-<all_smooth.pdf, id=1733, 722.7pt x 722.7pt>
+[7 <./colours.pdf>] <all_smooth.pdf, id=1736, 722.7pt x 722.7pt>
 File: all_smooth.pdf Graphic file (type pdf)
- <use all_smooth.pdf>
+
+<use all_smooth.pdf>
 Package pdftex.def Info: all_smooth.pdf used on input line 262.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
-
-<all_disc.pdf, id=1734, 722.7pt x 722.7pt>
+ <all_disc.pdf, id=1737, 722.7pt x 722.7pt>
 File: all_disc.pdf Graphic file (type pdf)
- <use all_disc.pdf>
+
+<use all_disc.pdf>
 Package pdftex.def Info: all_disc.pdf used on input line 263.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<red_s_smooth.pdf, id=1739, 722.7pt x 722.7pt>
+ <red_s_smooth.pdf, id=1738, 722.7pt x 722.7pt>
 File: red_s_smooth.pdf Graphic file (type pdf)
- <use red_s_smooth.pdf>
+
+<use red_s_smooth.pdf>
 Package pdftex.def Info: red_s_smooth.pdf used on input line 288.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
-
-<red_s_disc.pdf, id=1740, 722.7pt x 722.7pt>
+ <red_s_disc.pdf, id=1739, 722.7pt x 722.7pt>
 File: red_s_disc.pdf Graphic file (type pdf)
- <use red_s_disc.pdf>
+
+<use red_s_disc.pdf>
 Package pdftex.def Info: red_s_disc.pdf used on input line 289.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<red_s_smooth_clean_new.pdf, id=1741, 722.7pt x 722.7pt>
+
+Package natbib Warning: Citation `Baldry' on page 8 undefined on input line 290
+.
+
+<red_s_smooth_clean_new.pdf, id=1740, 722.7pt x 722.7pt>
 File: red_s_smooth_clean_new.pdf Graphic file (type pdf)
 
 <use red_s_smooth_clean_new.pdf>
 Package pdftex.def Info: red_s_smooth_clean_new.pdf used on input line 296.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<red_s_disc_clean_new.pdf, id=1742, 722.7pt x 722.7pt>
+<red_s_disc_clean_new.pdf, id=1741, 722.7pt x 722.7pt>
 File: red_s_disc_clean_new.pdf Graphic file (type pdf)
 
 <use red_s_disc_clean_new.pdf>
 Package pdftex.def Info: red_s_disc_clean_new.pdf used on input line 297.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <gv_smooth.pdf, id=1743, 722.7pt x 722.7pt>
-File: gv_smooth.pdf Graphic file (type pdf)
 
-<use gv_smooth.pdf>
+
+Package natbib Warning: Citation `Baldry' on page 8 undefined on input line 298
+.
+
+<gv_smooth.pdf, id=1742, 722.7pt x 722.7pt>
+File: gv_smooth.pdf Graphic file (type pdf)
+ <use gv_smooth.pdf>
 Package pdftex.def Info: gv_smooth.pdf used on input line 303.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <gv_disc.pdf, id=1744, 722.7pt x 722.7pt>
-File: gv_disc.pdf Graphic file (type pdf)
 
-<use gv_disc.pdf>
+<gv_disc.pdf, id=1743, 722.7pt x 722.7pt>
+File: gv_disc.pdf Graphic file (type pdf)
+ <use gv_disc.pdf>
 Package pdftex.def Info: gv_disc.pdf used on input line 304.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <gv_smooth_clean.pdf, id=1745, 722.7pt x 722.7pt>
-File: gv_smooth_clean.pdf Graphic file (type pdf)
 
-<use gv_smooth_clean.pdf>
+
+Package natbib Warning: Citation `Baldry' on page 8 undefined on input line 305
+.
+
+<gv_smooth_clean.pdf, id=1744, 722.7pt x 722.7pt>
+File: gv_smooth_clean.pdf Graphic file (type pdf)
+ <use gv_smooth_clean.pdf>
 Package pdftex.def Info: gv_smooth_clean.pdf used on input line 310.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <gv_disc_clean.pdf, id=1746, 722.7pt x 722.7pt>
-File: gv_disc_clean.pdf Graphic file (type pdf)
 
-<use gv_disc_clean.pdf>
+<gv_disc_clean.pdf, id=1745, 722.7pt x 722.7pt>
+File: gv_disc_clean.pdf Graphic file (type pdf)
+ <use gv_disc_clean.pdf>
 Package pdftex.def Info: gv_disc_clean.pdf used on input line 311.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <blue_c_smooth.pdf, id=1747, 722.7pt x 722.7pt>
-File: blue_c_smooth.pdf Graphic file (type pdf)
 
-<use blue_c_smooth.pdf>
+
+Package natbib Warning: Citation `Baldry' on page 8 undefined on input line 312
+.
+
+<blue_c_smooth.pdf, id=1746, 722.7pt x 722.7pt>
+File: blue_c_smooth.pdf Graphic file (type pdf)
+ <use blue_c_smooth.pdf>
 Package pdftex.def Info: blue_c_smooth.pdf used on input line 317.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <blue_c_disc.pdf, id=1748, 722.7pt x 722.7pt>
-File: blue_c_disc.pdf Graphic file (type pdf)
 
-<use blue_c_disc.pdf>
+<blue_c_disc.pdf, id=1747, 722.7pt x 722.7pt>
+File: blue_c_disc.pdf Graphic file (type pdf)
+ <use blue_c_disc.pdf>
 Package pdftex.def Info: blue_c_disc.pdf used on input line 318.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- <blue_c_smooth_clean.pdf, id=1749, 722.7pt x 722.7pt>
+
+
+Package natbib Warning: Citation `Baldry' on page 8 undefined on input line 319
+.
+
+<blue_c_smooth_clean.pdf, id=1748, 722.7pt x 722.7pt>
 File: blue_c_smooth_clean.pdf Graphic file (type pdf)
 
 <use blue_c_smooth_clean.pdf>
 Package pdftex.def Info: blue_c_smooth_clean.pdf used on input line 324.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<blue_c_disc_clean.pdf, id=1750, 722.7pt x 722.7pt>
+<blue_c_disc_clean.pdf, id=1749, 722.7pt x 722.7pt>
 File: blue_c_disc_clean.pdf Graphic file (type pdf)
 
 <use blue_c_disc_clean.pdf>
 Package pdftex.def Info: blue_c_disc_clean.pdf used on input line 325.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
- [8 <./all_smooth.pdf> <./all_disc.pdf
+
+
+Package natbib Warning: Citation `Baldry' on page 8 undefined on input line 326
+.
+
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./all_smooth.pdf> <./all_disc.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./all_disc.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
@@ -427,7 +475,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./red_s_smooth.pdf> <./red_s_disc.pdf
+ [10 <./red_s_smooth.pdf> <./red_s_disc.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./red_s_disc.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
@@ -442,10 +490,7 @@ lusion: multiple pdfs with page group included in a single page
 >]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10 <./gv_smooth.pdf> <./gv_disc.pdf
+ [11 <./gv_smooth.pdf> <./gv_disc.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./gv_disc.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
@@ -463,7 +508,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./blue_c_smooth.pdf> <./blue_c_disc.pdf
+ [12 <./blue_c_smooth.pdf> <./blue_c_disc.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./blue_c_disc.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
@@ -475,7 +520,7 @@ usion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./blue_c_disc_clean.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
->] [12]
+>]
 Underfull \vbox (badness 6380) has occurred while \output is active []
 
  [13]
@@ -489,27 +534,33 @@ Type  H <return>  for immediate help.
 l.423 \begin{thebibliography}{}
                                
 ? 
-<bars.pdf, id=6736, 722.7pt x 722.7pt>
+[14] <bars.pdf, id=6780, 722.7pt x 722.7pt>
 File: bars.pdf Graphic file (type pdf)
  <use bars.pdf>
-Package pdftex.def Info: bars.pdf used on input line 441.
+Package pdftex.def Info: bars.pdf used on input line 464.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<no_bars.pdf, id=6737, 722.7pt x 722.7pt>
+<no_bars.pdf, id=6781, 722.7pt x 722.7pt>
 File: no_bars.pdf Graphic file (type pdf)
  <use no_bars.pdf>
-Package pdftex.def Info: no_bars.pdf used on input line 442.
+Package pdftex.def Info: no_bars.pdf used on input line 465.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<c_c_evo_numpy.pdf, id=6738, 1734.48pt x 361.35pt>
+<c_c_evo_numpy.pdf, id=6782, 1734.48pt x 361.35pt>
 File: c_c_evo_numpy.pdf Graphic file (type pdf)
  <use c_c_evo_numpy.pdf>
-Package pdftex.def Info: c_c_evo_numpy.pdf used on input line 459.
+Package pdftex.def Info: c_c_evo_numpy.pdf used on input line 482.
 (pdftex.def)             Requested size: 504.0pt x 104.99834pt.
 
-[14] [15
 
- <./bars.pdf> <./no_bars.pdf
+Package natbib Warning: There were undefined citations.
+
+[15
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./bars.pdf> <./no_bars.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./no_bars.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
@@ -519,13 +570,13 @@ pdfTeX warning: /usr/texbin/pdflatex (file ./c_c_evo_numpy.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
 >] (./GV.aux) ) 
 Here is how much of TeX's memory you used:
- 3051 strings out of 493315
- 40206 string characters out of 6137904
- 116553 words of memory out of 5000000
- 6439 multiletter control sequences out of 15000+600000
+ 3121 strings out of 493315
+ 41285 string characters out of 6137904
+ 118310 words of memory out of 5000000
+ 6509 multiletter control sequences out of 15000+600000
  14532 words of font info for 50 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,14n,25p,1063b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,25p,1063b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -548,10 +599,10 @@ ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
 e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on GV.pdf (15 pages, 6358946 bytes).
+Output written on GV.pdf (16 pages, 6369816 bytes).
 PDF statistics:
- 7586 PDF objects out of 8907 (max. 8388607)
- 571 compressed objects within 6 object streams
+ 7629 PDF objects out of 8907 (max. 8388607)
+ 572 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
