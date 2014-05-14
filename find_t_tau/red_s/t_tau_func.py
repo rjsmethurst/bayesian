@@ -209,7 +209,7 @@ def corner_plot(s, labels):
     ax2 = P.subplot(223)
     ax2.set_xlabel(labels[0])
     ax2.set_ylabel(labels[1])
-    im = triangle.histo2d(x, y, ax=ax2, extent=[[0, 13.807108309208775],[0, 3.0]])
+    im = triangle.histo2d(x, y, ax=ax2, extent=[[0, 13.807108309208775],[0, 3.0]], plot_contours='True')
     [l.set_rotation(45) for l in ax2.get_xticklabels()]
     [j.set_rotation(45) for j in ax2.get_yticklabels()]
     ax1 = P.subplot(221, xlim=[0, 13.807108309208775])

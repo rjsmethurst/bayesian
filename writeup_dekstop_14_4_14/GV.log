@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  9 MAY 2014 14:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.17)  13 MAY 2014 18:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -341,16 +341,16 @@ Overfull \hbox (14.45973pt too wide) detected at line 269
 [] [] \OT1/cmr/m/n/9 = [] [] [] \OML/cmm/m/it/9 :
  []
 
-<red_s_smooth.pdf, id=1740, 722.7pt x 722.7pt>
-File: red_s_smooth.pdf Graphic file (type pdf)
- <use red_s_smooth.pdf>
-Package pdftex.def Info: red_s_smooth.pdf used on input line 287.
+<red_s_smooth_new.pdf, id=1740, 722.7pt x 722.7pt>
+File: red_s_smooth_new.pdf Graphic file (type pdf)
+ <use red_s_smooth_new.pdf>
+Package pdftex.def Info: red_s_smooth_new.pdf used on input line 287.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<red_s_disc.pdf, id=1741, 722.7pt x 722.7pt>
-File: red_s_disc.pdf Graphic file (type pdf)
- <use red_s_disc.pdf>
-Package pdftex.def Info: red_s_disc.pdf used on input line 288.
+<red_s_disc_new.pdf, id=1741, 722.7pt x 722.7pt>
+File: red_s_disc_new.pdf Graphic file (type pdf)
+ <use red_s_disc_new.pdf>
+Package pdftex.def Info: red_s_disc_new.pdf used on input line 288.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
 <red_s_smooth_clean_new.pdf, id=1742, 722.7pt x 722.7pt>
@@ -428,10 +428,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./red_s_smooth.pdf> <./red_s_disc.pdf
+ [9 <./red_s_smooth_new.pdf> <./red_s_disc_new.pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ./red_s_disc.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
+pdfTeX warning: /usr/texbin/pdflatex (file ./red_s_disc_new.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
 > <./red_s_smooth_clean_new.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./red_s_smooth_clean_new.pdf): PDF i
@@ -487,19 +487,19 @@ Type  H <return>  for immediate help.
 l.430 \begin{thebibliography}{}
                                
 ? 
-[14] <bars.pdf, id=6782, 722.7pt x 722.7pt>
+[14] <bars.pdf, id=6896, 722.7pt x 722.7pt>
 File: bars.pdf Graphic file (type pdf)
  <use bars.pdf>
 Package pdftex.def Info: bars.pdf used on input line 516.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<no_bars.pdf, id=6783, 722.7pt x 722.7pt>
+<no_bars.pdf, id=6897, 722.7pt x 722.7pt>
 File: no_bars.pdf Graphic file (type pdf)
  <use no_bars.pdf>
 Package pdftex.def Info: no_bars.pdf used on input line 517.
 (pdftex.def)             Requested size: 250.73877pt x 250.73225pt.
 
-<c_c_evo_numpy.pdf, id=6784, 1734.48pt x 361.35pt>
+<c_c_evo_numpy.pdf, id=6898, 1734.48pt x 361.35pt>
 File: c_c_evo_numpy.pdf Graphic file (type pdf)
  <use c_c_evo_numpy.pdf>
 Package pdftex.def Info: c_c_evo_numpy.pdf used on input line 534.
@@ -516,45 +516,41 @@ ple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./c_c_evo_numpy.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
->] (./GV.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+>] (./GV.aux) ) 
 Here is how much of TeX's memory you used:
  3257 strings out of 493315
- 43267 string characters out of 6137904
+ 43307 string characters out of 6137904
  118889 words of memory out of 5000000
  6644 multiletter control sequences out of 15000+600000
  14700 words of font info for 51 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,14n,25p,1280b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on GV.pdf (16 pages, 6378887 bytes).
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmbx8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cmext
+ra/cmex9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on GV.pdf (16 pages, 6506192 bytes).
 PDF statistics:
- 7634 PDF objects out of 8907 (max. 8388607)
+ 7748 PDF objects out of 8907 (max. 8388607)
  576 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
